@@ -6,6 +6,9 @@
 # PDF output - usually a bad idea to keep this in Git
 *.pdf
 
+# Problems folder *should* be included
+!Problems/*
+
 # Latexmk
 *.fdb_latexmk
 
