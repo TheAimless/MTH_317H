@@ -2,137 +2,147 @@
     \normalfont
 
     Determine if each of the following sets is a subspace.  You can use the conditions in LADR result 1.34 to confirm whether it is or is not a subspace.  If you are confirming ``yes'', then you must verify the requirements in result 1.34 for generic vectors and scalars (following the instructions above).  If you are justifying ``no'', then you must choose a property from result 1.34 that fails, and also you must give concrete choices of vectors and/or scalars that demonstrate the failure.
-	
-	
-	\begin{enumerate}[(i)]
-		\item Determine whether the subset $W_1$ is a subspace of $\P_4$:
-		\begin{align*}
-			W_1=\{ f\in \P_4\ : \ f''+f=0 \},
-		\end{align*}
-		(Hint: do not focus on the coefficients for $f$, rather, just use the rules for differentiation.)
-		
-		\vspace{.6cm}
-		
-		\item Determine whether the subset $W_2$  is a subspace of $\P_4$:
-		\begin{align*}
-			W_2=\{ f\in \P_4\ : \ f''+f=1 \}.
-		\end{align*}
-		(Hint: do not focus on the coefficients for $f$, rather, just use the rules for differentiation.)
-		
-		\vspace{.6cm}
-		
-		
-		\item  Determine whether the subset $W_3$ is a subspace of $\real^3$:
-		\begin{align*}
-			W_3 = \left\{ \colvecthree{x_1}{x_2}{x_3}\in \real^3 \ :\ x_2 = 3x_1 - 6x_3  \right\}
-		\end{align*}
-		
-		\vspace{.6cm}
-		
-		\item Determine whether the subset $W_4$  is a subspace of $\P_3$:
-		\begin{align*}
-			W_4 = \{ p\in\P_3\ : \ p(x) = a_0 + a_1x + a_2 x^2 + a_3x^3\ \text{and}\ a_2=0 \}.
-		\end{align*}
-		
-		
-		\vspace{.6cm}
-		
-		
-		\item 
-		Define the polynomials, $q_1$, $q_2$, $q_3$ as:
-		\begin{align*}
-			q_1(x) = x+x^2,\ \ \ q_2(x) = 1-x,\ \ \ q_3(x) = x^3
-		\end{align*}
-		Determine whether the subset $W_5$  is a subspace of $\P_3$:
-		\begin{align*}
-			W_5 = 
-			\{ p\in\P_3\ : \text{there are}\ a_1,a_2,a_3\in\real\ \text{with}\ p=a_1 q_1 + a_2 q_2 + a_3 q_3 \}.
-		\end{align*}
-		
-	\end{enumerate}
+
+
+    \begin{enumerate}[(i)]
+        \item Determine whether the subset $W_1$ is a subspace of $\P_4$:
+              \begin{align*}
+                  W_1=\{ f\in \P_4\ : \ f''+f=0 \},
+              \end{align*}
+              (Hint: do not focus on the coefficients for $f$, rather, just use the rules for differentiation.)
+
+              \vspace{.6cm}
+
+        \item Determine whether the subset $W_2$  is a subspace of $\P_4$:
+              \begin{align*}
+                  W_2=\{ f\in \P_4\ : \ f''+f=1 \}.
+              \end{align*}
+              (Hint: do not focus on the coefficients for $f$, rather, just use the rules for differentiation.)
+
+              \vspace{.6cm}
+
+
+        \item  Determine whether the subset $W_3$ is a subspace of $\real^3$:
+              \begin{align*}
+                  W_3 = \left\{ \colvecthree{x_1}{x_2}{x_3}\in \real^3 \ :\ x_2 = 3x_1 - 6x_3  \right\}
+              \end{align*}
+
+              \vspace{.6cm}
+
+        \item Determine whether the subset $W_4$  is a subspace of $\P_3$:
+              \begin{align*}
+                  W_4 = \{ p\in\P_3\ : \ p(x) = a_0 + a_1x + a_2 x^2 + a_3x^3\ \text{and}\ a_2=0 \}.
+              \end{align*}
+
+
+              \vspace{.6cm}
+
+
+        \item
+              Define the polynomials, $q_1$, $q_2$, $q_3$ as:
+              \begin{align*}
+                  q_1(x) = x+x^2,\ \ \ q_2(x) = 1-x,\ \ \ q_3(x) = x^3
+              \end{align*}
+              Determine whether the subset $W_5$  is a subspace of $\P_3$:
+              \begin{align*}
+                  W_5 =
+                  \{ p\in\P_3\ : \text{there are}\ a_1,a_2,a_3\in\real\ \text{with}\ p=a_1 q_1 + a_2 q_2 + a_3 q_3 \}.
+              \end{align*}
+
+    \end{enumerate}
 \end{question}
 
 \begin{sol}
-\begin{enumerate}[(i)]
-    \item To show that $W_1$ is a subspace of $\P_4$, the three following properties must hold true:
-    \begin{enumerate}[(1)]
-        \item The zero vector of $\P_4$ belongs to $W_1$: Let $f=0\in\P_4$. Then, $f''=f=0$, or $f''+f=0$. Therefore, the zero vector of $\P_4$ belongs to $W_1$.
-        \item Vector addition is closed under $W_1$: Let $u,v\in W_1$. Then, $u''+u=v''+v=0$. We have:
-        \[
-            \begin{aligned}
-                0 &= (u''+u)+(v''+v)\\
-                  &= (u''+v'')+(u+v)
-                  &= (u'+v')'+(u+v)\\
-                  &= (u+v)''+(u+v)
-            \end{aligned}
-        \]
-        It follows that $u+v\in W_1$, or vector addition is closed under $W_1$.
-        \item Scalar multiplication is closed under $W_1$: Let $\lam\in\R$ and $u\in W_1$. Then, $u''+u=0$ and
-        \[
-            \begin{aligned}
-                \lam(u''+u) &= \lam u''+\lam u\\
-                            &= (\lam u')'+\lam u\\
-                            &= (\lam u)''+\lam u
-            \end{aligned}
-        \]
-        It follows that $\lam u\in W_1$, or scalar multiplication is closed under $W_1$.
+    \begin{enumerate}[(i)]
+        \item To show that $W_1$ is a subspace of $\P_4$, the three following properties must hold true:
+              \begin{enumerate}[(1)]
+                  \item The zero vector of $\P_4$ belongs to $W_1$: Let $f=0\in\P_4$. Then, $f''=f=0$, or $f''+f=0$. Therefore, the zero vector of $\P_4$ belongs to $W_1$.
+                  \item Vector addition is closed under $W_1$: Let $u,v\in W_1$. Then, $u''+u=v''+v=0$. We have:
+                        \[
+                            \begin{aligned}
+                                0 & = (u''+u)+(v''+v) \\
+                                  & = (u''+v'')+(u+v)
+                                  & = (u'+v')'+(u+v)  \\
+                                  & = (u+v)''+(u+v)
+                            \end{aligned}
+                        \]
+                        It follows that $u+v\in W_1$, or vector addition is closed under $W_1$.
+                  \item Scalar multiplication is closed under $W_1$: Let $\lam\in\R$ and $u\in W_1$. Then, $u''+u=0$ and
+                        \[
+                            \begin{aligned}
+                                \lam(u''+u) & = \lam u''+\lam u   \\
+                                            & = (\lam u')'+\lam u \\
+                                            & = (\lam u)''+\lam u
+                            \end{aligned}
+                        \]
+                        It follows that $\lam u\in W_1$, or scalar multiplication is closed under $W_1$.
 
+              \end{enumerate}
+              Therefore, $W_1$ is a subspace of $\P_4$.
+        \item Let $z=\Vec{0}\in\P_4$. Then, $z''=z'=0$, or
+              \[
+                  z''+z=0\not=1
+              \]
+              Therefore, $z\not\in W_2$, or the zero vector of $\P_4$ does not belong to $W_2$. It follows that $W_2$ is not a subspace of $\P_4$.
+        \item For $W_3$ to be a subspace of $\R^{3}$, it has to satisfy the three following properties:
+              \begin{enumerate}[(1)]
+                  \item The zero vector of $\R^{3}$ belongs to $W_3$: Let $x_1,x_2,x_3\in\R$ such that $x_1=x_2=x_3=0$. Let $u=\colvecthree{x_1}{x_2}{x_3}\in\R^{3}$. Then, $u$ is the zero vector of $\R^{3}$ and $x_2=3x_1-6x_3$. Therefore, $u\in W_3$, or the zero vector of $\R^{3}$ belongs to $W_3$.
+                  \item Let $u=\colvecthree{x_1}{x_2}{x_3}$ and $v=\colvecthree{y_1}{y_2}{y_3}$, where $x_1,x_2,x_3,y_1,y_2,y_3\in\R$, $x_2=3x_1-6x_3$ and $y_2=3y_1-6y_3$. Then, $u,v\in\R^{3}$, and
+                        \[
+                            \begin{aligned}
+                                u+v & = \colvecthree{x_1+y_1}{x_2+y_2}{x_3+y_3}                      \\
+                                    & = \colvecthree{x_1+y_1}{(3x_1-6x_3)+(3y_1-6y_2}{x_3+y_3}       \\
+                                    & = \colvecthree{x_1+y_1}{3(x_1+y_1)-6(x_3+y_3)}{x_3+y_3}\in W_3
+                            \end{aligned}
+                        \]
+                        Therefore, vector addition is closed under $W_3$.
+                  \item Scalar multiplication is closed under $W_3$: Let $\lam\in\R$ and $u=\colvecthree{x_1}{x_2}{x_3}\in W_3$. Then, $x_2=3x_1-6x_3$, and
+                        \[
+                            \begin{aligned}
+                                \lam u & = \lam\colvecthree{x_1}{x_2}{x_3}                                  \\
+                                       & = \colvecthree{\lam x_1}{\lam (3x_1-6x_3)}{\lam x_3}               \\
+                                       & = \colvecthree{\lam x_1}{3(\lam x_1)-6(\lam x_3)}{\lam x_3}\in W_3
+                            \end{aligned}
+                        \]
+                        Therefore, scalar multiplication is closed under $W_3$.
+              \end{enumerate}
+              From the three properties above, it follows that $W_3$ is a subspace of $\R^{3}$.
+        \item For $W_4$ to be a subspace of $\P_3$, we need to prove the three following properties:
+              \begin{enumerate}[(1)]
+                  \item The zero vector of $\P_3$ belongs to $W_4$: Let $z=0\in\P_3$ be the zero vector of $\P_3$. Then, $z=a_0+a_1x+a_2x^{2}+a_3x^{3}$, where $a_0=a_1=a_2=a_3=0$. It follows that $z\in W_4$, or the zero vector of $\P_3$ belongs to $W_4$.
+                  \item Vector addition is closed under $W_4$: Let $u,v\in W_4$. Then, $u, v$ can be written as
+                        \[
+                            \begin{aligned}
+                                u & = a_0+a_1x+a_2x^{2}+a_3x^{3} \\
+                                v & = b_0+b_1x+b_2x^{2}+b_3x^{3}
+                            \end{aligned}
+                        \]
+                        , where $a_2=b_2=0$. We have:
+                        \[
+                            \begin{aligned}
+                                u+v & = (a_0+a_1x+a_2x^{2}+a_3x^{3})+(b_0+b_1x+b_2x^{2}+b_3x^{3}) \\
+                                    & = (a_0+b_0)+(a_1+b_1)x+(a_2+b_2)x^{2}+(a_3+b_3)x^{3}
+                            \end{aligned}
+                        \]
+                        Since $a_2=b_2=a_2+b_2=0$, it follows that $u+v\in W_4$. Therefore, vector addition is closed under $W_4$.
+                  \item Scalar multiplication is closed under $W_4$: Let $\lam\in\R$ and $u=a_0+a_1x+a_2x^{2}+a_3x^{3}\in W_4$. Then, $a_2=0$ and
+                        \[
+                            \begin{aligned}
+                                \lam u & = \lam(a_0+a_1x+a_2x^{2}+a_3x^{3})
+                                       & = (\lam a_0)+(\lam a_1)x+(\lam a_2)x^{2}+(\lam a_3)x^{3}
+                            \end{aligned}
+                        \]
+                        Since $a_2=\lam a_2=0$, it follows that $\lam u\in W_4$. Therefore, scalar multiplication is closed under $W_4$.
+              \end{enumerate}
+        \item For $W_5$ to be a subspace of $\P_3$, it must satisfy the three following properties:
+              \begin{enumerate}[(1)]
+                  \item The zero vector of $\P_3$ belongs to $W_5$: Let $z=vec{0}\in\P_3$. Then, $z$ can be written as $0q_1+0q_2+0q_3$, with $q_1,q_2,q_3$ be the given polynomials in the problem statement. Therefore, the zero vector of $\P_3$ belongs to $W_5$.
+                  \item Vector addition is closed under $W_5$: Let $u,v\in W_5$. Then, $u,v$ can be written as
+                        \[
+                            \begin{aligned}
+                                u & = a_1q_1+a_2q_2+a_3q_3 \\
+                            \end{aligned}
+                        \]
+              \end{enumerate}
     \end{enumerate}
-    Therefore, $W_1$ is a subspace of $\P_4$.
-    \item Let $z=\Vec{0}\in\P_4$. Then, $z''=z'=0$, or
-    \[
-        z''+z=0\not=1
-    \]
-    Therefore, $z\not\in W_2$, or the zero vector of $\P_4$ does not belong to $W_2$. It follows that $W_2$ is not a subspace of $\P_4$.
-    \item For $W_3$ to be a subset of $\R^{3}$, it has to satisfy the three following properties:
-    \begin{enumerate}[(1)]
-        \item The zero vector of $\R^{3}$ belongs to $W_3$: Let $x_1,x_2,x_3\in\R$ such that $x_1=x_2=x_3=0$. Let $u=\colvecthree{x_1}{x_2}{x_3}\in\R^{3}$. Then, $u$ is the zero vector of $\R^{3}$ and $x_2=3x_1-6x_3$. Therefore, $u\in W_3$, or the zero vector of $\R^{3}$ belongs to $W_3$.
-        \item Let $u=\colvecthree{x_1}{x_2}{x_3}$ and $v=\colvecthree{y_1}{y_2}{y_3}$, where $x_1,x_2,x_3,y_1,y_2,y_3\in\R$, $x_2=3x_1-6x_3$ and $y_2=3y_1-6y_3$. Then, $u,v\in\R^{3}$, and
-        \[
-            \begin{aligned}
-                u+v &= \colvecthree{x_1+y_1}{x_2+y_2}{x_3+y_3}\\
-                    &= \colvecthree{x_1+y_1}{(3x_1-6x_3)+(3y_1-6y_2}{x_3+y_3}\\
-                    &= \colvecthree{x_1+y_1}{3(x_1+y_1)-6(x_3+y_3)}{x_3+y_3}\in W_3
-            \end{aligned}
-        \]
-        Therefore, vector addition is closed under $W_3$.
-        \item Scalar multiplication is closed under $W_3$: Let $\lam\in\R$ and $u=\colvecthree{x_1}{x_2}{x_3}\in W_3$. Then, $x_2=3x_1-6x_3$, and
-        \[
-            \begin{aligned}
-                \lam u &= \lam\colvecthree{x_1}{x_2}{x_3}\\
-                       &= \colvecthree{\lam x_1}{\lam (3x_1-6x_3)}{\lam x_3}\\
-                       &= \colvecthree{\lam x_1}{3(\lam x_1)-6(\lam x_3)}{\lam x_3}\in W_3
-            \end{aligned}
-        \]
-        Therefore, scalar multiplication is closed under $W_3$.
-    \end{enumerate}
-    From the three properties above, it follows that $W_3$ is a subspace of $\R^{3}$.
-    \item For $W_4$ to be a subspace of $\P_3$, we need to prove the three following properties:
-    \begin{enumerate}[(1)]
-        \item The zero vector of $\P_3$ belongs to $W_4$: Let $z=0\in\P_3$ be the zero vector of $\P_3$. Then, $z=a_0+a_1x+a_2x^{2}+a_3x^{3}$, where $a_0=a_1=a_2=a_3=0$. It follows that $z\in W_4$, or the zero vector of $\P_3$ belongs to $W_4$.
-        \item Vector addition is closed under $W_4$: Let $u,v\in W_4$. Then, $u, v$ can be written as
-        \[
-            \begin{aligned}
-                u &= a_0+a_1x+a_2x^{2}+a_3x^{3}\\
-                v &= b_0+b_1x+b_2x^{2}+b_3x^{3}
-            \end{aligned}
-        \]
-        , where $a_2=b_2=0$. We have:
-        \[
-            \begin{aligned}
-                u+v &= (a_0+a_1x+a_2x^{2}+a_3x^{3})+(b_0+b_1x+b_2x^{2}+b_3x^{3})\\
-                    &= (a_0+b_0)+(a_1+b_1)x+(a_2+b_2)x^{2}+(a_3+b_3)x^{3}
-            \end{aligned}
-        \]
-        Since $a_2=b_2=a_2+b_2=0$, it follows that $u+v\in W_4$. Therefore, vector addition is closed under $W_4$.
-        \item Scalar multiplication is closed under $W_4$: Let $\lam\in\R$ and $u=a_0+a_1x+a_2x^{2}+a_3x^{3}\in W_4$. Then, $a_2=0$ and
-        \[
-            \begin{aligned}
-                \lam u &= \lam(a_0+a_1x+a_2x^{2}+a_3x^{3})
-                       &= (\lam a_0)+(\lam a_1)x+(\lam a_2)x^{2}+(\lam a_3)x^{3}
-            \end{aligned}    
-        \]
-        Since $a_2=\lam a_2=0$, it follows that $\lam u\in W_4$. Therefore, 
-    \end{enumerate}
-\end{enumerate}
 \end{sol}
