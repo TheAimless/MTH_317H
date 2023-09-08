@@ -1,0 +1,34 @@
+\subsection*{Problem 2.2}
+Let the following sets, $A$ and $B$, be defined as
+	\begin{align*}
+		&A = \{  p\in\mathcal{P}_3 :\ p''(1)=0  \}\\
+		&B = \{  q(x) = a_0 + a_3(1-x)^3\ :\ a_0,a_3\in\mathbb{R}  \}.
+	\end{align*}
+
+	\begin{enumerate}[(i)]
+		\item Prove that $B\subseteq A$.
+		\item Is it true that $A\subseteq B$?  If your answer is ``yes'', then give the set containment proof outlined in Question 2.1.  If your answer is ``no'', then give a concrete example of an element in $A$ that is not in $B$.
+	\end{enumerate}
+\renewcommand\qedsymbol{}
+\begin{proof}
+\begin{enumerate}[(i)]
+    
+    \item Let $q = a_0 + a_3(1-x)^3\in B$ for some $a_0, a_3\in \mathbb{R}$. It is easy to see that $q$ is twice differentiable, and
+    \[
+    \begin{aligned}
+        &q'(x)  = -3a_3(1-x)^2\\
+        &q''(x) = 6a_3(1-x)
+    \end{aligned}
+    \]
+    Then, $q''(1) = 0$, or $q\in A$. Since $q$ is an arbitrary element of $B$, this implies that $B\subseteq A.\qed{\blacksquare}$
+    \item Let $p = a_1x$ for some $a_1\in\mathbb{R}$. Then, $p\in \mathcal{P}_3$ and is twice differentiable, meaning
+    \[
+    \begin{aligned}
+        &p'(x) = a_1\\
+        &p''(x) = 0.
+    \end{aligned}
+    \]
+    Thus, $p''(1) = 0$, meaning $p\in A$. However, it is not the case that there exist $a_0, a_3\in\mathbb{R}$ such that $p(x) = a_0 + a_3(1-x)^3$ for any $x\in\mathbb{R}$. Therefore, $p\not\in B$, or $A\not\subseteq B$. The answer to the question is "no".$\qed{\blacksquare}$
+
+\end{enumerate}
+\end{proof}

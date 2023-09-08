@@ -1,0 +1,27 @@
+\subsection*{Problem 2.5}
+Consider the set, $\mathbb{R}^2$, with the usual addition operation for vectors in $\mathbb{R}^2$. Define an operation, $\odot$, so that
+	\begin{align*}
+		&\odot: \mathbb{R}\times \mathbb{R}^2\to \mathbb{R}^2,\\
+		&\lambda\in\mathbb{R},\ \begin{pmatrix}x_1\\x_2\end{pmatrix}\in\mathbb{R}^2,\ \ 
+		\lambda\odot \begin{pmatrix}x_1\\x_2\end{pmatrix}:= \begin{pmatrix}\lambda x_1\\x_2\end{pmatrix}.
+	\end{align*}
+	
+	Does $\odot$ satisfy the requirements of a scalar multiplication in a vector space (i.e. does it satisfy the requirements as given in definitions 1.18 and 1.19 of LADR)?  Your answer will be ``yes'' or ``no'', followed by a justification of your choice.  If you answer yes, then you must verify that all requirements of scalar multiplication are true.  If your answer is no, then you must identify one requirement that fails, and you will demonstrate the failure with a concrete choice of vectors and scalars.
+\renewcommand\qedsymbol{}
+\renewcommand*{\proofname}{Solution}
+\begin{proof}
+    Let $x=\begin{pmatrix}x_1\\x_2\end{pmatrix}\in\mathbb{R}$ for some $x_1, x_2\in\mathbb{R}$ such that $x_2\not=0$. Then,
+    \[
+        \begin{aligned}
+            3\odot x     &=\begin{pmatrix}3x_1\\x_2\end{pmatrix},\\
+            (1+2)\odot x &=1\odot\begin{pmatrix}x_1\\x_2\end{pmatrix} + 2\odot\begin{pmatrix}x_1\\x_2\end{pmatrix}\\
+                         &=\begin{pmatrix}x_1\\x_2\end{pmatrix} + \begin{pmatrix}x_1\\2x_2\end{pmatrix}\\
+                         &=\begin{pmatrix}2x_1\\3x_2\end{pmatrix}
+        \end{aligned}
+    \]
+    However, since $x_2\not=0$,
+    \[
+        x_2\not=3x_2,
+    \]
+    or $3\odot x\not=(1+2)\odot x$. This implies that $(\mathbb{R}^2,\odot)$ does not satisfy the distributive property of scalar multiplication with respect to real addition, or $\odot$ does not satisfy the requirements of a scalar multiplication in a vector space. Therefore, the answer to the question is "no".
+\end{proof}

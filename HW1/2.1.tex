@@ -1,0 +1,46 @@
+\subsection*{Problem 2.1}
+Let $\mathcal{P}_3$ denote the set of polynomials of degree less than or equal to 3, with real coefficients. For the following two sets, $A$ and $B$, prove that $A=B$.
+	\begin{align*}
+		&A = \{ p\in\mathcal{P}_3\ :\ p''=0    \}\\
+		&B = \{ f(x)=a_0 + a_1 x\ :\ a_0,a_1\in\mathbb{R}    \}.
+	\end{align*}
+\renewcommand\qedsymbol{$\blacksquare$}
+\begin{proof}
+We will show that $A=B$ by proving that $A\subseteq B$ and $B\subseteq A$.\\
+To show that $A\subseteq B$, let $p\in A$ be arbitrary. Since $p\in A\subseteq\mathcal{P}_3$, $p$ is a function of $x$ such that
+\begin{equation*}
+    p(x) = a_0 + a_1x + a_2x^2,
+\end{equation*}
+in which $a_0, a_1, a_2$ are coefficients in $\mathbb{R}$. Then,
+\begin{equation*}
+    p'(x) = a_1 + 2a_2x
+\end{equation*}
+and
+\begin{equation*}
+    p''(x) = 2a_2
+\end{equation*}
+Solving for $p''(x) = 0$, it follows that $a_2 = 0$. Thus,
+\begin{equation*}
+    p(x) = a_0 + a_1x,
+\end{equation*}
+which implies that $p\in B$. Therefore, we have proven that 
+\[
+A\subseteq B\tag{1}\label{1}.
+\]
+To show that $B\subseteq A$, let $p\in B$ be arbitrary. Then, there exist $a_0, a_1\in \mathbb{R}$ such that
+\begin{equation*}
+    p(x) = a_0 + a_1x
+\end{equation*}
+for any $x\in \mathbb{R}$. It is easy to see that $p(x)$ is twice differentiable, and
+\begin{equation*}
+\begin{aligned}
+    p'(x)  &= a_1\\
+    p''(x) &= 0.
+\end{aligned}
+\end{equation*}
+Thus, $p\in A$, or
+\[
+B\subseteq A\tag{2}\label{2}.
+\]
+From \eqref{1} and \eqref{2}, it follows that $A = B$.
+\end{proof}

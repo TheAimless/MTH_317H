@@ -1,0 +1,62 @@
+\subsection*{Problem 2.3}
+Let $\mathcal{P}_n$ denote the vector space of real polynomials of degree less than or equal to $n$. For this question, assume the usual operations of addition and scalar multiplication that are given on the vector spaces $\mathbb{R}^n$ and $\mathcal{P}_n$.
+	
+	For each of the following sets, $X$, complete the following
+	\begin{enumerate}[(a)]
+		
+		\item List 3 different and concrete elements of $X$.
+		\item Verify whether or not the set, $X$, satisfies the following 3 properties with respect to the usual addition and scalar multiplication associated with $\mathbb{R}^n$ or $\mathcal{P}_n$.  For each property, your answer will be ``yes'' or ``no'', and you must provide a justification.  If your answer is ``yes'', you will demonstrate the property for generic inputs.  If your answer is ``no'', you will choose specific concrete elements and/or scalars that show the property fails.
+		\begin{enumerate}[(1)]
+			\item for two generic elements of $X$, say $u,v\in X$, also $u+v\in X$.
+			\item for a generic scalar, $\lambda\in\mathbb{R}$ and a generic element, $v\in X$, also $\lambda v\in X$.
+			\item the zero vector, $\vec{0}$, is in $X$.
+		\end{enumerate}
+    \end{enumerate}
+    Here are the sets, $X$:
+	\begin{enumerate}[(i)]
+		\item $\displaystyle X = \left\{  \begin{pmatrix}x_1\\0\\x_3\end{pmatrix}\ :\ x_1,x_3\in\mathbb{R}  \right\}$
+		
+		\item $\displaystyle X = \left\{  \begin{pmatrix}x_1\\1\\x_3\end{pmatrix}\ :\ x_1,x_3\in\mathbb{R}  \right\}$
+		
+		\item $\displaystyle X = \left\{  \begin{pmatrix}x\\3x\\3x^2\end{pmatrix}\ :\ x\in\mathbb{R}  \right\}$
+		
+		\item $\displaystyle 
+		X = \left\{  a\begin{pmatrix}1\\1\\1\end{pmatrix} + b\begin{pmatrix}2\\1\\1\end{pmatrix}\ :\ a,b\in\mathbb{R}   \right\}$
+		
+		\item $\displaystyle X = \left\{  p\in \mathcal{P}_3,\ :\ p(5)=0  \right \}$
+		
+		\item $\displaystyle X = \left\{  p\in \mathcal{P}_3,\ :\ \deg(p)=3  \right \}$
+		
+		%(here we use that the degree of a polynominal, $\deg(p)$, is the number of the highest exponent with a non-zero coefficient. )
+		% I commented this comment out because they need to know this to even understand the definition of $\P_n$. Feel free to put it back in if you want. 
+	\end{enumerate}
+\renewcommand\qedsymbol{}
+\begin{proof}
+\begin{enumerate}[(a)]
+    \item Let $p_1(x) = a_0,\:p_2(x) = a_1x,\:p_3(x) = a_2x^2$, where $a_1, a_2, a_3\in\mathbb{R}$ and $a_1a_2a_3 \not=0$. Then, for all $x\in\mathbb{R}$, $p_1(x)\not=p_2(x)\not=p_3(x)$ and $p_1, p_2, p_3\in\mathbb{R}$. Hence, $p_1, p_2, p_3$ are three different and concrete elements of $X$.
+    
+    \item\begin{enumerate}[(i)]
+        \item The first set satisfies the three following properties:
+        \begin{enumerate}[(1)]
+            \item Let $x = \begin{pmatrix}x_1\\0\\x_2\end{pmatrix}$ and $y = \begin{pmatrix}y_1\\0\\y_2\end{pmatrix}$ be elements of $X$, where $x_1, x_2, y_1, y_2\in\mathbb{R}$. Then, $x+y=\begin{pmatrix}x_1+y_1\\0\\x_2+y_2\end{pmatrix}\in X$, since $x_1 + y_1\in\mathbb{R}$ and $x_2 + y_2\in\mathbb{R}$.
+            \item Let $x = \begin{pmatrix}x_1\\0\\x_2\end{pmatrix}$ and $\lambda\in\mathbb{R}$. Then, $\lambda x = \begin{pmatrix}\lambda x_1\\0\\\lambda x_2\end{pmatrix}\in X$, since both $\lambda x_1$ and $\lambda x_2$ are in $X$.
+            \item Let $x = \begin{pmatrix}x_1\\0\\x_2\end{pmatrix}$, where $x_1 = x_2 = 0$. Then, $x$ is the zero vector of $X$.
+        \end{enumerate}
+        Therefore, $X$ satisfies the three following properties, or the answer to the question is "yes".
+        \item The set does not contain the zero vector since every $x\in X$ has the second component to be $1$. Therefore, the answer to the question is "no".
+        \item Let $x=\begin{pmatrix}1\\3\\3\end{pmatrix},\: y=\begin{pmatrix}2\\6\\12\end{pmatrix}$. It is easy to see that $x, y\in X$. However, $x+y=\begin{pmatrix}3\\9\\15\end{pmatrix}\not\in X$, since $15\not=3\times3^2$. Therefore, the set fails property (1), or the answer to the question is "no". 
+        \item The fourth set satisfies the three following properties:
+        \begin{enumerate}[(1)]
+            \item Let $x = a_1\begin{pmatrix}1\\1\\1\end{pmatrix}+b_1\begin{pmatrix}2\\1\\1\end{pmatrix}$ and $y = a_2\begin{pmatrix}1\\1\\1\end{pmatrix}+b_2\begin{pmatrix}2\\1\\1\end{pmatrix}$ be elements of $X$, where $a_1, a_2, b_1, b_2\in\mathbb{R}$. Then, $x+y=(a_1+a_2)\begin{pmatrix}1\\1\\1\end{pmatrix}+(b_1+b_2)\begin{pmatrix}2\\1\\1\end{pmatrix}\in X$, since $a_1 + a_2\in\mathbb{R}$ and $b_1 + b_2\in\mathbb{R}$.
+            \item Let $x = a\begin{pmatrix}1\\1\\1\end{pmatrix}+b\begin{pmatrix}2\\1\\1\end{pmatrix}\in X$ and $\lambda\in\mathbb{R}$. Then, $\lambda x = \lambda a\begin{pmatrix}1\\1\\1\end{pmatrix}+\lambda b\begin{pmatrix}2\\1\\1\end{pmatrix}\in X$, since both $\lambda a$ and $\lambda b$ are in $X$.
+            \item Let $x = a\begin{pmatrix}1\\1\\1\end{pmatrix}+b\begin{pmatrix}2\\1\\1\end{pmatrix}\in X$, where $a = b = 0$. Then, $x$ is the zero vector of $X$.
+        \end{enumerate}
+        Therefore, $X$ satisfies the three following properties, or the answer to the question is "yes".
+        \item The fifth set satisfies the three following properties:
+        \begin{enumerate}[(1)]
+            \item Let $p, q\in X$. Then, 
+        \end{enumerate}
+    \end{enumerate}
+
+\end{enumerate}
+\end{proof}

@@ -1,0 +1,23 @@
+\subsection*{Problem 2.7}
+Assume that $V$ is a vector space.  By the vector space axioms, for each $v\in V$, there exists an additive inverse, which we denote $(-v)$. This additive inverse $(-v)$ is unique (see LADR 1.26). Since $(-v)$ is in $V$, it too has an additive inverse, which we will write as $-(-v)$.  Prove that
+	\begin{align*}
+		-(-v)=v.
+	\end{align*}
+\renewcommand\qedsymbol{$\blacksquare$}
+\begin{proof}
+    Let $v\in V$ and $w$ be the additive inverse of $-v$. Then,
+    \[
+        w+(-v)=\vec{0},
+    \]
+    or $v+w+(-v)=v$. From the commutative and associative property of vector addition,
+    \[
+        \begin{aligned}
+        v &= v+w+(-v)\\
+          &= w+v+(-v)\\
+          &= w+(v+(-v))\\
+          &= w+\vec{0}\\
+          &= w
+        \end{aligned}
+    \]
+    (since $-v$ is the additive inverse of $v$). Therefore, $-(-v)=w=v$
+\end{proof}

@@ -1,0 +1,50 @@
+\subsection*{Problem 2.6}
+Consider the set of 3-dimensional columns of real numbers
+
+$$ v =  \left( \begin{array}{c}
+v_1 \\
+v_2 \\
+v_3 \\
+
+ \end{array} \right)$$
+
+ with addition and scalar multiplication defined by:
+\[
+ \left( \begin{array}{c}
+v_1 \\
+v_2 \\
+v_3 \\
+
+ \end{array} \right)  +  \left( \begin{array}{c}
+w_1 \\
+w_2 \\
+w_3 \\
+
+ \end{array}  \right)= \left( \begin{array}{c}
+w_1 - v_1 \\
+w_2 - v_2\\
+w_3 - v_3\\
+
+\end{array} \right), \ \ \mathrm{and}  \ \ \ \ \ \ \lambda \left( \begin{array}{c}
+v_1 \\
+v_2 \\
+v_3 \\ 
+
+ \end{array} \right) = \left( \begin{array}{c}
+\lambda v_1 \\
+\lambda v_2 \\
+\lambda v_3 \\
+
+ \end{array} \right),
+\]
+respectively. Does this define a vector space? If your answer is ``yes," you need to verify all of the vector space axioms. If your answer is ``no" you need to identify an axioms that fails, and demonstrate the failure with a concrete counterexample. 	
+\renewcommand\qedsymbol{}
+\renewcommand*{\proofname}{Solution}
+\begin{proof}
+    Let $v=\left( \begin{array}{c}v_1 \\v_2 \\v_3 \\ \end{array}  \right)$ and $w=\left( \begin{array}{c}w_1 \\w_2 \\w_3 \\ \end{array}  \right)$, where $v_1\not=w_1$.
+    Then, $v+w=\left( \begin{array}{c}v_1-w_1 \\v_2-w_2 \\v_3-w_3 \\ \end{array}  \right)$, while $w-v=\left( \begin{array}{c}w_1-v_1 \\w_2-v_2 \\w_3-v_3 \\ \end{array}  \right)$. However, since $v_1\not=w_1$,
+    \[
+        v_1-w_1\not=w_1-v_1,  
+    \] 
+    or $v+w\not=w+v$. Therefore, the following set equipped with addition and scalar multiplication does not form a vector space, or the answer to the question is "no".
+\end{proof}

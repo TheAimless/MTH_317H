@@ -1,0 +1,20 @@
+\subsection*{Problem 2.4}
+Determine for which $m\in\mathbb{R}$ and for which $b\in\mathbb{R}$ the following set, $X$, satisfies the 3 properties required in Question (2.3).
+	
+	\begin{align*}
+		X = \left\{  \begin{pmatrix}x_1\\mx_1+b\end{pmatrix}\ :\ x_1\in\mathbb{R}   \right\}.
+	\end{align*}
+	
+	For the $m$ and $b$ that work, prove they work-- i.e. establish the 3 requirements.  For the $m$ and $b$ that don't work, pick one of the 3 properties that fail, and then give specific examples of vectors and scalars that show the property fails.
+\renewcommand\qedsymbol{}
+\renewcommand*{\proofname}{Solution}
+\begin{proof}
+    It is easy to see that $b$ must be 0, since if $b\not=0$ then the zero vector does not belong to $X$ (if the first component of the vector (i.e. $x_1$) is zero, the second component (i.e. $mx_1+b$) of the vector is equal to $b\not=0$).\\
+    $m$ can be any element of $\mathbb{R}$ since all three properties are satisfied for any $m$:
+    \begin{enumerate}[(1)]
+        \item Let $x=\begin{pmatrix}x_1\\mx_1\end{pmatrix}$ and $y=\begin{pmatrix}y_1\\my_1\end{pmatrix}$ be elements of $X$. Then, $x+y=\begin{pmatrix}x_1+y_1\\m(x_1+y_1)\end{pmatrix}\in X$.
+        \item Let $x=\begin{pmatrix}x_1\\mx_1\end{pmatrix}$ and $\lambda\in\mathbb{R}$. Then, $\lambda x=\begin{pmatrix}\lambda x_1\\m(\lambda x_1)\end{pmatrix}\in X$.
+        \item Let $x=\begin{pmatrix}x_1\\mx_1\end{pmatrix}\in X$ such that $x_1=0$. Then, $x=\begin{pmatrix}0\\0\end{pmatrix}$, or the zero vector is in $X$.
+    \end{enumerate}
+    Therefore, in order for the set $X$ to satisfy all three properties from Question (2.3), $b$ must be 0 but $m$ can be any element of $\mathbb{R}$.
+\end{proof}
