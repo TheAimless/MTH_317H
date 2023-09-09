@@ -1,0 +1,483 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb}
+\usepackage{epsfig}
+\usepackage{psfrag}
+\usepackage{fullpage}
+\usepackage{color}
+\usepackage{amsfonts,epsf}
+\usepackage{amsmath,amssymb,
+amscd,amsbsy, bbm, amsthm, enumerate, url}
+\usepackage{wasysym}
+
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{question}[thm]{Question}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{DEF}[thm]{Definition}
+\newtheorem{rem}[thm]{Remark}
+\newenvironment{sol}{\paragraph{Solution:}\color{red}}{\hfill$\square$}
+\newenvironment{grade}{\paragraph{grading:}\color{blue}}{\hfill$\square$}
+
+
+
+\def\real{{\mathbb R}}
+\def\Natural{\mathbb{N}}
+\def\Z{\mathbb{Z}}
+\def\integer{\mathbb{Z}}
+\def\dx{\textnormal{dx}}
+\def\dy{\textnormal{dy}}
+\def\dz{\textnormal{dz}}
+\def\dt{\textnormal{dt}}
+\def\ds{\textnormal{ds}}
+\def\dw{\textnormal{dw}}
+\def\Re{\textnormal{Re}}
+\def\Im{\textnormal{Im}}
+\def\Id{\textnormal{Id}}
+\def\exp{\textnormal{exp}}
+\def\dim{\textnormal{dim}}
+\def\interior{\textnormal{interior}}
+\def\NullLA{\textnormal{null}}
+\def\SpanLA{\textnormal{span}}
+\def\range{\textnormal{range}}
+\def\al{\alpha}
+\def\del{\delta}
+\def\Del{\Delta}
+\def\gam{\gamma}
+\def\Gam{\Gamma}
+\def\Om{\Omega}
+\def\ep{\varepsilon}
+\def\lam{\lambda}
+\def\rational{{\mathbb Q}}
+\def\integer{{\mathbb Z}}
+\def\grad{\nabla}
+
+\def\C{\mathcal C}
+\def\I{\mathcal I}
+\def\M{\mathcal M}
+\def\N{\mathbb N}
+\def\P{\mathcal P}
+\def\R{\mathbb R}
+\def\T{\mathcal T}
+\def\Z{\mathbb Z}
+
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\ColVecTwo}[2]{\begin{pmatrix} #1\\ #2\end{pmatrix}}
+\newcommand{\ColVecThree}[3]{\begin{pmatrix} #1\\ #2\\ #3\end{pmatrix}}
+\newcommand{\ColVecFour}[4]{\begin{pmatrix} #1\\ #2\\#3 \\ #4\end{pmatrix}}
+\newcommand{\MatrixTwoTwo}[4]{\begin{pmatrix} #1 &#2\\ #3 &#4 \end{pmatrix}}
+\newcommand{\inner}[2]{\langle #1 , #2 \rangle}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\spanvect}{\textnormal{span}}
+\newcommand{\union}{\cup}
+\newcommand{\Union}{\bigcup}
+\newcommand{\intersect}{\cap}
+\newcommand{\Intersect}{\bigcap}
+
+\DeclareMathOperator*{\Limsup}{LIMSUP}
+
+
+
+\pagestyle{empty}
+\begin{document}
+
+	\begin{LARGE}
+	\begin{center}
+		
+	
+		
+		
+	\textbf{Homework 2; Due THURSDAY, 09/14/2023}
+	
+
+	(MTH 317H, Honors Linear Algebra;  Fall 2023)
+	\end{center}
+	\end{LARGE}
+	\vspace{0.15in}
+	
+	
+	
+	
+\section{Commentary}
+
+In this homework you will start to explore the material related to subspaces (LADR 1.C).  Also, you will perform some calculations related to vector spaces and HW1.  
+
+You should try to manage your time so that each week you \textbf{do not spend more than 12 hours outside of class meetings} working on the reading, homework, and reviewing lecture notes.
+
+
+
+
+\subsection{required reading}
+
+There has been a slight change in the textbooks regarding the 299 material.  We will follow mostly ``Book of Proof'' (also added to D2L), but you can keep working with HTTLAM, if you like.  You should always seek out multiple references for any topic!\
+
+
+In what follows below, you should read the section of LADR and the sections corresponding to at least one of HTTLAM or BOP, but you do not need to read both HTTLAM and BOP.
+
+
+
+\noindent
+``LADR'' -- Linear Algebra done right
+
+\noindent
+``HTTLAM'' -- How to think like a mathematician
+
+\noindent
+``BOP'' -- Book of Proof
+
+\begin{itemize}
+	\item LADR, sections 1.C, 2A.  For the moment, we will exclusively use the scalar field to be the real numbers, $\real$.  That is to say, any time you encounter $\mathbf{F}$, or $\mathbf{F^n}$, you are free to assume $\mathbf{F}=\real$.  (This will change later in the semester.)
+	
+	\item HTTLAM, chapters 8, 9, 10  (and review older reading, chapters 1, 6, 7).
+	
+	\item BOP, sections 2.1--2.7 (and review sections 1.1 -- 1.7)
+\end{itemize}
+
+
+
+
+
+\section{Questions}
+
+
+
+\subsection{Subspaces}
+
+The following questions involve the notion of vector subspace (LADR definition 1.32 and result 1.34).\\
+
+\noindent \textbf{Instructions:} For a vector space $V$ and a subset $W$ of $V$, anytime you want to prove that $W$ is a subspace of $V$ you need to include the following steps:  
+\begin{enumerate}[(1)]
+	
+	\item State what is the zero vector is in $V$.  Give an explanation for why $\vec{0}\in W$.  That is to say, you must confirm that $\vec{0}$ satisfies the requirement to be in $W$.
+	
+	\item Take two generic elements in $W$; you can call them $x$ and $y$, or $u$ and $v$, or $\smiley$ and $\frownie$... whatever.  Compute the new vector, $z=x+y$, using the addition operation that is specific to $V$.  Confirm that $z$ also satisfies the requirement to be in $W$.
+	
+	\item Take a generic scalar, say $\lam\in\real$ and a generic vector in $W$, say $x$.  Compute $w=\lam x$ using the usual scalar multiplication that is specific to V.  Explain why $w$ is satisfies the requirement to be in $W$.
+	
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\begin{question}
+	\normalfont
+	
+	
+	Determine if each of the following sets is a subspace.  You can use the conditions in LADR result 1.34 to confirm whether it is or is not a subspace.  If you are confirming ``yes'', then you must verify the requirements in result 1.34 for generic vectors and scalars (following the instructions above).  If you are justifying ``no'', then you must choose a property from result 1.34 that fails, and also you must give concrete choices of vectors and/or scalars that demonstrate the failure.
+	
+	
+	\begin{enumerate}[(i)]
+		\item Determine whether the subset $W_1$ is a subspace of $\P_4$:
+		\begin{align*}
+			W_1=\{ f\in \P_4\ : \ f''+f=0 \},
+		\end{align*}
+		(Hint: do not focus on the coefficients for $f$, rather, just use the rules for differentiation.)
+		
+		\vspace{.6cm}
+		
+		\item Determine whether the subset $W_2$  is a subspace of $\P_4$:
+		\begin{align*}
+			W_2=\{ f\in \P_4\ : \ f''+f=1 \}.
+		\end{align*}
+		(Hint: do not focus on the coefficients for $f$, rather, just use the rules for differentiation.)
+		
+		\vspace{.6cm}
+		
+		
+		\item  Determine whether the subset $W_3$ is a subspace of $\real^3$:
+		\begin{align*}
+			W_3 = \left\{ \ColVecThree{x_1}{x_2}{x_3}\in \real^3 \ :\ x_2 = 3x_1 - 6x_3  \right\}
+		\end{align*}
+		
+		\vspace{.6cm}
+		
+		\item Determine whether the subset $W_4$  is a subspace of $\P_3$:
+		\begin{align*}
+			W_4 = \{ p\in\P_3\ : \ p(x) = a_0 + a_1x + a_2 x^2 + a_3x^3\ \text{and}\ a_2=0 \}.
+		\end{align*}
+		
+		
+		\vspace{.6cm}
+		
+		
+		\item 
+		Define the polynomials, $q_1$, $q_2$, $q_3$ as:
+		\begin{align*}
+			q_1(x) = x+x^2,\ \ \ q_2(x) = 1-x,\ \ \ q_3(x) = x^3
+		\end{align*}
+		Determine whether the subset $W_5$  is a subspace of $\P_3$:
+		\begin{align*}
+			W_5 = 
+			\{ p\in\P_3\ : \text{there are}\ a_1,a_2,a_3\in\real\ \text{with}\ p=a_1 q_1 + a_2 q_2 + a_3 q_3 \}.
+		\end{align*}
+		
+	\end{enumerate}
+	
+	
+	
+\end{question}
+
+
+\vspace{.6cm}
+
+
+\begin{question}\label{que:SubspaceSpecific}
+	\normalfont
+	
+	Here we will work in the vector space, $\real^3$, with the usual operations of addition and scalar multiplication.  Define the following two sets:
+	
+	\begin{align*}
+		&W_1 = \left\{ \ColVecThree{x_1}{x_2}{x_3}\in \real^3\ :\ x_1 + x_2 + x_3 = 0 \right\}\\
+		&\text{and}\ \ \ 
+		W_2 = \left\{ \ColVecThree{x_1}{x_2}{x_3}\in \real^3\ :\ x_1 + 2x_2 - x_3 = 0 \right\}.
+	\end{align*}
+	
+	\begin{enumerate}[(i)]
+		\item Use LADR result 1.34 to prove that $W_1$ and $W_2$ are both subspaces of $\real^3$.  Note, your proofs should look very similar for each of $W_1$ and $W_2$.
+		
+		\item Consider the set $V=W_1\intersect W_2$.  List 3 distinct elements of $V$.
+		
+		\item Give a description of the set, 
+		\begin{align*}
+			V= W_1 \intersect W_2.
+		\end{align*}
+		That is to say, write $V$ in the form,
+		\begin{align*}
+			V = \left\{ \ColVecThree{v_1}{v_2}{v_3}\in\real^3\ :\ v_1, v_2, v_3\ \text{satisfy some relationship} \right\}.
+		\end{align*}
+		There is no proof required here and your answer should just be a set, as suggested.
+		
+		
+		(Hint: for the requirements on $v_1$, $v_2$, $v_3$, you have 2 equations (one each from $W_1$, $W_2$), and 3 unknowns.  Use those requirements to create a simplified explanation of the relationship required for $v_1$, $v_2$, $v_3$.)
+		
+		
+			\end{enumerate}
+\end{question}
+
+
+
+
+
+
+\begin{question}
+	\normalfont
+	
+	Assume that $W_1$ and $W_2$ are both subspaces of a vector space, $V$.  Prove that $U=W_1\intersect W_2$ is also a subspace of $V$.
+	
+	
+\end{question}
+
+
+\vspace{0.4cm}
+
+
+
+
+
+
+
+\begin{question}\label{que:SubspaceUnion}
+	\normalfont
+	
+	Assume that $W_1$ and $W_2$ are both subspaces of a vector space, $V$.  Define $U=W_1\union W_2$.  Prove that 
+	\begin{center}
+		$U$ is a subspace of $V$ if and only if $W_1\subseteq W_2$ or $W_2\subseteq W_1$.  
+	\end{center}
+	
+\end{question}
+
+
+\textbf{Instructions for Question \ref{que:SubspaceUnion}.}
+
+Again, in this question, we are asking you to step outside of the box and to try out some mathematical logic that has not yet been presented carefully in class!  This is OK.  You should try to follow the instructions here, and do your best.  Then, when this material is carefully presented in your Monday meetings, it should start to come together.
+
+You can and should read about implications and the bi-conditional (equivalence) in either (or both!) HTTLAM chapters 7, 8, 9, or in BOP sections 2.3 and 2.4.
+
+Here are the steps you must use to prove this statement.
+\begin{enumerate}[1.]
+	\item This is a shorthand notation for two separate implications:
+	\begin{center}
+		if $U$ is a subspace of $V$, then $W_1\subseteq W_2$ or $W_2\subseteq W_1$,\\
+		and\\
+		if $W_1\subseteq W_2$ or $W_2\subseteq W_1$, then $U$ is a subspace of $V$.
+	\end{center}
+	You must prove each implication separately.
+	
+	\item The first implication is best proved using a device called the ``contrapositive'' implication.  You can read about this in HTTLAM chapter 8 or BOP chapter 5.  The way this works is that you will assume that 
+	\begin{align*}
+		\text{not}(W_1\subseteq W_2\ \text{or}\ W_2\subseteq W_1)
+	\end{align*}
+	is true, and then you will try to demonstrate that 
+	\begin{align*}
+		\text{not}(U\ \text{is a subspace})
+	\end{align*}
+	is true.  That is to say, you will assume that
+	\begin{align*}
+		W_1\not\subseteq W_2\ \text{and}\ W_2\not\subseteq W_1
+	\end{align*}
+	and you will try to show that $U$ is not a subspace.  For this, you should try to find elements, $v_1$ and $v_2$ so that $v_1,v_2\in U$, and yet, $v_1+v_2\not\in U$.
+	
+	
+	\item The second implication is more straightforward.  You should assume $W_1\subseteq W_2$ or $W_2\subseteq W_1$, and then try to show that $U$ must be a subspace.  
+	
+	
+\end{enumerate}
+
+
+\vspace{0.4cm}
+
+
+\begin{question}
+	\normalfont
+	
+	In each of the following, give an example of the requested sets.  You do not have to give any explanation or justification for your choice.
+	
+	\begin{enumerate}[(i)]
+		\item A \emph{non-empty} set, $U\subseteq\real^2$ that is closed under scalar multiplication and $U$ is not a subspace of $\real^2$.
+		
+		\item A \emph{non-empty} set, $U\subset\P_3$ that is closed under addition and $U$ is not a subspace of $\P_3$.
+	\end{enumerate}
+\end{question}
+
+
+\vspace{0.4cm}
+
+
+
+
+
+
+
+
+
+\subsection{Building towards new material}
+
+The next batch of questions are meant to build up some calculations and illustrate some features that will be useful for upcoming material.  But these questions also provide the benefit of having you make specific calculations in some of our main examples of vector spaces. So they also serve to reinforce the content you have already seen for vector spaces.
+
+
+
+\begin{question}\label{que:TowardsSpan}
+	\normalfont
+	
+	In this question, you are working in the vector space, $V=\real^3$, with the usual definitions of addition and scalar multiplication.  
+	
+	Let $w_1, w_2\in\real^3$ be the vectors given by 
+	\begin{align*}
+		w_1 = \ColVecThree{1}{1}{1},\ \ \ \text{and}\ \ \ w_2 = \ColVecThree{1}{3}{1}.
+	\end{align*}
+	\begin{enumerate}[(i)]
+		\item For the vector, $\displaystyle x = \ColVecThree{3}{-1}{3}$, are there numbers, $a_1,a_2\in\real$ with the property that
+		\begin{align*}
+			x = a_1 w_1 + a_2 w_2?
+		\end{align*}
+		
+		\item For the vector, $\displaystyle y = \ColVecThree{1}{2}{3}$, are there numbers, $b_1,b_2\in\real$ with the property that
+		\begin{align*}
+			y = b_1 w_1 + b_2 w_2?
+		\end{align*}
+	\end{enumerate}
+	
+	
+	In the event that you believe your answer is ``yes'', then all you need to do is list the numbers (either $a_i$ or $b_i$ depending on each part), and demonstrate that your choice of numbers does indeed give the desired equality.  In the event that you believe your answer is ``no'', then you should assume (for the sake of contradiction) that such numbers exist; and then you should use the specified equation to deduce that there is some sort of mathematical impossibility.  Like ``0=1'' or ``the easter bunny is real'', etc...
+\end{question}
+
+
+
+
+\vspace{0.4cm}
+
+
+
+\begin{question}
+	\normalfont
+	
+	
+	In this question, you are working in the vector space, $V=\real^3$, with the usual definitions of addition and scalar multiplication.  
+	
+	Let $w_1, w_2, w_3\in\real^3$ be the vectors given by 
+	\begin{align*}
+		w_1 = \ColVecThree{0}{1}{1},\ \ \ w_2=\ColVecThree{0}{2}{1},\ \ \ 
+		w_3 = \ColVecThree{1}{5}{3}.
+	\end{align*}
+	
+	\begin{enumerate}[(i)]
+		\item Is it possible to find numbers, $a_1,a_2,a_3\in\real$ so that at least one of $a_1$, $a_2$, $a_3$ is non-zero, and
+		\begin{align*}
+			a_1 w_1 + a_2 w_2 + a_3 w_3 = \ColVecThree{0}{0}{0}?
+		\end{align*}
+		
+		\item Is it possible to find numbers, $b_1,b_2,b_3\in\real$ so that 
+		\begin{align*}
+			\ColVecThree{1}{0}{0} = b_1 w_1 + b_2 w_2 + b_3 w_3?
+		\end{align*}
+
+	\end{enumerate}
+	
+	
+	The same instructions for validating your ``yes'' or ``no'' answer from Question \ref{que:TowardsSpan} apply here.
+	
+
+\end{question}
+
+
+
+\vspace{0.4cm}
+
+
+
+
+\begin{question}
+	\normalfont
+
+Consider the polynomials	\begin{align*}
+		p_1(x) = 1-x,\ \ \ \ p_2(x)=x^2+x,\ \ \ \ p_3(x)=x^3+x^2,\ \ \ \ p_4(x)=x^3.
+	\end{align*}
+	For the polynomial, $g\in\P_3$, given by
+	\begin{align*}
+		g(x)=2x^3+1,
+	\end{align*}
+	produce a list of real numbers, $\al_1$, $\al_2$, $\al_3$, $\al_4$, so that
+	\begin{align*}
+		g = \al_1 p_1 + \al_2 p_2 + \al_3 p_3 + \al_4 p_4.
+	\end{align*}
+
+\end{question}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

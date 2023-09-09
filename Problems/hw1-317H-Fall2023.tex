@@ -1,0 +1,380 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb}
+\usepackage{epsfig}
+\usepackage{psfrag}
+\usepackage{fullpage}
+\usepackage{color}
+\usepackage{amsfonts,epsf}
+\usepackage{amsmath,amssymb,
+amscd,amsbsy, bbm, amsthm, enumerate, url}
+\usepackage{wasysym}
+
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{question}[thm]{Question}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{DEF}[thm]{Definition}
+\newtheorem{rem}[thm]{Remark}
+\newenvironment{sol}{\paragraph{Solution:}\color{red}}{\hfill$\square$}
+\newenvironment{grade}{\paragraph{grading:}\color{blue}}{\hfill$\square$}
+
+
+
+\def\real{{\mathbb R}}
+\def\Natural{\mathbb{N}}
+\def\Z{\mathbb{Z}}
+\def\integer{\mathbb{Z}}
+\def\dx{\textnormal{dx}}
+\def\dy{\textnormal{dy}}
+\def\dz{\textnormal{dz}}
+\def\dt{\textnormal{dt}}
+\def\ds{\textnormal{ds}}
+\def\dw{\textnormal{dw}}
+\def\Re{\textnormal{Re}}
+\def\Im{\textnormal{Im}}
+\def\Id{\textnormal{Id}}
+\def\exp{\textnormal{exp}}
+\def\dim{\textnormal{dim}}
+\def\interior{\textnormal{interior}}
+\def\NullLA{\textnormal{null}}
+\def\SpanLA{\textnormal{span}}
+\def\range{\textnormal{range}}
+\def\al{\alpha}
+\def\del{\delta}
+\def\Del{\Delta}
+\def\gam{\gamma}
+\def\Gam{\Gamma}
+\def\Om{\Omega}
+\def\ep{\varepsilon}
+\def\lam{\lambda}
+\def\rational{{\mathbb Q}}
+\def\integer{{\mathbb Z}}
+\def\grad{\nabla}
+
+\def\C{\mathcal C}
+\def\I{\mathcal I}
+\def\M{\mathcal M}
+\def\N{\mathbb N}
+\def\P{\mathcal P}
+\def\R{\mathbb R}
+\def\T{\mathcal T}
+\def\Z{\mathbb Z}
+
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\ColVecTwo}[2]{\begin{pmatrix} #1\\ #2\end{pmatrix}}
+\newcommand{\ColVecThree}[3]{\begin{pmatrix} #1\\ #2\\ #3\end{pmatrix}}
+\newcommand{\ColVecFour}[4]{\begin{pmatrix} #1\\ #2\\#3 \\ #4\end{pmatrix}}
+\newcommand{\MatrixTwoTwo}[4]{\begin{pmatrix} #1 &#2\\ #3 &#4 \end{pmatrix}}
+\newcommand{\inner}[2]{\langle #1 , #2 \rangle}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\spanvect}{\textnormal{span}}
+\newcommand{\union}{\cup}
+\newcommand{\Union}{\bigcup}
+\newcommand{\intersect}{\cap}
+\newcommand{\Intersect}{\bigcap}
+
+\DeclareMathOperator*{\Limsup}{LIMSUP}
+
+
+
+\pagestyle{empty}
+\begin{document}
+
+	\begin{LARGE}
+	\begin{center}
+		
+	
+		
+		
+		
+	\textbf{Homework 1; Due THURSDAY, 09/07/2023}
+	
+
+	(MTH 317H, Honors Linear Algebra;  Spring 2023)
+	\end{center}
+	\end{LARGE}
+	\vspace{0.15in}
+	
+	
+	
+	
+\section{Commentary}
+
+In this HW, you will begin working with the vector space axioms (def's 1.18 and 1.19 in LADR), and you will try out some proofs involving set inequalities.  All of this may seem very different from the type of math you have been used to, and that is OK.  It is because it most likely is different.  Just stick with it and ask lots of questions.
+
+You should try to manage your time so that each week you \textbf{do not spend more than 12 hours outside of class meetings} working on the reading, homework, and reviewing lecture notes.
+
+
+
+
+\subsection{required reading}
+
+``LADR'' -- Linear Algebra done right
+
+\noindent
+``BOP'' -- How to think like a mathematician
+
+\begin{itemize}
+	\item LADR, sections 1.A, 1.B, 1.C.  For the moment, we will exclusively use the scalar field to be the real numbers, $\real$.  That is to say, any time you encounter $\mathbf{F}$, or $\mathbf{F^n}$, you are free to assume $\mathbf{F}=\real$.  (This will change later in the semester.)
+	
+	\item BOP, sections 1.1, 1.2, 1.3, 1.5, 1.6, 1.7.
+\end{itemize}
+
+
+
+
+
+\section{Questions}
+
+
+
+\begin{question}\label{que:SetEquality}
+	\normalfont
+	
+	Let $\P_3$ denote the set of polynomials of degree less than or equal to 3, with real coefficients. For the following two sets, $A$ and $B$, prove that $A=B$.
+	\begin{align*}
+		&A = \{ p\in\P_3\ :\ p''=0    \}\\
+		&B = \{ f(x)=a_0 + a_1 x\ :\ a_0,a_1\in\real    \}.
+	\end{align*}
+	When proving a set equality, at least for right now, you need to prove two things: $A\subseteq B$ and $B\subseteq A$.  Here is generically what you must do to establish a subset statement, $X\subseteq Y$:
+	\begin{enumerate}
+		\item Assume that $x$ is a generic element of $X$.
+		\item Give some explanation that demonstrates that $x$ must also be an element of $Y$.
+		\item Conclude that $X\subseteq Y$.
+	\end{enumerate}
+\end{question}
+
+\vspace{0.4cm}
+
+\begin{question}
+	\normalfont
+	
+	
+	Let the following sets, $A$ and $B$, be defined as
+	\begin{align*}
+		&A = \{  p\in\P_3\ :\ p''(1)=0  \}\\
+		&B = \{  q(x) = a_0 + a_3(1-x)^3\ :\ a_0,a_3\in\real  \}.
+	\end{align*}
+	
+	
+	\begin{enumerate}[(i)]
+		\item Prove that $B\subseteq A$.
+		\item Is it true that $A\subseteq B$?  If your answer is ``yes'', then give the set containment proof outlined in Question \ref{que:SetEquality}.  If your answer is ``no'', then give a concrete example of an element in $A$ that is not in $B$.
+	\end{enumerate}
+	
+\end{question}
+
+\vspace{0.4cm}
+
+
+
+\begin{question}\label{que:VectSpaceAxioms}
+	\normalfont
+	
+	Let $\P_n$ denote the vector space of real polynomials of degree less than or equal to $n$. For this question, assume the usual operations of addition and scalar multiplication that are given on the vector spaces $\real^n$ and $\P_n$. \\
+	
+	For each of the following sets, $X$, complete the following
+	\begin{enumerate}[(a)]
+		
+		\item List 3 different and concrete elements of $X$.
+		
+		\item Verify whether or not the set, $X$, satisfies the following 3 properties with respect to the usual addition and scalar multiplication associated with $\real^n$ or $\P_n$.  For each property, your answer will be ``yes'' or ``no'', and you must provide a justification.  If your answer is ``yes'', you will demonstrate the property for generic inputs.  If your answer is ``no'', you will choose specific concrete elements and/or scalars that show the property fails.
+		
+		\begin{enumerate}[(1)]
+			\item for two generic elements of $X$, say $u,v\in X$, also $u+v\in X$.
+			\item for a generic scalar, $\lam\in\real$ and a generic element, $v\in X$, also $\lam v\in X$.
+			\item the zero vector, $\vec{0}$, is in $X$.
+		\end{enumerate}
+		
+	\end{enumerate}
+	
+	
+	Here are the sets, $X$:
+	\begin{enumerate}[(i)]
+		\item $\displaystyle X = \left\{  \ColVecThree{x_1}{0}{x_3}\ :\ x_1,x_3\in\real  \right\}$
+		
+		\item $\displaystyle X = \left\{  \ColVecThree{x_1}{1}{x_3}\ :\ x_1,x_3\in\real  \right\}$
+		
+		\item $\displaystyle X = \left\{  \ColVecThree{x}{3x}{3x^2}\ :\ x\in\real  \right\}$
+		
+		\item $\displaystyle 
+		X = \left\{  a\ColVecThree{1}{1}{1} + b\ColVecThree{2}{1}{1}\ :\ a,b\in\real   \right\}$
+		
+		\item $\displaystyle X = \left\{  p\in \P_3,\ :\ p(5)=0  \right \}$
+		
+		\item $\displaystyle X = \left\{  p\in \P_3,\ :\ \deg(p)=3  \right \}$
+		
+		%(here we use that the degree of a polynominal, $\deg(p)$, is the number of the highest exponent with a non-zero coefficient. )
+		% I commented this comment out because they need to know this to even understand the definition of $\P_n$. Feel free to put it back in if you want. 
+	\end{enumerate}
+\end{question}
+
+
+
+\vspace{0.4cm}
+
+
+
+
+
+\begin{question}
+	\normalfont
+	
+	
+	Determine for which $m\in\real$ and for which $b\in\real$ the following set, $X$, satisfies the 3 properties required in Question \ref{que:VectSpaceAxioms}.
+	
+	\begin{align*}
+		X = \left\{  \ColVecTwo{x_1}{mx_1+b}\ :\ x_1\in\real   \right\}.
+	\end{align*}
+	
+	For the $m$ and $b$ that work, prove they work-- i.e. establish the 3 requirements.  For the $m$ and $b$ that don't work, pick one of the 3 properties that fail, and then give specific examples of vectors and scalars that show the property fails.
+\end{question}
+\vspace{0.4cm}
+
+
+\begin{question}
+	\normalfont
+	
+	Consider the set, $\real^2$, with the usual addition operation for vectors in $\real^2$. Define an operation, $\odot$, so that
+	\begin{align*}
+		&\odot: \real\times \real^2\to \real^2,\\
+		&\lam\in\real,\ \ColVecTwo{x_1}{x_2}\in\real^2,\ \ 
+		\lam\odot \ColVecTwo{x_1}{x_2}:= \ColVecTwo{\lam x_1}{x_2}.
+	\end{align*}
+	
+	Does $\odot$ satisfy the requirements of a scalar multiplication in a vector space (i.e. does it satisfy the requirements as given in definitions 1.18 and 1.19 of LADR)?  Your answer will be ``yes'' or ``no'', followed by a justification of your choice.  If you answer yes, then you must verify that all requirements of scalar multiplication are true.  If your answer is no, then you must identify one requirement that fails, and you will demonstrate the failure with a concrete choice of vectors and scalars.
+\end{question}
+
+\vspace{0.4cm}
+
+\begin{question}
+\normalfont
+Consider the set of 3-dimensional columns of real numbers
+
+$$ v =  \left( \begin{array}{c}
+v_1 \\
+v_2 \\
+v_3 \\
+
+ \end{array} \right)$$
+
+ with addition and scalar multiplication defined by:
+\[
+ \left( \begin{array}{c}
+v_1 \\
+v_2 \\
+v_3 \\
+
+ \end{array} \right)  +  \left( \begin{array}{c}
+w_1 \\
+w_2 \\
+w_3 \\
+
+ \end{array}  \right)= \left( \begin{array}{c}
+w_1 - v_1 \\
+w_2 - v_2\\
+w_3 - v_3\\
+
+\end{array} \right), \ \ \mathrm{and}  \ \ \ \ \ \ \lambda \left( \begin{array}{c}
+v_1 \\
+v_2 \\
+v_3 \\ 
+
+ \end{array} \right) = \left( \begin{array}{c}
+\lambda v_1 \\
+\lambda v_2 \\
+\lambda v_3 \\
+
+ \end{array} \right),
+\]
+respectively. Does this define a vector space? If your answer is ``yes," you need to verify all of the vector space axioms. If your answer is ``no" you need to identify an axioms that fails, and demonstrate the failure with a concrete counterexample. 	
+
+
+\end{question}
+
+\vspace{0.4cm}
+
+\begin{question}
+	\normalfont
+	
+	Assume that $V$ is a vector space.  By the vector space axioms, for each $v\in V$, there exists an additive inverse, which we denote $(-v)$. This additive inverse $(-v)$ is unique (see LADR 1.26). Since $(-v)$ is in $V$, it too has an additive inverse, which we will write as $-(-v)$.  Prove that
+	\begin{align*}
+		-(-v)=v.
+	\end{align*}
+	
+	
+	
+\noindent (\emph{Hint}: let $w$ be the additive inverse of $(-v)$.  Write down the equation that $w$ is required to uniquely satisfy as the additive inverse.  Also, as $(-v)$ is the additive inverse of $v$, write down the equation that $(-v)$ is required to uniquely satisfy.  Compare these two equations.)
+\end{question}
+
+
+\vspace{0.4cm}
+
+\begin{question}\label{que:IfAVZeroThen...}
+	\normalfont
+	
+	Assume that $V$ is a vector space, $a\in\real$ and $v\in V$. Prove the following implication:
+	
+	\begin{center}
+		if $av=\vec{0}$, then $a=0$ or $v=\vec{0}$.
+	\end{center}
+\end{question}
+
+\textbf{Discussion of Question \ref{que:IfAVZeroThen...}:} This question involves mathematical structure to which you may not have been previously exposed.  Furthermore, this structure is part of the content that will be covered in your Monday meetings that cover the ``MTH 299'' material.  There is no better way to start learning new things than to just jump in and try them out.  Here is some explanation of what this structure is, and some steps you should use to create a proof.
+
+The \emph{implication}, ``if A, then B'', is a logical construction that captures the statement ``whenever A is true, B must also be true''.  You should start reading about this in Section 2.3 of BOP.  The implication that appears in Question \ref{que:IfAVZeroThen...} also includes another logical construction, which is the \emph{compound statement} made with the \emph{connective}, ``or''.  The statement ``C or D'' is true whenever at least one of $C$, $D$ is true.  You should read about this in Section 2.2 of BOP.
+
+So, in this context of Question \ref{que:IfAVZeroThen...}, you want to show that ``whenever $av=\vec{0}$ is true, also $a=0$ or $v=\vec{0}$''.    Here are the steps to make a proof by cases on $a$. 
+
+\begin{enumerate}
+	\item Assume that $av=\vec{0}$.
+	
+	\item Make two separate cases on $a$: case 1, $a=0$; and case 2, $a\not=0$.  Now, you will work through each case separately.
+	
+	\item In case 1, you should be able to immediately conclude the truth of the statement: ``$a=0$ or $v=\vec{0}$''.
+	
+	\item In case 2, you should be able to use the properties of scalar multiplication to cancel the factor of $a$ on the left hand side of $av=\vec{0}$.  For any real number $\lam$, what does LADR 1.30 say about $\lam\vec{0}$? 
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

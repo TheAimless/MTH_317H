@@ -9,6 +9,9 @@
 # Problems folder *should* be included
 !Problems/*
 
+# Also PDF folders
+PDF/*
+
 # Latexmk
 *.fdb_latexmk
 
