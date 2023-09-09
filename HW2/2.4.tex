@@ -1,0 +1,35 @@
+\begin{question}\label{que:SubspaceUnion}
+	\normalfont
+	
+	Assume that $W_1$ and $W_2$ are both subspaces of a vector space, $V$.  Define $U=W_1\union W_2$.  Prove that 
+	\begin{center}
+		$U$ is a subspace of $V$ if and only if $W_1\subseteq W_2$ or $W_2\subseteq W_1$.  
+	\end{center}
+	
+\end{question}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\begin{proof}
+    To prove that if $W_1\subseteq W_2$ or $W_2\subseteq W_1$ then $U$ is a subspace of $V$, without loss of generality let $W_1\subseteq W_2$. Then, $U=W_1\union W_2=W_2$. Since $W_2$ is a subspace of $V$, it follows that $U$ is also a subspace of $V$. (1)\\
+    Conversely, suppose $W_1\not\subseteq W_2$ and $W_2\not\subseteq W_1$. Then, 
+    \[
+        \begin{aligned}
+            (\exists x_1\in W_1, x_2\in W_2)(x_1\not\in W_2\land x_2\not\in W_1)
+        \end{aligned}
+    \]Moreover, as $x_1\in W_1, x_2\in W_2$ and $U=W_1\union W_2$, it follows that $x_1,x_2\in U$.\\
+    We will show that $U$ is not a subspace of $V$ by proving that vector addition is not closed under $U$. Assume the contrary, then $x_1+x_2\in U=W_1\union W_2$. It follows that $x_1+x_2\in W_1$ or $x_1+x_2\in W_2$. Without loss of generality, let $x_1+x_2\in W_1$. Since $W_1$ is a subspace of $V$, $W_1$ is also a vector space. As such, for some $x_1\in W_1$ there exists $-x_1\in W_1$ such that 
+    \[
+        \begin{aligned}
+            x_1+(-x_1)=\vec{0}
+        \end{aligned}
+    \], where $\vec{0}$ is the zero vector of $W_1.$ We have 
+    \[
+        \begin{aligned}
+            x_1+x_2          &\in W_1\\
+            (-x_1)+x_1+x_2   &\in W_1\\
+            ((-x_1)+x_1)+x_2 &\in W_1\\
+            \vec{0}+x_2      &\in W_1\\
+            x_2              &\in W_1
+        \end{aligned}
+    \], contradicting our above claim ($x_2\not\in W_1$). Thus, it is not the case that vector addition is closed under $U$, or $U$ is not a subspace of $V$ (2).\\ 
+    From (1) and (2), we proven that $U$ is a subspace of $V$ if and only if $W_1\subseteq W_2$ or $W_2\subseteq W_1$.
+\end{proof}
