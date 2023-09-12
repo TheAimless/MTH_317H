@@ -18,11 +18,40 @@
     \end{enumerate}
 \end{question}
 
-\begin{enumerate}[(i)]
-    \item\begin{proof}
-        Choose $a_1=, a_2=, a_3=, a_4=$. Then, $a_1,a_2,a_3,a_4$ are not all 0 and $a_1v_1+a_2v_2+a_3v_3+a_4v_4=\vec{0}$. Therefore, $v_1,v_2,v_3,v_4$ is a linearly dependent list.
-    \end{proof}
-    \item\begin{proof}
-        Let $a_1=, a_2=, a_3=$. Then, $v_4=a_1v_1+a_2v_2+a_3v_3$. Therefore, $v_4\in\SpanLA(v_1,v_2,v_3)$.
-    \end{proof}
-\end{enumerate}
+\begin{proof}
+    \renewcommand{\qedsymbol}{$ $}
+    \begin{enumerate}[(i)]
+        \renewcommand{\qedsymbol}{$\blacksquare$}
+        \item Choose $a_1=, a_2=, a_3=, a_4=$. Then, $a_1,a_2,a_3,a_4$ are not all 0 and $a_1v_1+a_2v_2+a_3v_3+a_4v_4=\vec{0}$. Therefore, $v_1,v_2,v_3,v_4$ is a linearly dependent list.\qed
+        \item Let $a_1=, a_2=, a_3=$. Then, $v_4=a_1v_1+a_2v_2+a_3v_3$. Therefore, $v_4\in\SpanLA(v_1,v_2,v_3)$.\qed
+        \item Assume the contrary. Then there exists $a_2,a_3,a_4$ such that $v_1=a_2v_2+a_3v_3+a_4v_4$. We have 
+        \[
+            \begin{aligned}
+                \ColVecThree{1}{1}{1} &= a_2 \ColVecThree{1}{2}{3}+a_3 \ColVecThree{1}{0}{1}+a_4 \ColVecThree{3}{2}{5}\\
+                                      &= \ColVecThree{a_2}{2a_2}{3a_2}+\ColVecThree{a_3}{0}{a_3}+\ColVecThree{3a_4}{2a_4}{5a_4}\\
+                                      &= \ColVecThree{a_2+a_3+3a_4}{2a_2+2a_4}{3a_2+a_3+5a_4}
+            \end{aligned}
+        \]
+        , which is equivalent to the following system of equations: 
+        \begin{align*}
+            &\begin{cases}
+                a_2+a_3+3a_4 &= 1\\
+                2a_2+2a_4    &= 1\\
+                3a_2+a_3+5a_4&= 1
+            \end{cases}\\
+            \iff
+            &\begin{cases}
+                a_2+a_4      &= 0.5\\
+                a_3+2a_4     &= 0.5\\
+                3a_2+a_3+5a_4&= 1
+            \end{cases}\\
+            \iff
+            &\begin{cases}
+                3a_2+3a_4    &= 1.5\\
+                a_3+2a_4     &= 0.5\\
+                a_3+2a_4     &= -0.5
+            \end{cases}
+        \end{align*}
+        , which is a contradiction (since $a_3+2a_4$ cannot be both 1.5 and -0.5). Therefore, $v_1\not\in\SpanLA{(v_2,v_3,v_4)}$.\qed
+    \end{enumerate}
+\end{proof}
