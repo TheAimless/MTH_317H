@@ -1,101 +1,50 @@
-\begin{question}\label{que:SubspaceSpecific}
-	\normalfont
-	
-	Here we will work in the vector space, $\real^3$, with the usual operations of addition and scalar multiplication.  Define the following two sets:
-	
-    \begin{equation}
-        \begin{aligned}
-            &W_1 = \left\{ \colvecthree{x_1}{x_2}{x_3}\in \real^3\ :\ x_1 + x_2 + x_3 = 0 \right\}\\
-            &\text{and}\ \ \ 
-            W_2 = \left\{ \colvecthree{x_1}{x_2}{x_3}\in \real^3\ :\ x_1 + 2x_2 - x_3 = 0 \right\}.
-        \end{aligned}
-    \end{equation}
-	
-	\begin{enumerate}[(i)]
-		\item Use LADR result 1.34 to prove that $W_1$ and $W_2$ are both subspaces of $\real^3$.  Note, your proofs should look very similar for each of $W_1$ and $W_2$.
-		
-		\item Consider the set $V=W_1\intersect W_2$.  List 3 distinct elements of $V$.
-		
-		\item Give a description of the set, 
-		\begin{equation}
-			V= W_1 \intersect W_2.
-		\end{equation}
-		That is to say, write $V$ in the form,
-		\begin{equation}
-			V = \left\{ \colvecthree{v_1}{v_2}{v_3}\in\real^3\ :\ v_1, v_2, v_3\ \text{satisfy some relationship} \right\}.
-		\end{equation}
-		There is no proof required here and your answer should just be a set, as suggested.
-	\end{enumerate}
+\begin{question}
+    \normalfont
+
+
+    Consider the same list of vectors $v_1, v_2, v_3, v_4$ \hspace{.1cm} as in Question \ref{que:LinDepInR3}.
+    \begin{enumerate}[(i)]
+        \item Prove that $\SpanLA(v_1, v_2, v_3, v_4) = \SpanLA(v_1, v_2, v_3)$.
+
+        \item Prove that $\SpanLA(v_1, v_2, v_3) = \real^3$.
+
+              Here, you must use the basic set equality proof structure, namely to show as sets that $A=B$, you must demonstrate $A\subseteq B$ and $B\subset A$.
+
+        \item Prove that $\SpanLA(v_1, v_2)\not=\real^3$.
+    \end{enumerate}
 \end{question}
 
-\begin{sol}
+\renewcommand{\qedsymbol}{$ $}
+\begin{proof}
     \begin{enumerate}[(i)]
-        \item 
-        \renewcommand\qedsymbol{$\blacksquare$}
-        \begin{proof}
-            To show that $W_1$ and $W_2$ are both subspaces of $\R^{3}$, we need to show that the three following properties hold true for both sets:
-            \begin{enumerate}[(1)]
-                \item The zero vector of $\R^{3}$ belongs to both $W_1$ and $W_2$: Let $x_1,x_2,x_3\in\R$ such that $x_1=x_2=x_3=0$. Let $u=\colvecthree{x_1}{x_2}{x_3}\in\R^{3}$. Then,
-                \[
-                    \begin{aligned}
-                        x_1+x_2+x_3=x_1+2x_2-x_3=0
-                    \end{aligned}
-                \]
-                It follows that $u\in W_1$ and $u\in W_2$, or the zero vector of $\R^{3}$ belongs to both $W_1$ and $W_2$.
-                \item Vector addition is closed under $W_1$ and $W_2$: Let $u,v\in W_1$ and $a,b\in W_2$. Then, we can write $u,v,a,b$ as
-                \[
-                    \begin{aligned}
-                        u = \colvecthree{x_1}{x_2}{x_3},
-                        v = \colvecthree{y_1}{y_2}{y_3},
-                        a = \colvecthree{p_1}{p_2}{p_3},
-                        b = \colvecthree{q_1}{q_2}{q_3}
-                    \end{aligned}  
-                \]
-                such that the vector components are elements of $\R$. We have:
-                \[
-                    \begin{aligned}
-                        u+v = \colvecthree{x_1+y_1}{x_2+y_2}{x_3+y_3}
-                    \end{aligned}    
-                \]
-                Since $x_1+x_2+x_3=y_1+y_2+y_3=0$,
-                \[
-                    \begin{aligned}
-                        (x_1+y_1)+(x_2+y_2)+(x_3+y_3)=0
-                    \end{aligned}  
-                \]
-                Thus, $u+v\in W_1$, or vector addition is closed under $W_1$.\\
-                Similarly,
-                \[
-                    \begin{aligned}
-                        a+b = \colvecthree{p_1+q_1}{p_2+q_2}{p_3+q_3}
-                    \end{aligned}  
-                \]
-                Since $p_1+2p_2-p_3=q_1+2q_2-q_3=0$, $(p_1+q_1)+2(p_2+q_2)-(p_3+q_3)=0$, it follows that $ a+b\in W_2 $. Therefore, vector addition is closed under $W_2$.
-                \item Scalar multiplication is closed under $W_1$ and $W_2$: Let $u\in W_1, v\in W_2, \lam\in\R$. Then, $u,v$ can be written as $u=\colvecthree{x_1}{x_2}{x_3} $, $v=\colvecthree{y_1}{y_2}{y_3}$ such that $x_1,x_2,x_3,y_1,y_2,y_3\in\R$ and $x_1+x_2+x_3=y_1+2y_2-y_3=0$. We have:
-                \[
-                    \begin{aligned}
-                        \lam u = \colvecthree{\lam x_1}{\lam x_2}{\lam x_3},
-                        \lam v = \colvecthree{\lam y_1}{\lam y_2}{\lam y_3}
-                    \end{aligned}
-                \]
-                Since $x_1+x_2+x_3=y_1+2y_2-y_3=0$, $\lam x_1+\lam x_2+\lam x_3=\lam y_1+2\lam y_2-\lam y_3=0$. Thus, $\lam u\in W_1$ and $\lam v\in W_2$, or scalar multiplication is closed under both $W_1$ and $W_2$.
-            \end{enumerate}
-            Therefore, $W_1$ and $W_2$ are both subspaces of $\R^{3}.$
-        \end{proof}
-        \item Let $u=\colvecthree{0}{0}{0}, v=\colvecthree{3}{-2}{-1}, w=\colvecthree{6}{-4}{-2}$. Then, $u,v,w$ can be written as $\colvecthree{x_1}{x_2}{x_3}$ satisfying 
-        \[
-            \begin{aligned}
-                &x_1+x_2+x_3 &&= 0\\
-                \text{and } &x_1+2x_2-x_3 &&= 0
-            \end{aligned}
-        \]
-        Therefore, $u,v,w$ are pairwise distinct elements of both $W_1$ and $W_2$, or $u,v,w\in V$.
-        \item $V$ can be written as:
-        \[
-            \begin{aligned}
-                V=\left\{ \colvecthree{v_1}{v_2}{v_3}\ \in\R^{3} : -2v_1=3v_2=6v_3 \right\}
-            \end{aligned}
-        \]
+        \renewcommand{\qedsymbol}{$\blacksquare$}
+        \item To show that $\SpanLA(v_1,v_2,v_3,v_4)=\SpanLA(v_1,v_2,v_3)$, we need to show that $\SpanLA(v_1,v_2,v_3,v_4)\subseteq\SpanLA(v_1,v_2,v_3)$ and $\SpanLA(v_1,v_2,v_3)\subseteq\SpanLA(v_1,v_2,v_3,v_4)$.
         
+        Let $x\in\SpanLA(v_1,v_2,v_3)$. Then, there exist $\lam_1,\lam_2,\lam_3\in\F$ such that
+        \[
+            \begin{aligned}
+                x=\lam_1v_1+\lam_2v_2+\lam_3v_3
+            \end{aligned}    
+        \]
+        Choose $\lam_4=0\in\F$, and $x=\lam_1v_1+\lam_2v_2+\lam_3v_3+\lam_4v_4$. Hence, $x\in\SpanLA(v_1,v_2,v_3,v_4)$, or $\SpanLA(v_1,v_2,v_3)\subseteq\SpanLA(v_1,v_2,v_3,v_4)$. (1)
+        
+        Conversely, let $x\in\SpanLA(v_1,v_2,v_3,v_4)$. Then, there exist $\lam_1,\lam_2,\lam_3,\lam_4$ such that
+        \[
+            \begin{aligned}
+                x=\lam_1v_1+\lam_2v_2+\lam_3v_3+\lam_4v_4
+            \end{aligned}
+        \]  
+        Let $\lam_2=\lam_2'-\lam_4$ and $\lam_3=\lam_3'-2\lam_4$, where $\lam_2',\lam_3'\in\F$. Then
+        \[
+            \begin{aligned}
+                x &= \lam_1v_1+\lam_2v_2+\lam_3v_3+\lam_4v_4\\
+                  &= \lam_1v_1+(\lam_2'-\lam_4)v_2+(\lam_3'-2\lam_4)v_3+\lam_4v_4\\
+                  &= \lam_1v_1+\lam_2'v_2+\lam_3'v_3+\lam_4(-v_2-2v_3+v_4)
+            \end{aligned}  
+        \]
+        However, since $v_4-v_2-2v_3=\vec{0}$, it follows that $x=\lam_1'v_1+\lam_2'v_2+\lam_3'v_3\in\SpanLA(v_1,v_2,v_3)$. Hence, $\SpanLA(v_1,v_2,v_3,v_4)\subseteq\SpanLA(v_1,v_2,v_3)$. (2)
+
+        Therefore, from (1) and (2), it follows that $\SpanLA(v_1,v_2,v_3,v_4)=\SpanLA(v_1,v_2,v_3)$.\qed
+        \item To show that $\SpanLA(v_1,v_2,v_3)=\R^3$, we need to prove that $$
     \end{enumerate}
-\end{sol}
+\end{proof}
