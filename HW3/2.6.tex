@@ -1,41 +1,13 @@
-\begin{question}\label{que:TowardsSpan}
-	\normalfont
-	
-	In this question, you are working in the vector space, $V=\real^3$, with the usual definitions of addition and scalar multiplication.  
-	
-	Let $w_1, w_2\in\real^3$ be the vectors given by 
-	\[
-        \begin{aligned}
-            w_1 = \colvecthree{1}{1}{1},\ \ \ \text{and}\ \ \ w_2 = \colvecthree{1}{3}{1}.
-        \end{aligned}
-    \]
-    \begin{enumerate}[(i)]
-		\item For the vector, $\displaystyle x = \colvecthree{3}{-1}{3}$, are there numbers, $a_1,a_2\in\real$ with the property that
-		\[
-            \begin{aligned}
-			    x = a_1 w_1 + a_2 w_2?
-		    \end{aligned}
-		\]
-		\item For the vector, $\displaystyle y = \colvecthree{1}{2}{3}$, are there numbers, $b_1,b_2\in\real$ with the property that
-        \[
-            \begin{aligned}
-                y = b_1 w_1 + b_2 w_2?
-            \end{aligned}
-        \]
-	\end{enumerate}
+\begin{question}\label{que:SpanAgain}
+    \normalfont
+
+    Assume that  $u,v,w_1,\dots,w_n$ are all distinct elements of a vector space, $V$.  Define the lists of vectors, $B$ and $C$, as
+    \begin{align*}
+        B =  u, w_1,\dots, w_n \ \ \ \text{and}\ \ \
+        C =  v, w_1,\dots, w_n .
+    \end{align*}
+    Prove the following implication:
+    \begin{align*}
+        \text{if}\ B\ \text{is a linearly independent list and}\  u\in\SpanLA(C),\ \ \text{then}\ \ \SpanLA(B)=\SpanLA(C).
+    \end{align*}
 \end{question}
-\begin{sol}
-    \begin{enumerate}[(i)]
-        \item Yes. Let $a_1=5, a_2=-2.$ Then, $x=a_1w_1+a_2w_2$.
-        \item No. Suppose there exist $b_1,b_2\in\R$ such that $y=b_1w_1+b_2w_2$. Then, 
-        \[
-            \begin{aligned}
-                \colvecthree{1}{2}{3} &= b_1 \colvecthree{1}{1}{1}+b_2 \colvecthree{1}{3}{1}\\
-                                      &= \colvecthree{b_1}{b_1}{b_1}+\colvecthree{b_2}{3b_2}{b_2}\\
-                                      &= \colvecthree{b_1+b_2}{b_1+3b_2}{b_1+b_2}
-            \end{aligned}
-        \]
-        It must be the case that $b_1+b_2=1$ and $b_1+b_2=3$, which is contradictory. Therefore, there does not exist $b_1,b_2\in\R$ such that $y=b_1w_1+b_2w_2$.
-    \end{enumerate}
-    
-\end{sol}

@@ -1,48 +1,12 @@
 \begin{question}
-	\normalfont
+    \normalfont
 
-Consider the polynomials	\begin{align*}
-		p_1(x) = 1-x,\ \ \ \ p_2(x)=x^2+x,\ \ \ \ p_3(x)=x^3+x^2,\ \ \ \ p_4(x)=x^3.
-	\end{align*}
-	For the polynomial, $g\in\P_3$, given by
-	\begin{align*}
-		g(x)=2x^3+1,
-	\end{align*}
-	produce a list of real numbers, $\al_1$, $\al_2$, $\al_3$, $\al_4$, so that
-	\begin{align*}
-		g = \al_1 p_1 + \al_2 p_2 + \al_3 p_3 + \al_4 p_4.
-	\end{align*}
+    Consider the polynomials
+    \begin{align*}
+        p_1(x) = 1-x,\ \ \ \ p_2(x)=x^2+x,\ \ \ \ p_3(x)=x^3+x^2,\ \ \ \ p_4(x)=x^3.
+    \end{align*}
+
+    Prove that the list of polynomials $p_1, p_2, p_3, p_4$ \hspace{.1cm} is a basis for $\P_3$.
+
 
 \end{question}
-
-\begin{sol}
-    Let $\al_1,\al_2,\al_3,\al_4\in\R$ be a solution to $g=\al_1p_1+\al_2p2+\al_3p_3+\al_4p_4$. It follows that 
-    \[
-        \begin{aligned}
-            g &= \al_1p_1+\al_2p_2+\al_3p_3+\al_4p_4\\
-              &= \al_1(1-x)+\al_2(x^2+x)+\al_3(x^3+x^2)+\al_4(x^3)\\
-              &= \al_1-\al_1x+\al_2x^2+\al_2x+\al_3x^3+\al_3x^2+\al_4x^3\\
-              &= \al_1+(\al_2-\al_1)x+(\al_2+\al_3)x^2+(\al_3+\al_4)x^3\\
-              &= 2x^3+1
-        \end{aligned}
-    \]
-    We can convert the equation to the following system of equations:
-    \begin{align*}
-        \begin{cases}
-            \al_1       &= 1\\
-            \al_2-\al_1 &= 0\\
-            \al_2+\al_3 &= 0\\
-            \al_3+\al_4 &= 2
-        \end{cases}
-        \iff
-        \begin{cases}
-            \al_1 &= 1\\
-            \al_2 &= \al_1\\
-            \al_3 &= -\al_2\\
-            \al_4 &= 2-\al_3
-        \end{cases}\\
-        \iff
-        (\al_1,\al_2,\al_3,\al_4)=(1,1,-1,3)
-    \end{align*}
-    Therefore, $(\al_1,\al_2,\al_3,\al_4)=(1,1,-1,3)$ satisfies the problem statement.
-\end{sol}

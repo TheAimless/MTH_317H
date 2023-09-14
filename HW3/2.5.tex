@@ -1,18 +1,18 @@
-\begin{question}
-	\normalfont
-	
-	In each of the following, give an example of the requested sets.  You do not have to give any explanation or justification for your choice.
-	
-	\begin{enumerate}[(i)]
-		\item A \emph{non-empty} set, $U\subseteq\real^2$ that is closed under scalar multiplication and $U$ is not a subspace of $\real^2$.
-		
-		\item A \emph{non-empty} set, $U\subset\P_3$ that is closed under addition and $U$ is not a subspace of $\P_3$.
-	\end{enumerate}
-\end{question}
-\renewcommand{\qedsymbol}{}
-\begin{sol}
+\begin{question}\label{que:SpanIntersection}
+    \normalfont
+
     \begin{enumerate}[(i)]
-        \item Let $U=\R^{2}\ \ \backslash \ \ \left\{ \colvectwo{x}{x}\ :\ x\in\R \right\}$. Then, $U$ satisfies the problem statement.
-        \item Let $U=\left\{ a_0\in\R\ :\ a_0>0 \right\}$. Then, $U$ satisfies the problem statement.
+        \item Let $V$ be a vector space, and let $A$ = $\{v_1,\dots, v_m\}$ and $B=\{ w_1, \dots, w_n\}$.  Prove that
+              \begin{align*}
+                  \SpanLA(A\intersect B) \subseteq \SpanLA(A)\intersect\SpanLA(B).
+              \end{align*}
+
+
+        \item Give an example for $V=\real^3$ of two \emph{non-empty} sets $A$ and $B$ as above, in which
+              \begin{align*}
+                  \SpanLA(A)\intersect \SpanLA(B) \not\subseteq \SpanLA(A\intersect B).
+              \end{align*}
+
+
     \end{enumerate}
-\end{sol}
+\end{question}

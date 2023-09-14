@@ -1,30 +1,15 @@
 \begin{question}
     \normalfont
+    Let $u_1, u_2, v_1, v_2$ be vectors in $\real^3$, and let
+    \begin{align*}
+        U=\SpanLA(u_1,u_2)\ \ \ \textup{and} \ \ \
+        V=\SpanLA(v_1,v_2).
+    \end{align*}
+    Give an example of specific vectors $u_1, u_2, v_1, v_2$ in $\real^3$ so that
+    \begin{align*}
+        \{u_1, u_2\}\intersect \{ v_1, v_2 \} = \emptyset,
+    \end{align*}
+    and yet, $U=V$.  \textbf{No proof needed.}
 
-    Assume that $W_1$ and $W_2$ are both subspaces of a vector space, $V$. Prove that $U=W_1\intersect W_2$ is also a subspace of $V$.
+
 \end{question}
-
-\renewcommand\qedsymbol{$\blacksquare$}
-\begin{proof}
-    To show that $U$ is a vector space of $V$, we need to prove the three following properties:
-    \begin{enumerate}
-        \item The zero vector of $V$ belongs to $U$: Let $z$ be the zero vector of $V$. Since both $W_1$ and $W_2$ are subspaces of $V$, it follows that $z\in W_1$ and $z\in W_2$. Therefore, $z\in W_1\intersect W_2=U$.
-        \item Vector addition is closed under $U$: Let $u,v\in U$. Since $U=W_1\intersect W_2$, $u,v\in W_1$ and $u,v\in W_2$. As both $W_1$ and $W_2$ are subspaces of $V$, vector addition is closed under both $W_1$ and $W_2$, or 
-        \[
-            \begin{aligned}
-                u+v &\in W_1\\
-                u+v &\in W_2
-            \end{aligned}
-        \]
-        Therefore, $u+v\in W_1\intersect W_2=U$, or vector addition is closed under $U$.
-        \item Scalar multiplication is closed under $U$: Let $\lam\in\R$ and $u\in U$. Since $U=W_1\intersect W_2, u\in W_1$ and $u\in W_2$. As both $W_1$ and $W_2$ are subspaces of $V$, scalar multiplication is closed under both $W_1$ and $W_2$, or 
-        \[
-            \begin{aligned}
-                \lam u &\in W_1\\
-                \lam u &\in W_2
-            \end{aligned}
-        \]
-        Therefore, $\lam u\in W_1\intersect W_2=U$, or scalar multiplication is closed under $U$.
-    \end{enumerate}
-    From the three following properties, $U$ must be a subspace of $V$.
-\end{proof}
