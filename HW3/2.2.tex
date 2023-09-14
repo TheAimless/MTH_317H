@@ -45,6 +45,42 @@
         However, since $v_4-v_2-2v_3=\vec{0}$, it follows that $x=\lam_1'v_1+\lam_2'v_2+\lam_3'v_3\in\SpanLA(v_1,v_2,v_3)$. Hence, $\SpanLA(v_1,v_2,v_3,v_4)\subseteq\SpanLA(v_1,v_2,v_3)$. (2)
 
         Therefore, from (1) and (2), it follows that $\SpanLA(v_1,v_2,v_3,v_4)=\SpanLA(v_1,v_2,v_3)$.\qed
-        \item To show that $\SpanLA(v_1,v_2,v_3)=\R^3$, we need to prove that $a$
+        \item To show that $\SpanLA(v_1,v_2,v_3)=\R^3$, we need to prove that $\SpanLA(v_1,v_2,v_3)\subseteq\R^3$ and $\R^3\subseteq\SpanLA(v_1,v_2,v_3)$.
+        
+        Let $x\in\SpanLA(v_1,v_2,v_3)$. Then there exists $\lam_1,\lam_2,\lam_3\in\R$ such that $x=\lam_1v_1+\lam_2v_2+\lam_3v_3$. However, as $v_1,v_2,v_3\in\R^3$ and $\R^3$ is a vector space, both scalar multiplication and vector addition are closed under $\R^3$. Thus, $x=\lam_1v_1+\lam_2v_2+\lam_3v_3\in\R^3$, or $\SpanLA(v_1,v_2,v_3)\subseteq\R^3$ (1).
+
+        Conversely, let $x=\ColVecThree{x_1}{x_2}{x_3}\in\R^3$. We will show that there exists $\lam_1,\lam_2,\lam_3\in\R$ such that $x=\lam_1v_1+\lam_2v_2+\lam_3v_3$.
+        This equation is equivalent to: 
+        \[
+            \begin{aligned}
+                \lam_1 \ColVecThree{1}{1}{1}+\lam_2 \ColVecThree{1}{2}{3}+\lam_3 \ColVecThree{1}{0}{1} &= \ColVecThree{x_1}{x_2}{x_3}\\
+                \ColVecThree{\lam_1+\lam_2+\lam_3}{\lam_1+2\lam_2}{\lam_1+3\lam_2+\lam_3}              &= \ColVecThree{x_1}{x_2}{x_3}
+            \end{aligned}
+        \]
+        , which can be further reduced to the following system of equations: 
+        \begin{align*}
+            &\begin{cases}
+                \lam_1+\lam_2+\lam_3  &= x_1\\
+                \lam_1+2\lam_2        &= x_2\\
+                \lam_1+3\lam_2+\lam_3 &= x_3
+            \end{cases}\\\iff
+            &\begin{cases}
+                \lam_1+\lam_2+\lam_3  &= x_1\\
+                \lam_1+2\lam_2        &= x_2\\
+                2\lam_2               &= x_3-x_1
+            \end{cases}\\\iff
+            &\begin{cases}
+                \lam_1                &= x_2-x_3+x_1\\
+                \lam_2                &= \frac{x_3-x_1}{2}\\
+                \lam_1+\lam_2+\lam_3  &= x_1
+            \end{cases}\\\iff
+            &\begin{cases}
+                \lam_1                &= x_2-x_3+x_1\\
+                \lam_2                &= \frac{x_3-x_1}{2}\\
+                \lam_3                &= \frac{x_1-2x_2+x_3}{2}
+            \end{cases}
+        \end{align*}
+        Thus, $x\in\SpanLA(v_1,v_2,v_3)$, or $\R^3\subseteq\SpanLA(v_1,v_2,v_3)$ (2). Therefore, from (1) and (2), it follows that $\R^3=\SpanLA(v_1,v_2,v_3)$.\qed
+        \item Let $x=\ColVecThree{1}{3}{4}\in\R^3$. Suppose there exist $\lam_1,\lam_2\in\R$ satisfying $\lam_1v_1+\lam_2v_2=x$.  
     \end{enumerate}
 \end{proof}
