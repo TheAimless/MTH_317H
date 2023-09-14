@@ -13,3 +13,38 @@
         \item Prove that $\SpanLA(v_1, v_2)\not=\real^3$.
     \end{enumerate}
 \end{question}
+
+\renewcommand{\qedsymbol}{$ $}
+\begin{proof}
+    \begin{enumerate}[(i)]
+        \renewcommand{\qedsymbol}{$\blacksquare$}
+        \item To show that $\SpanLA(v_1,v_2,v_3,v_4)=\SpanLA(v_1,v_2,v_3)$, we need to show that $\SpanLA(v_1,v_2,v_3,v_4)\subseteq\SpanLA(v_1,v_2,v_3)$ and $\SpanLA(v_1,v_2,v_3)\subseteq\SpanLA(v_1,v_2,v_3,v_4)$.
+        
+        Let $x\in\SpanLA(v_1,v_2,v_3)$. Then, there exist $\lam_1,\lam_2,\lam_3\in\F$ such that
+        \[
+            \begin{aligned}
+                x=\lam_1v_1+\lam_2v_2+\lam_3v_3
+            \end{aligned}    
+        \]
+        Choose $\lam_4=0\in\F$, and $x=\lam_1v_1+\lam_2v_2+\lam_3v_3+\lam_4v_4$. Hence, $x\in\SpanLA(v_1,v_2,v_3,v_4)$, or $\SpanLA(v_1,v_2,v_3)\subseteq\SpanLA(v_1,v_2,v_3,v_4)$. (1)
+        
+        Conversely, let $x\in\SpanLA(v_1,v_2,v_3,v_4)$. Then, there exist $\lam_1,\lam_2,\lam_3,\lam_4$ such that
+        \[
+            \begin{aligned}
+                x=\lam_1v_1+\lam_2v_2+\lam_3v_3+\lam_4v_4
+            \end{aligned}
+        \]  
+        Let $\lam_2=\lam_2'-\lam_4$ and $\lam_3=\lam_3'-2\lam_4$, where $\lam_2',\lam_3'\in\F$. Then
+        \[
+            \begin{aligned}
+                x &= \lam_1v_1+\lam_2v_2+\lam_3v_3+\lam_4v_4\\
+                  &= \lam_1v_1+(\lam_2'-\lam_4)v_2+(\lam_3'-2\lam_4)v_3+\lam_4v_4\\
+                  &= \lam_1v_1+\lam_2'v_2+\lam_3'v_3+\lam_4(-v_2-2v_3+v_4)
+            \end{aligned}  
+        \]
+        However, since $v_4-v_2-2v_3=\vec{0}$, it follows that $x=\lam_1'v_1+\lam_2'v_2+\lam_3'v_3\in\SpanLA(v_1,v_2,v_3)$. Hence, $\SpanLA(v_1,v_2,v_3,v_4)\subseteq\SpanLA(v_1,v_2,v_3)$. (2)
+
+        Therefore, from (1) and (2), it follows that $\SpanLA(v_1,v_2,v_3,v_4)=\SpanLA(v_1,v_2,v_3)$.\qed
+        \item To show that $\SpanLA(v_1,v_2,v_3)=\R^3$, we need to prove that $a$
+    \end{enumerate}
+\end{proof}
