@@ -67,9 +67,19 @@
         \]
         This equation can be reduced to
         \begin{align*}
-            \begin{cases}
-                a
+            &\begin{cases}
+                \lam_1+\lam_2  &= 1\\
+                \lam_1+2\lam_2 &= 3\\
+                \lam_1+3\lam_2 &= 4
+            \end{cases}\\\iff
+            &\begin{cases}
+                \lam_1         &= 1\\
+                \lam_2         &= 2\\
+                \lam_2         &= 1
             \end{cases}
         \end{align*}
+        , which is impossible (since $\lam_2$ cannot be equal to both 1 and 2). Thus, there does not exist $\lam_1,\lam_2\in\R$ satisfying $\lam_1v_1+\lam_2v_2=x$, or $x\not\in\SpanLA(v_1,v_2)$. 
+        
+        Therefore, $\SpanLA(v_1,v_2)\not\subseteq\R^3$, or $\SpanLA(v_1,v_2)\not=\R^3$.\qed
     \end{enumerate}
 \end{proof}
