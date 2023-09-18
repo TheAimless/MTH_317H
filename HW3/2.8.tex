@@ -10,3 +10,43 @@
 
 
 \end{question}
+
+\begin{proof}
+    We will prove that the list of polynomials $p_1,p_2,p_3,p_4$ spans $\P_3$ and is linearly independent.
+
+    Let $(a_1,a_2,a_3,a_4)$ be a solution to $a_1p_1(x)+a_2p_2(x)+a_3p_3(x)+a_4p_4(x)=0$. Then, 
+    \[
+        \begin{aligned}
+            &\ \ \ \ a_1p_1(x)+a_2p_2(x)+a_3p_3(x)+a_4p_4(x)\\
+            &= a_1(1-x)+a_2(x^2+x)+a_3(x^3+x^2)+a_4x^3\\
+            &= a_1-a_1x+a_2x^2+a_2x+a_3x^3+a_3x^2+a_4x^3\\
+            &= a_1+(-a_1+a_2)x+(a_2+a_3)x^2+(a_3+a_4)x^3
+        \end{aligned}
+    \]
+    This reduces to 
+    \begin{align*}
+        &\begin{cases}
+            a_1      &= 0\\
+            -a_1+a_2 &= 0\\
+            a_2+a_3  &= 0\\
+            a_3+a_4  &= 0
+        \end{cases}\\\iff
+        &a_1=a_2=a_3=a_4=0 
+    \end{align*}
+    Hence, the only solution to $a_1p_1(x)+a_2p_2(x)+a_3p_3(x)+a_4p_4(x)=0$ is $a_1=a_2=a_3=a_4=0$, or the polynomials $p_1,p_2,p_3,p_4$ are linearly independent (1).
+
+    To show that $p_1,p_2,p_3,p_4$ spans $\P_3$, let $p\in\P_3$ such that $p(x)=a_0+a_1x+a_2x^2+a_3x^3$ for some $a_0,a_1,a_2,a_3\in\R$. Let $\alpha_1=a_0,\alpha_2=a_0+a_1,\alpha_3=-a_0-a_1+a_2,\alpha_4=a_0+a_1-a_2+a_3$. Then, 
+    \[
+        \begin{aligned}
+            &\ \ \ \ \alpha_1p_1(x)+\alpha_2p_2(x)+\alpha_3p_3(x)+\alpha_4p_4(x)\\
+            &= a_0(1-x)+(a_0+a_1)(x^2+x)+(-a_0-a_1+a_2)(x^3+x^2)+(a_0+a_1-a_2+a_3)x^3\\
+            &= a_0-a_0x+(a_0+a_1)x^2+(a_0+a_1)x+(-a_0-a_1+a_2)x^3+(-a_0-a_1+a_2)x^2\\
+            &\ \ \ +(a_0+a_1-a_2+a_3)x^3\\
+            &= a_0+a_1x+a_2x^2+a_3x^3\\
+            &=p(x)
+        \end{aligned}
+    \]
+    Hence, any $p\in\P_3$ can be written as a linear combination of $p_1,p_2,p_3,p_4$, or $p_1,p_2,p_3,p_4$ spans $\P_3$ (2).
+
+    Therefore, from (1) and (2), it follows that the list $p_1,p_2,p_3,p_4$ forms a basis of $\P_3$.
+\end{proof}
