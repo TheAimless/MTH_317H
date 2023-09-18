@@ -16,11 +16,44 @@
 \begin{proof}
     Let $B$ be a linearly independent list and $u\in\SpanLA(C)$. To show that $\SpanLA(B)=\SpanLA(C)$, we will prove that $\SpanLA(B)\subseteq\SpanLA(C)$ and $\SpanLA(C)\subseteq\SpanLA(B)$. 
 
-    Let $x\in\SpanLA(B)$. Then there exist $a_0,a_1,...,a_n$ such that 
+    Let $x\in\SpanLA(B)$. Then there exist $a_0,a_1,...,a_n\in\R$ such that 
     \[
         \begin{aligned}
             x=a_0u+a_1w_1+a_2w_2+...+a_nw_n
         \end{aligned}
     \]
+    However, since $u\in\SpanLA(C)$, there exist $b_0,b_1,...,b_n\in\R$ such that $u=b_0v+b_1w_1+...+b_nw_n$. We have 
+    \[
+        \begin{aligned}
+            x &= a_0u+a_1w_1+a_2w_2+...+a_nw_2\\
+              &= a_0(b_0v+b_1w_1+b_2w_2+...+b_nw_2)+a_1w_1+a_2w_2+...+a_nw_2\\
+              &= a_0b_0v+(a_0b_1+a_1)w_1+(a_0b_2+a_2)w_2+...+(a_0b_n+a_n)w_n
+        \end{aligned}
+    \]
+    Thus, $x$ can be written as a linear combination of vectors in $C$, or $x\in\SpanLA(C)$. Hence, $\SpanLA(B)\subseteq\SpanLA(C)$ (1).
 
+    Conversely, we will prove that $\SpanLA(C)\subseteq\SpanLA(B)$ by contradiction. Assume the contrary. Then there exists $x\in\SpanLA(C)$ such that $x\not\in\SpanLA(B)$. Write $x=a_0v+a_1w_1+...+a_nw_n$, where $a_0,a_1,...,a_n\in\R$.
+
+    Since $u\in\SpanLA(C)$, there exist $b_0,b_1,...,b_n\in\R$ such that 
+    \[
+        \begin{aligned}
+            u=b_0v+b_1w_1+...+b_nw_n
+        \end{aligned}
+    \]
+    However, since $B$ is a linearly independent list, $u$ cannot be written as a linear combination of $w_1,w_2,...,w_n$, or 
+    \[
+        \begin{aligned}
+            u\not=b_1w_1+b_2v_2+...+b_nv_n
+        \end{aligned}
+    \]
+    Thus, $b_0\not=0$, or $\frac{a_0u}{b_0}=a_0v+\frac{a_0b_1w_1}{b_0}+\frac{a_0b_2w_2}{b_0}+...+\frac{a_0b_nw_n}{b_0}$. We have 
+    \[
+        \begin{aligned}
+            x-\frac{a_0u}{b_0} &= (a_0v+a_1w_1+a_2w_2+...+a_nw_n)-(a_0v+\frac{a_0b_1w_1}{b_0}+\frac{a_0b_2w_2}{b_0}+...+\frac{a_0b_nw_n}{b_0})\\
+                               &= 0v+(a_1-\frac{a_0b_1}{b_0})w_1+(a_2-\frac{a_0b_2}{b_0})w_2+...+(a_n-\frac{a_0b_n}{b_0})w_n
+        \end{aligned}
+    \]  
+    , which is a linear combination of the vectors $v,w_1,w_2,...,w_n$. Hence, $x-\frac{a_0u}{b_0}\in\SpanLA(C)$. But since $\SpanLA(C)$ is a subspace of $V$, vector addition and scalar multiplication is closed under $\SpanLA(C)$. Thus, for $u\in\SpanLA(C)$, $\frac{a_0u}{b_0}\in\SpanLA(C)$ and $x=(x-\frac{a_0u}{b_0})+\frac{a_0u}{b_0}\in\SpanLA(C)$, contradicting our above assumption ($x\not\in\SpanLA(C)$). Hence, $\SpanLA(C)\subseteq\SpanLA(B)$ (2).
+
+    Therefore, from (1) and (2), it follows that $\SpanLA(B)=\SpanLA(C)$
 \end{proof}

@@ -20,13 +20,13 @@
         \renewcommand{\qedsymbol}{$\blacksquare$}
         \item To show that $\SpanLA(v_1,v_2,v_3,v_4)=\SpanLA(v_1,v_2,v_3)$, we need to show that\\ $\SpanLA(v_1,v_2,v_3,v_4)\subseteq\SpanLA(v_1,v_2,v_3)$ and $\SpanLA(v_1,v_2,v_3)\subseteq\SpanLA(v_1,v_2,v_3,v_4)$.
         
-        Let $x\in\SpanLA(v_1,v_2,v_3)\subseteq\R^3$. Then, there exist $\lam_1,\lam_2,\lam_3\in\F$ such that
+        Let $x\in\SpanLA(v_1,v_2,v_3)\subseteq\R^3$. Then, there exist $\lam_1,\lam_2,\lam_3\in\R$ such that
         \[
             \begin{aligned}
                 x=\lam_1v_1+\lam_2v_2+\lam_3v_3
             \end{aligned}    
         \]
-        Choose $\lam_4=0\in\F$. Then, $x=\lam_1v_1+\lam_2v_2+\lam_3v_3+\lam_4v_4$. Hence, $x\in\SpanLA(v_1,v_2,v_3,v_4)$, or $\SpanLA(v_1,v_2,v_3)\subseteq\SpanLA(v_1,v_2,v_3,v_4)$. (1)
+        Choose $\lam_4=0\in\R$. Then, $x=\lam_1v_1+\lam_2v_2+\lam_3v_3+\lam_4v_4$. Hence, $x\in\SpanLA(v_1,v_2,v_3,v_4)$, or $\SpanLA(v_1,v_2,v_3)\subseteq\SpanLA(v_1,v_2,v_3,v_4)$. (1)
         
         Conversely, let $x\in\SpanLA(v_1,v_2,v_3,v_4)$. Then, there exist $\lam_1,\lam_2,\lam_3,\lam_4$ such that
         \[
@@ -34,7 +34,7 @@
                 x=\lam_1v_1+\lam_2v_2+\lam_3v_3+\lam_4v_4
             \end{aligned}
         \]  
-        Let $\lam_2'=\lam_2+\lam_4\in\F$ and $\lam_3'=\lam_3+2\lam_4\in\F$. Then
+        Let $\lam_2'=\lam_2+\lam_4\in\R$ and $\lam_3'=\lam_3+2\lam_4\in\F$. Then
         \[
             \begin{aligned}
                 x &= \lam_1v_1+\lam_2v_2+\lam_3v_3+\lam_4v_4\\
