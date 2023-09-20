@@ -31,7 +31,11 @@
     Moreover, let $s=e_1,e_2,e_3,e_4\in\P_3$ be a canonical basis for $\P_3$ such that $e_1=1,e_2=x,e_3=x^2,e_4=x^3$. We have
     \begin{align*}
         \begin{cases}
-            e_1(x)=
+            &e_1(x)=1=\frac{1}{2}(p_1(x)+p_2(x))\\
+            &e_2(x)=x=p_3(x)\\
+            &e_3(x)=x^2=\frac{1}{2}(p_1(x)-p_2(x))\\
+            &e_4(x)=x^3=p_4(x)
         \end{cases}
     \end{align*}
+    Hence, $e_1,e_2,e_3,e_4\in\SpanLA(p_1,p_2,p_3,p_4)$. But since $e_1,e_2,e_3,e_4$ is the canonical basis for $\P^3$, any vector in $\P_3$ can be written as a linear combination of vectors in $s$. But since $e_1,e_2,e_3,e_4$ can be written as linear combinations of vectors in $\ell'$, 
 \end{sol}
