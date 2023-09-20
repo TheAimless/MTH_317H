@@ -26,15 +26,15 @@
                 x=\lam_1v_1+\lam_2v_2+\lam_3v_3
             \end{aligned}    
         \]
-        Choose $\lam_4=0\in\R$. Then, $x=\lam_1v_1+\lam_2v_2+\lam_3v_3+\lam_4v_4$. Hence, $x\in\SpanLA(v_1,v_2,v_3,v_4)$, or $\SpanLA(v_1,v_2,v_3)\subseteq\SpanLA(v_1,v_2,v_3,v_4)$. (1)
+        Let $\lam_4=0\in\R$. Then, $x=\lam_1v_1+\lam_2v_2+\lam_3v_3+\lam_4v_4$. Hence, $x\in\SpanLA(v_1,v_2,v_3,v_4)$, or $\SpanLA(v_1,v_2,v_3)\subseteq\SpanLA(v_1,v_2,v_3,v_4)$. (1)
         
-        Conversely, let $x\in\SpanLA(v_1,v_2,v_3,v_4)$. Then, there exist $\lam_1,\lam_2,\lam_3,\lam_4$ such that
+        Conversely, let $x\in\SpanLA(v_1,v_2,v_3,v_4)$. Then, there exist $\lam_1,\lam_2,\lam_3,\lam_4\in\R$ such that
         \[
             \begin{aligned}
                 x=\lam_1v_1+\lam_2v_2+\lam_3v_3+\lam_4v_4
             \end{aligned}
         \]  
-        Let $\lam_2'=\lam_2+\lam_4\in\R$ and $\lam_3'=\lam_3+2\lam_4\in\F$. Then
+        Let $\lam_2'=\lam_2+\lam_4\in\R$ and $\lam_3'=\lam_3+2\lam_4\in\R$. We have
         \[
             \begin{aligned}
                 x &= \lam_1v_1+\lam_2v_2+\lam_3v_3+\lam_4v_4\\
@@ -42,7 +42,7 @@
                   &= \lam_1v_1+\lam_2'v_2+\lam_3'v_3+\lam_4(-v_2-2v_3+v_4)
             \end{aligned}  
         \]
-        However, since $v_4-v_2-2v_3=\vec{0}$, it follows that $x=\lam_1'v_1+\lam_2'v_2+\lam_3'v_3\in\SpanLA(v_1,v_2,v_3)$. Hence, $\SpanLA(v_1,v_2,v_3,v_4)\subseteq\SpanLA(v_1,v_2,v_3)$. (2)
+        However, since $v_4-v_2-2v_3=\ColVecThree{3}{2}{5}-\ColVecThree{1}{2}{3}-2\ColVecThree{1}{0}{1}=\ColVecThree{0}{0}{0}$, it follows that $x=\lam_1'v_1+\lam_2'v_2+\lam_3'v_3\in\SpanLA(v_1,v_2,v_3)$. Hence, $\SpanLA(v_1,v_2,v_3,v_4)\subseteq\SpanLA(v_1,v_2,v_3)$. (2)
 
         Therefore, from (1) and (2), it follows that $\SpanLA(v_1,v_2,v_3,v_4)=\SpanLA(v_1,v_2,v_3)$.\qed
         \item To show that $\SpanLA(v_1,v_2,v_3)=\R^3$, we need to prove that $\SpanLA(v_1,v_2,v_3)\subseteq\R^3$ and $\R^3\subseteq\SpanLA(v_1,v_2,v_3)$.

@@ -22,9 +22,9 @@
     \renewcommand{\qedsymbol}{$ $}
     \begin{enumerate}[(i)]
         \renewcommand{\qedsymbol}{$\blacksquare$}
-        \item Choose $a_1=0, a_2=1, a_3=2, a_4=-1$. Then, $a_1,a_2,a_3,a_4$ are not all 0 and $a_1v_1+a_2v_2+a_3v_3+a_4v_4=\ColVecThree{0}{0}{0}+\ColVecThree{1}{2}{3}+\ColVecThree{2}{0}{2}+\ColVecThree{-3}{-2}{-5}=\ColVecThree{0}{0}{0}$. Therefore, $v_1,v_2,v_3,v_4$ is a linearly dependent list.\qed
+        \item Choose $a_1=0, a_2=1, a_3=2, a_4=-1$. Then, $a_1,a_2,a_3,a_4$ are not all 0 and $a_1v_1+a_2v_2+a_3v_3+a_4v_4=\ColVecThree{0}{0}{0}+\ColVecThree{1}{2}{3}+\ColVecThree{2}{0}{2}+\ColVecThree{-3}{-2}{-5}=\ColVecThree{0}{0}{0}$. Since we have found a non-trivial solution to the equation $a_1v_1+a_2v_2+a_3v_3+a_4v_4=\vec{0}$, $v_1,v_2,v_3,v_4$ must be a linearly dependent list.\qed
         \item Let $a_1=0, a_2=1, a_3=2$. Then, $a_1v_1+a_2v_2+a_3v_3=\ColVecThree{0}{0}{0}+\ColVecThree{1}{2}{3}+\ColVecThree{2}{0}{2}=\ColVecThree{3}{2}{5}=v_4$. Therefore, $v_4\in\SpanLA(v_1,v_2,v_3)$.\qed
-        \item Assume the contrary. Then there exists $a_2,a_3,a_4\in\R$ such that $v_1=a_2v_2+a_3v_3+a_4v_4$. We have
+        \item Assume the contrary. Then, there exist $a_2,a_3,a_4\in\R$ such that $v_1=a_2v_2+a_3v_3+a_4v_4$. We have
               \[
                   \begin{aligned}
                       \ColVecThree{1}{1}{1} & = a_2 \ColVecThree{1}{2}{3}+a_3 \ColVecThree{1}{0}{1}+a_4 \ColVecThree{3}{2}{5}          \\
@@ -52,6 +52,6 @@
                          a_3+2a_4  & = -0.5
                      \end{cases}
               \end{align*}
-              , which is impossible (since $a_3+2a_4$ cannot be both 1.5 and -0.5). Therefore, $v_1\not\in\SpanLA{(v_2,v_3,v_4)}$.\qed
+              , which is impossible (since $a_3+2a_4$ cannot be equal to both 1.5 and -0.5). Therefore, $v_1\not\in\SpanLA{(v_2,v_3,v_4)}$.\qed
     \end{enumerate}
 \end{proof}
