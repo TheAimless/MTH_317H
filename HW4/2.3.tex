@@ -9,3 +9,29 @@
 	\end{align*}
 	Add vectors to the list, $\ell$, so that it becomes a basis for $\P_3$.  Prove that your new list is both linearly independent and that it spans $\P_3$.
 \end{question}
+
+\begin{sol}
+    Let $p_3,p_4\in\P_3$ such that 
+    \[
+        \begin{aligned}
+            p_3(x)=x,\ \ \
+            p_4(x)=x^3
+        \end{aligned}
+    \]
+    To prove that the new list $\ell'=p_1,p_2,p_3,p_4$ is both linearly independent and spans $\P_3$, let $a,b,c,d\in\R$ be solution to $ap_1+bp_2+cp_3+dp_4=\vec{0}$. We have 
+    \[
+        \begin{aligned}
+            0 &= ap_1(x)+bp_2(x)+cp_3(x)+dp_4(x)\\
+              &= a(1+x^2)+b(1-x^2)+cx+dx^3\\
+              &= (a+b)+cx+(a-b)x^2+dx^3   
+        \end{aligned}
+    \]
+    Then, for $(a+b)+cx+(a-b)x^2+dx^3=0$ for any $x\in\R$, $a+b=c=a-b=d=0$, or $a=b=c=d=0$. Hence, the only solution to $ap_1+bp_2+cp_3+dp_4=\vec{0}$ is the trivial solution, or $\ell'$ is linearly.
+
+    Moreover, let $s=e_1,e_2,e_3,e_4\in\P_3$ be a canonical basis for $\P_3$ such that $e_1=1,e_2=x,e_3=x^2,e_4=x^3$. We have
+    \begin{align*}
+        \begin{cases}
+            e_1(x)=
+        \end{cases}
+    \end{align*}
+\end{sol}
