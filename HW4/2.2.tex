@@ -18,3 +18,61 @@
 	\end{enumerate}
 
 \end{question}
+\begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
+    \begin{enumerate}[(i)]
+        \item We have:
+        \begin{align*}
+            \begin{cases}
+                &-0.5x_1+0.5x_2+x_3
+                =\ColVecThree{-0.5}{-1}{-1.5}+\ColVecThree{0.5}{1}{0.5}+\ColVecThree{1}{0}{1}
+                =\ColVecThree{1}{0}{0}
+                =e_1\\
+                &0.5x_2-0.5x_3
+                =\ColVecThree{0.5}{1}{0.5}-\ColVecThree{0.5}{0}{0.5}
+                =\ColVecThree{0}{1}{0}
+                =e_2\\
+                &0.5x_1-0.5x_2
+                =\ColVecThree{0.5}{1}{1.5}-\ColVecThree{0.5}{1}{0.5}
+                =\ColVecThree{0}{0}{1}
+                =e_3
+            \end{cases}
+        \end{align*}
+        Thus, $e_1,e_2,e_3\in\SpanLA(\ell)$. However, since $e_1,e_2,e_3$ is the canonical basis of $\R^3$, any vector in $\R^3$ can be written as a linear combination of $e_1,e_2,e_3$. Hence, any vector in $\R^3$ can be written as a linear combination of $x_1,x_2,x_3$, or $\R^3\subseteq\SpanLA(\ell)$.
+        In addition, because $x_1,x_2,x_3\in\R^3$, $\SpanLA(\ell)\subseteq\R^3$. Therefore, $\SpanLA(\ell)=\R^3$ (1).
+
+        Moreover, to show that $x_1,x_2,x_3$ are linearly independent vectors, let $a,b,c\in\R$ be solution to $ax_1+bx_2+cx_3=\vec{0}$. We have 
+        \[
+            \begin{aligned}
+                \ColVecThree{0}{0}{0}
+                &= ax_1+bx_2+cx_3\\
+                &= \ColVecThree{a}{2a}{3a}+\ColVecThree{b}{2b}{b}+\ColVecThree{c}{0}{c}\\
+                &= \ColVecThree{a+b+c}{2a+2b}{3a+b+c}
+            \end{aligned}
+        \]
+        , which can be reduced to
+        \begin{align*}
+            &\begin{cases}
+                a+b+c  &= 0\\
+                2a+2b  &= 0\\
+                3a+b+c &= 0
+            \end{cases}\\\iff
+            &\begin{cases}
+                a+b+c  &= 0\\
+                a+b    &= 0\\
+                2a     &= 0
+            \end{cases}\\\iff
+            &\begin{cases}
+                c      &= 0\\
+                a      &= 0\\
+                b      &= 0
+            \end{cases}
+        \end{align*}
+        Hence, the only solution to the equation $ax_1+bx_2+cx_3=\vec{0}$ is the trivial solution ($a=b=c=0$), or $x_1,x_2,x_3$ are linearly independent (2). 
+
+        From (1) and (2), it follows that $\ell$ is a basis of $\R^3$.\qed
+        \item We have: $\dim(\R^3)=3$. Then, for $\ell$ to be a basis for $\R^3$, $\ell$ must have a length of 3 and be linearly independent (Theorem 2.39 Section 2C LADR). However, since $\ell$ comprises three vectors and is linearly independent as proven in part (i), it follows that $\ell$ forms a basis of $\R^3$.\qed
+        \item The method stated in part (ii) is preferable as the list length requirement is both easier to check than the spanning requirement.
+    \end{enumerate}
+    \renewcommand{\qedsymbol}{}
+\end{proof}
