@@ -20,13 +20,13 @@
 \begin{proof}
     \begin{enumerate}[(i)]
         \renewcommand{\qedsymbol}{$\blacksquare$}
-        \item Let $C=A\intersect B=\{u_1,...,u_p\}$ where $p$ is non-negative and $u_1,...,u_p\in C$.
+        \item Let $C=A\intersect B=\{u_1,...,u_p\}$ where $p$ is non-negative and $u_1,...,u_p\in V$.
         Then, for any $x\in\SpanLA(A\intersect B)$, $x$ can be written as $x=a_1u_1+...+a_pu_p$, with $a_1,...,a_p\in\R$. 
 
         Since $\{u_1,...,u_p\}=A\intersect B$, $u_1,...,u_p$ are elements of $A$. Hence, $x$ is a linear combination of vectors in $A$, or $x\in\SpanLA(A)$.
         Similarly, $x\in\SpanLA(B)$. Therefore, $x\in\SpanLA(A)\intersect\SpanLA(B)$, or $\SpanLA(A\intersect B)\subseteq\SpanLA(A)\intersect\SpanLA(B)$.\qed
         \item Let $A=\left\{ \ColVecThree{1}{1}{1}\right \}$ and $B=\left\{\ColVecThree{2}{2}{2}\right\}$. Then, $A\intersect B=\emptyset$, or $\SpanLA(A\intersect B)=\emptyset$.
         
-        However, since both $\SpanLA(A)$ and $\SpanLA(B)$ are subspaces of $V$, the zero vector $z\in V$ belongs to both $\SpanLA(A)$ and $\SpanLA(B)$. Therefore, $\SpanLA(A)\intersect\SpanLA(B)\not=\emptyset=\SpanLA(A\intersect B)$, or $\SpanLA(A)\intersect\SpanLA(B)\not\subseteq\SpanLA(A\intersect B)$.\qed
+        However, since both $\SpanLA(A)$ and $\SpanLA(B)$ are subspaces of $V$, the zero vector $z\in V$ belongs to both $\SpanLA(A)$ and $\SpanLA(B)$. Therefore, $\SpanLA(A)\intersect\SpanLA(B)\not=\emptyset=\SpanLA(A\intersect B)$, or $\SpanLA(A)\intersect\SpanLA(B)\not\subseteq\SpanLA(A\intersect B)$.
     \end{enumerate}
 \end{proof}
