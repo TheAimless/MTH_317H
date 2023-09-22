@@ -23,3 +23,33 @@
 		Determine if the list of vectors \hspace{.1cm}  $ u_1, u_2, u_3, u_4 $  \hspace{.1cm} is linearly dependent or is linearly independent.  Justify your answer with a proof.	
 	\end{enumerate}
 \end{question}
+
+\begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
+    \begin{enumerate}[(i)]
+        \item No. Since $w_1-w_2+w_3-w_4=(v_1+v_2)-(v_2+v_3)+(v_3+v_4)-(v_4+v_1)=\vec{0}$, there exists a non-trivial solution to the equation $a_1w_1+a_2w_2+a_3w_3+a_4w_4=\vec{0}$, or the list of vectors $w_1,w_2,w_3,w_4$ is linearly dependent.\qed
+        \item Let $a_1,a_2,a_3,a_4\in\R$ be solution to $a_1u_1+a_2u_2+a_3u_3+a_4u_4=\vec{0}$. Then 
+        \[
+            \begin{aligned}
+                a_1u_1+a_2u_2+a_3u_3+a_4u_4
+                &= a_1(v_1+v_2)+a_2(v_2+v_3)+a_3(v_3+v_4)+a_4(v_4-v_1)\\
+                &= (a_1-a_4)v_1+(a_1+a_2)v_2+(a_2+a_3)v_3+(a_3+a_4)v_4\\
+                &= \vec{0}
+            \end{aligned}
+        \]
+        However, since $v_1,v_2,v_3,v_4$ is a linearly independent list of vectors in $V$, the only solution to the equation $(a_1-a_4)v_1+(a_1+a_2)v_2+(a_2+a_3)v_3+(a_3+a_4)v_4=\vec{0}$ is $a_1-a_4=a_1+a_2=a_2+a_3=a_3+a_4=0$, or
+        \begin{align*}
+            &\begin{cases}
+                a_1 &=a_4\\
+                a_1 &=-a_2\\
+                -a_2&=a_3\\
+                a_3 &=-a_4
+            \end{cases}\\\implies
+            &a_4=a_1=-a_2=a_3=-a_4\\\implies
+            &a_1=a_2=a_3=a_4=0
+        \end{align*}
+        Thus, the only solution to $a_1u_1+a_2u_2+a_3u_3+a_4u_4=\vec{0}$ is the trivial solution, or the list of vectors $u_1,u_2,u_3,u_4$ is linearly independent.\qed
+    \end{enumerate}
+    
+    \renewcommand{\qedsymbol}{}
+\end{proof}
