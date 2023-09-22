@@ -10,7 +10,8 @@
 	Add vectors to the list, $\ell$, so that it becomes a basis for $\P_3$.  Prove that your new list is both linearly independent and that it spans $\P_3$.
 \end{question}
 
-\begin{sol}
+\begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
     Let $p_3,p_4\in\P_3$ such that 
     \[
         \begin{aligned}
@@ -26,16 +27,8 @@
               &= (a+b)+cx+(a-b)x^2+dx^3   
         \end{aligned}
     \]
-    Then, for $(a+b)+cx+(a-b)x^2+dx^3=0$ for any $x\in\R$, $a+b=c=a-b=d=0$, or $a=b=c=d=0$. Hence, the only solution to $ap_1+bp_2+cp_3+dp_4=\vec{0}$ is the trivial solution, or $\ell'$ is linearly.
+    Then, for $(a+b)+cx+(a-b)x^2+dx^3=0$ for any $x\in\R$, $a+b=c=a-b=d=0$, or $a=b=c=d=0$. Hence, the only solution to $ap_1+bp_2+cp_3+dp_4=\vec{0}$ is the trivial solution, or $\ell'$ is linearly independent.
 
-    Moreover, let $s=e_1,e_2,e_3,e_4\in\P_3$ be a canonical basis for $\P_3$ such that $e_1=1,e_2=x,e_3=x^2,e_4=x^3$. We have
-    \begin{align*}
-        \begin{cases}
-            &e_1(x)=1=\frac{1}{2}(p_1(x)+p_2(x))\\
-            &e_2(x)=x=p_3(x)\\
-            &e_3(x)=x^2=\frac{1}{2}(p_1(x)-p_2(x))\\
-            &e_4(x)=x^3=p_4(x)
-        \end{cases}
-    \end{align*}
-    Hence, $e_1,e_2,e_3,e_4\in\SpanLA(p_1,p_2,p_3,p_4)$. But since $e_1,e_2,e_3,e_4$ is the canonical basis for $\P^3$, any vector in $\P_3$ can be written as a linear combination of vectors in $s$. But since $e_1,e_2,e_3,e_4$ can be written as linear combinations of vectors in $\ell'$, 
-\end{sol}
+    Since $\ell'$ has four vectors and all four vectors in $\P_3$ are linearly independent, from Theorem 2.39 Section 2.C LADR it follows that $\ell'$ forms a basis for $\P_3$. It follows that $\ell'$ spans $\P_3$.
+    Therefore, $\ell'$ is both linearly independent and spans $\P_3$
+\end{proof}
