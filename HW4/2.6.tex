@@ -16,3 +16,32 @@
 
 	
 \end{question}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\begin{proof}
+    \begin{enumerate}[(i)]
+        \item Since $v_1,v_2,v_3$ is a linearly dependent list of vectors, let $a_1,a_2,a_3\in\R$ such that $a_1,a_2,a_3$ are not all zero and $a_1v_1+a_2v_2+a_3v_3=\vec{0}$.
+        
+        Suppose $a_1=0$. Then, $a_2,a_3$ are not all zero and $a_2v_2+a_3v_3=\vec{0}$. It follows that $a_2v_2+a_3v_3+0w=\vec{0}$. But since $a_2,a_3$ are not all zero, $a_2,a_3,w$ must be linearly dependent, contradicting our problem statement.
+        Therefore, $a_1\not=0$, or 
+        \[
+            \begin{aligned}
+                v_1=-\frac{a_2}{a_1}v_2-\frac{a_3}{a_1}v_3
+            \end{aligned}
+        \]
+        , meaning $v_1$ is a linear combination of $v_2$ and $v_3$.\qed
+        \item Since $v_1$ is a linear combination of $v_2,v_3$, there exist $a_2,a_3\in\R$ such that $v_1=a_2v_2+a_3v_3$.
+        Suppose $w$ is a linear combination of $v_1,v_2,v_3$. Then, there exist $b_1,b_2,b_3\in\R$ such that $w=b_1v_1+b_2v_2+b_3v_3$. We have 
+        \[
+            \begin{aligned}
+                w &= b_1v_1+b_2v_2+b_3v_3\\
+                  &= b_1(a_2v_2+a_3v_3)+b_2v_2+b_3v_3\\
+                  &= (b_1a_2+b_2)v_2+(b_1a_3+b_3)v_3\\
+                \implies
+                &\quad \ (b_1a_2+b_2)v_2+(b_1a_3+b_3)v_3-w=\vec{0}
+            \end{aligned}
+        \]  
+        Thus, there exists a non-trivial solution to the equation $x_1w+x_2v_2+x_3v_3=\vec{0}$, or $v_2,v_3,w$ is a linearly dependent list of vectors, contradicting the problem statement. Therefore, $w$ cannot be a linear combination of $v_1,v_2,v_3$.\qed
+    \end{enumerate}
+    
+    \renewcommand{\qedsymbol}{}
+\end{proof}
