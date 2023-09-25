@@ -19,3 +19,36 @@
 		\item Use the results of LADR 2.C to show that $C$ is a basis of $V$.
 	\end{enumerate}
 \end{question}
+
+\begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
+    \begin{enumerate}[(i)]
+        \item Let $a_1,a_2,a_3,a_4\in\R$ be solution to $a_1w_1+a_2w_2+a_3w_3+a_4w_4=\vec{0}$. We have 
+        \[
+            \begin{aligned}
+                \vec{0} &= a_1w_1+a_2w_2+a_3w_3+a_4w_4\\
+                        &= a_1(v_1+v_2)+a_2(v_2+v_3)+a_3v2+a_4(v_2+v_4)\\
+                        &= a_1v_1+(a_1+a_2+a_3)v_2+a_2v_3+a_4v_4      
+            \end{aligned}
+        \]
+        However, since $v_1,v_2,v_3,v_4$ is a basis for $V$, the only solution to $a_1v_1+(a_1+a_2+a_3)v_2+a_2v_3+a_4v_4=\vec{0}$ is $a_1=a_1+a_2+a_3=a_2=a_4=0$, or $a_1=a_2=a_3=a_4=0$.
+        Hence, the only solution to $a_1w_1+a_2w_2+a_3w_3+a_4w_4=\vec{0}$ is the trivial solution, or $C$ is a linearly independent list (1).
+        
+        Let $x\in V$ be arbitrary. Since $v_1,v_2,v_3,v_4$ is a basis for $V$, there exist $a_1,a_2,a_3,a_4\in\R$ such that $a_1v_1+a_2v_2+a_3v_3+a_4v_4=x$.
+        We have 
+        \[
+            \begin{aligned}
+                &\quad \ a_1w_1+a_2w_2-(a_1+a_2-a_3+a_4)w_3+a_4w_4\\
+                &= a_1(v_1+v_2)+a_3(v_2+v_3)-(a_1-a_2+a_3+a_4)w_3+a_4(v_2+v_4)\\
+                &= a_1v_1+(a_1+a_3+a_4-a_1-a_3-a_4+a_2)v_2+a_3v_3+a_4v_4\\
+                &= a_1v_1+a_2v_2+a_3v_3+a_4v_4\\
+                &= x
+            \end{aligned}
+        \]
+        Hence, $x$ can be written as a linear combination of $w_1,w_2,w_3,w_4$, or $x\in\SpanLA(C)$. But since $x\in V$ arbitrary, it follows that $C$ spans $V$ (2).
+
+        From (1) and (2), it follows that $C$ is a basis for $V$.\qed
+        \item We have already proven that $C$ is linearly independent in (i). Since $B$ is a basis for $V$ and $B$ has four vectors, $\dim(V)=4$. However, because $C$ also contains four vectors, from Theorem 2.39 Section 2C LADR, it follows that $C$ must be a basis for $V$.\qed
+    \end{enumerate}
+    \renewcommand{\qedsymbol}{}
+\end{proof}
