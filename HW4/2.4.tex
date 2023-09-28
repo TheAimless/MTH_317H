@@ -10,9 +10,9 @@
 \renewcommand{\qedsymbol}{$\blacksquare$}
 \begin{proof}
     \begin{enumerate}[(i)]
-        \item No. Assume the contrary. Then, there exists a solution to the equation $x^4=a_1q_1(x)+a_2q_2(x)+...+a_mq_m(x)$ for some $a_1,a_2,...,a_m\in\R$ and the coefficient for $x^4$ of $q_1,...,q_m$ is $0$.
+        \item No. Assume the contrary. Then, there exists a solution to the equation $x^4=a_1q_1(x)+a_2q_2(x)+...+a_mq_m(x)$ for some $a_1,a_2,...,a_m\in\R$ and the coefficient for $x^4$ of the vectors $q_1,...,q_m$ is $0$.
         However, that means the coefficients of $x^4$ for $a_1q_1(x),a_2q_2(x),...,a_mq_m(x)$ must be 0, or the coefficients for $x^4$ of $a_1q_1(x)+a_2q_2(x)+...+a_mq_m(x)$ is zero. But since $x^4=a_1q_1(x)+a_2q_2(x)+...+a_mq_m(x)$, this leads to a contradiction. Therefore, it is not possible that there is no polynomial in $B$ of degree 4.\qed
-        \item Let $q_1,q_2,q_3,q_4,q_5\in\P_4$ such that $q_1(x)=1,q_2(x)=x,q_3(x)=x^3-x^2,q_4(x)=x^3+x^2,q_5(x)=x^4$. Let $B=q_1,q_2,q_3,q_4,q_5$. Then, no polynomial in $B$ has degree 2. We will prove that $B$ is a basis for $P_4$.
+        \item Let $q_1,q_2,q_3,q_4,q_5\in\P_4$ such that $q_1(x)=1,q_2(x)=x,q_3(x)=x^3-x^2,q_4(x)=x^3+x^2,q_5(x)=x^4$. Then, $B$ has no polynomial of degree 2. We will prove that $B$ is a basis for $P_4$.
         
         To show that $B$ is linearly independent, let $a_1,a_2,a_3,a_4,a_5\in\R$ such that $a_1q_1+a_2q_2+a_3q_3+a_4q_4+a_5q_5=\vec{0}$. It follows that 
         \[
@@ -38,7 +38,7 @@
 
         Moreover, since $\dim(\P_4)=5$ and $B$ has a length of 5, from Theorem 2.39 Section 2C LADR it follows that $B$ is a basis for $\P_4$.
         Therefore, it is possible that no polynomial in $B$ has degree 2.\qed
-        \item Since $\dim(\P_4)=5$, since $B$ is a basis for $\P_4$ it follows that $B$ must have a length of $5$, or $m=5$.
+        \item Since $\dim(\P_4)=5$, as $B$ is a basis for $\P_4$ it follows that $B$ must have a length of $5$, or $m=5$.\qed
     \end{enumerate}
     \renewcommand{\qedsymbol}{}
 \end{proof}
