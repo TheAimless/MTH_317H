@@ -1,0 +1,129 @@
+\begin{question}
+	\normalfont
+	
+	For each of the following functions, determine if it is linear or not, and justify your answer with a proof.
+	
+	
+	\begin{enumerate}[(i)]
+		\item Define $T:\P_4\to \P_4$ by 
+		\begin{align*}
+			(Tp)(x) =  x^2p''(x).
+		\end{align*}
+
+		\item Define $S:\P_4\to \P_4$ by 
+		\begin{align*}
+			(Sp)(x) =  p''(x) + x^2.
+		\end{align*}
+		
+		\item Define $H:\real^4\to \real^3$,  by 
+		\begin{align*}
+			 H(\ColVecFour{x_1}{x_2}{x_3}{x_4})=  \ColVecThree{x_1x_2}{x_1}{5x_3 + x_4}.
+		\end{align*}
+		\vspace{.3cm}
+		
+		\item Define $I:\real^4\to \real^3$ by 
+		\begin{align*}
+			 I(\ColVecFour{x_1}{x_2}{x_3}{x_4})=  \ColVecThree{x_1-3x_2}{x_1+7}{5x_3 + x_4}.
+		\end{align*}
+			\vspace{.3cm}
+			
+		\item Define  $J:\real^4\to \real^3$ by 
+		\begin{align*}
+			 J(\ColVecFour{x_1}{x_2}{x_3}{x_4})=  \ColVecThree{x_1-3x_2}{x_1}{5x_3 + x_4}.
+		\end{align*}
+	\end{enumerate}
+\end{question}
+
+\begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
+    \begin{enumerate}[(i)]
+        \item Let $p,q\in\P_4$ and $c\in\R$. We have 
+        \[
+            \begin{aligned}
+                (T(p+q))(x)
+                &= x^2(p+q)''(x)\\
+                &= x^2(p'+q')'(x)\\
+                &= x^2(p''+q'')(x)\\
+                &= x^2p''(x)+x^2q''(x)\\
+                &= (Tp)(x)+(Tq)(x)
+            \end{aligned}
+        \]
+        , and 
+        \[
+            \begin{aligned}
+                (T(cp))(x)
+                &= x^2(cp)''(x)\\
+                &= x^2(cp')'(x)\\
+                &= x^2cp''(x)\\
+                &= c(Tp)(x)
+            \end{aligned}
+        \]
+        Thus, $T$ satisfies the additivity and homogeneity properties, or $T$ is linear.\qed
+        \item No. Let $p,q\in\P_4$ such that $p(x)=1$ and $q(x)=x$. Then, 
+        \[
+            \begin{aligned}
+                (S(p+q))(x)
+                &= (p+q)''(x)+x^2\\
+                &= (1+x)''+x^2\\
+                &= x^2
+            \end{aligned}
+        \]
+        and 
+        \[
+            \begin{aligned}
+                (Sp)(x)+(Sq)(x)
+                &= (p''(x)+x^2)+(q''(x)+x^2)\\
+                &= 2x^2+1''+x''\\
+                &= 2x^2
+            \end{aligned}
+        \]
+        Thus, $S(p+q)\not=S(p)+S(q)$, or the additivity property does not hold. Therefore, $S$ is not linear.\qed
+        \item No. Let $u=\ColVecFour{1}{1}{1}{1}\in\R^4$ and $c=2$. Then 
+        \[
+            \begin{aligned}
+                H(cu) = H(\ColVecFour{2}{2}{2}{2}) = \ColVecThree{4}{2}{12}
+            \end{aligned}
+        \]
+        , while 
+        \[
+            \begin{aligned}
+                cH(u) = 2H(\ColVecFour{1}{1}{1}{1})
+                      = 2 \ColVecThree{1}{1}{6} = \ColVecThree{2}{2}{12}
+            \end{aligned}
+        \]
+        Thus, $H(cu)\not=cH(u)$, or the homogeneity property does not hold. Therefore, $H$ is not linear.\qed
+        \item No. Let $u=\ColVecFour{1}{0}{0}{0}\in\R^4$ and $c=2$. Then 
+        \[
+            \begin{aligned}
+                I(cu)=I(\ColVecFour{2}{0}{0}{0})=\ColVecThree{0}{9}{0}
+            \end{aligned}
+        \]
+        while 
+        \[
+            \begin{aligned}
+                cI(u)=2I(\ColVecFour{1}{0}{0}{0})=2\ColVecThree{0}{8}{0}=\ColVecThree{0}{16}{0}
+            \end{aligned}
+        \]
+        Thus, $I(cu)\not=cI(u)$, or the homogeneity property does not hold. Therefore, $I$ is not linear.\qed
+        \item Let $u,v\in\R^4$ and $c\in\R$ such that $u=\ColVecFour{x_1}{x_2}{x_3}{x_4}$ and $v=\ColVecFour{y_1}{y_2}{y_3}{y_4}$. We have 
+        \[
+            \begin{aligned}
+                J(u+v)&=J(\ColVecFour{x_1+y_1}{x_2+y_2}{x_3+y_3}{x_4+y_4})\\
+                &=\ColVecThree{(x_1+y_1)-3(x_2+y_2)}{x_1+y_1}{5(x_3+y_3)+(x_4+y_4)}\\
+                &=\ColVecThree{x_1-3x_2}{x_1}{5x_3+x_4}+\ColVecThree{y_1-3y_2}{y_1}{5y_3+y_4}=J(u)+J(v)
+            \end{aligned}
+        \]
+        and 
+        \[
+            \begin{aligned}
+                J(cu)=J(\ColVecFour{cx_1}{cx_2}{cx_3}{cx_4})
+                =\ColVecThree{cx_1-3cx_2}{cx_1}{5cx_3+cx_4}
+                =c \ColVecThree{x_1-3x_2}{x_1}{5x_3+x_4}
+                =cJ(u)
+            \end{aligned}
+        \]
+        Thus, both the additivity and homogeneity properties hold true for $J$, or $J$ is linear.\qed
+    \end{enumerate}
+    
+    \renewcommand{\qedsymbol}{}
+\end{proof}

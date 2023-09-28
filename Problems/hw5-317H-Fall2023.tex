@@ -1,0 +1,337 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb}
+\usepackage{epsfig}
+\usepackage{psfrag}
+\usepackage{fullpage}
+\usepackage{color}
+\usepackage{amsfonts,epsf}
+\usepackage{amsmath,amssymb,
+amscd,amsbsy, bbm, amsthm, enumerate, url}
+\usepackage{wasysym}
+
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{question}[thm]{Question}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{DEF}[thm]{Definition}
+\newtheorem{rem}[thm]{Remark}
+\newenvironment{sol}{\paragraph{Solution:}\color{red}}{\hfill$\square$}
+\newenvironment{grade}{\paragraph{grading:}\color{blue}}{\hfill$\square$}
+
+
+
+\def\real{{\mathbb R}}
+\def\Natural{\mathbb{N}}
+\def\Z{\mathbb{Z}}
+\def\integer{\mathbb{Z}}
+\def\dx{\textnormal{dx}}
+\def\dy{\textnormal{dy}}
+\def\dz{\textnormal{dz}}
+\def\dt{\textnormal{dt}}
+\def\ds{\textnormal{ds}}
+\def\dw{\textnormal{dw}}
+\def\Re{\textnormal{Re}}
+\def\Im{\textnormal{Im}}
+\def\Id{\textnormal{Id}}
+\def\exp{\textnormal{exp}}
+\def\dim{\textnormal{dim}}
+\def\interior{\textnormal{interior}}
+\def\NullLA{\textnormal{null}}
+\def\SpanLA{\textnormal{span}}
+\def\range{\textnormal{range}}
+\def\al{\alpha}
+\def\del{\delta}
+\def\Del{\Delta}
+\def\gam{\gamma}
+\def\Gam{\Gamma}
+\def\Om{\Omega}
+\def\ep{\varepsilon}
+\def\lam{\lambda}
+\def\rational{{\mathbb Q}}
+\def\integer{{\mathbb Z}}
+\def\grad{\nabla}
+
+\def\C{\mathcal C}
+\def\I{\mathcal I}
+\def\M{\mathcal M}
+\def\N{\mathbb N}
+\def\P{\mathcal P}
+\def\R{\mathbb R}
+\def\T{\mathcal T}
+\def\Z{\mathbb Z}
+
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\ColVecTwo}[2]{\begin{pmatrix} #1\\ #2\end{pmatrix}}
+\newcommand{\ColVecThree}[3]{\begin{pmatrix} #1\\ #2\\ #3\end{pmatrix}}
+\newcommand{\ColVecFour}[4]{\begin{pmatrix} #1\\ #2\\#3 \\ #4\end{pmatrix}}
+\newcommand{\MatrixTwoTwo}[4]{\begin{pmatrix} #1 &#2\\ #3 &#4 \end{pmatrix}}
+\newcommand{\inner}[2]{\langle #1 , #2 \rangle}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\spanvect}{\textnormal{span}}
+\newcommand{\union}{\cup}
+\newcommand{\Union}{\bigcup}
+\newcommand{\intersect}{\cap}
+\newcommand{\Intersect}{\bigcap}
+
+\DeclareMathOperator*{\Limsup}{LIMSUP}
+
+
+
+\pagestyle{empty}
+\begin{document}
+
+	\begin{LARGE}
+	\begin{center}
+		
+		
+
+		
+	
+	\textbf{Homework 5; due Thursday, 10/05/2023}
+	
+
+	(MTH 317H, Honors Linear Algebra;  Fall 2023)
+	\end{center}
+	\end{LARGE}
+	\vspace{0.15in}
+	
+	
+	
+
+
+	
+\section{Commentary}
+
+In this homework you will begin working with linear functions, and hopefully continue to improve you understanding of span, independence, and basis.
+
+
+
+\subsection{required reading}
+
+
+
+In what follows below, you should read the section of LADR and the sections corresponding to BOP.
+
+
+
+\noindent
+``LADR'' -- Linear Algebra done right
+
+
+\noindent
+``BOP'' -- Book of Proof
+
+\begin{itemize}
+	\item LADR, section 3C   (and review 2A, 2B, 2C, 3A, 3B).  For the moment, we will exclusively use the scalar field to be the real numbers, $\real$.  That is to say, any time you encounter $\mathbf{F}$, or $\mathbf{F^n}$, you are free to assume $\mathbf{F}=\real$.  (This will change later in the semester.)
+	
+	
+	\item BOP, chp 12, chp 10. 
+\end{itemize}
+
+
+\section{Definitions}\label{defs}
+We recall the following definitions, which you will need in this problem set: 
+
+\begin{DEF} A function $T: V \to W$ is called  \textbf{injective} if $u \neq v$ implies $T(u) \neq T(v)$. 
+\end{DEF}
+
+Equivalently, we can define injective functions in the following way, which is the contrapositive statement of the definition above:
+
+\begin{DEF} A function $T: V \to W$ is called \textbf{injective} if $T(u) = T(v)$ implies $u=v$. 
+\end{DEF}
+
+We will also be interested in surjective functions, which are defined as follows:
+
+\begin{DEF} A $T: V \to W$ is called \textbf{surjective} if for every $w \in W$, there is a $v\in V$ such that $T(v) = w$. 
+\end{DEF}
+
+
+
+
+\section{Questions}
+
+
+\begin{question}
+	\normalfont
+	
+	For each of the following functions, determine if it is linear or not, and justify your answer with a proof.
+	
+	
+	\begin{enumerate}[(i)]
+		\item Define $T:\P_4\to \P_4$ by 
+		\begin{align*}
+			(Tp)(x) =  x^2p''(x).
+		\end{align*}
+		(Please, \textbf{do not} bother writing out the polynomial $Tp$ in terms of its coefficients when you are writing your proof.) \\
+		
+		\item Define $S:\P_4\to \P_4$ by 
+		\begin{align*}
+			(Sp)(x) =  p''(x) + x^2.
+		\end{align*}
+		(Please, \textbf{do not} bother writing out the polynomial $Sp$ in terms of its coefficients when you are writing your proof.) \\
+		
+		\item Define $H:\real^4\to \real^3$,  by 
+		\begin{align*}
+			 H(\ColVecFour{x_1}{x_2}{x_3}{x_4})=  \ColVecThree{x_1x_2}{x_1}{5x_3 + x_4}.
+		\end{align*}
+		\vspace{.3cm}
+		
+		\item Define $I:\real^4\to \real^3$ by 
+		\begin{align*}
+			 I(\ColVecFour{x_1}{x_2}{x_3}{x_4})=  \ColVecThree{x_1-3x_2}{x_1+7}{5x_3 + x_4}.
+		\end{align*}
+			\vspace{.3cm}
+			
+		\item Define  $J:\real^4\to \real^3$ by 
+		\begin{align*}
+			 J(\ColVecFour{x_1}{x_2}{x_3}{x_4})=  \ColVecThree{x_1-3x_2}{x_1}{5x_3 + x_4}.
+		\end{align*}
+		
+		
+	\end{enumerate}
+	
+	
+\end{question}
+
+\vspace{.5cm}
+
+\begin{question}
+	\normalfont
+	
+Assume $V$ and $W$ are vector spaces. Prove that if $L:V\to W$ is linear and injective and \hspace{.1cm} $v_1,\dots, v_n$ \hspace{.1cm} is a linearly independent list of vectors, then \hspace{.1cm} $L(v_1),\dots L(v_n)$  \hspace{.1cm} is a linearly independent list of vectors.
+	
+	
+\noindent \emph{Note: You are free to use the following result that will be proved in class soon: for linear maps $L$, being injective is equivalent to the property that $L(v)=0$ only when $v=0$.}
+
+\end{question}
+
+\vspace{.5cm}
+
+
+\begin{question} \noindent \textbf{NOTE}: In this problem, you can use material from LADR up through Section 3.A, as well as the definitions of injective and surjective functions given in Section \ref{defs} of this assignment (above). You can NOT use material from LADR 3.B for these questions. \\
+
+	\normalfont
+	
+	Define the function, $L:\P_4\to \P_2$ by the following rule:
+	\begin{align*}
+		\text{for}\ p(x) = a_0 + a_1x + a_2x^2 + a_3x^3 + a_4 x^4,\ \ \ 
+		(Lp)(x) = a_2 + a_3 x + a_4 x^2. 
+	\end{align*}
+
+	
+	\begin{enumerate}[(i)]
+		
+		\item Prove that $U=\{p\in\P_4\ :\ Lp = \text{zero polynomial}\}$ is a subspace of $\P_4$. \\
+		\emph{Reminder: you cannot use results from LADR 3.B for these questions.}
+		
+		\item Give a basis for $U$. (No proof necessary.)
+		
+		\item Using the definition of an injective function (see Section \ref{defs} above), prove that $L$ is not injective.  
+				
+		\item Using the definition of a surjective function (See Section \ref{defs} above), prove that $L$ is surjective.  
+	\end{enumerate}
+\end{question}
+
+\vspace{.5cm}
+
+\begin{question}
+	\normalfont
+	
+	
+	\begin{enumerate}[(i)]
+		\item Let $T:\real^2\to\real$ be a \emph{linear} function with the property that
+		\begin{align*}
+			T(\ColVecTwo{1}{1}) = 3\ \ \ \text{and}\ \ \ 
+			T(\ColVecTwo{1}{0}) = 4.
+		\end{align*}
+		Compute the value of $T(\ColVecTwo{3}{1})$.
+		
+		\item Assume that $L:\real^2\to\real$ is a \emph{linear} function.  Prove that there exist $a_1,a_2\in\real$ so that 
+		\begin{align*}
+			\forall\ x=\ColVecTwo{x_1}{x_2},\ \ L(x) = a_1x_1 + a_2x_2.
+		\end{align*}
+		\emph{Note: Feel free to use the result from class that says a linear function is uniquely determined by its values on a basis.}
+	\end{enumerate}
+\end{question}
+
+\vspace{.5cm}
+
+\noindent \textbf{NOTE}: In the next two problems, we use the notation that if $X\subseteq V$, and $L: V \to W$,  then 
+	\begin{align*}
+		L(X) = \{ L(x)\in W\ :\ x\in X \}.
+	\end{align*}
+\vspace{.1cm}
+
+\begin{question}
+	\normalfont
+	Let $L:\real^3\to\real^2$ be the linear function defined as
+		\begin{align*}
+			L(\ColVecThree{x_1}{x_2}{x_3}) = \ColVecTwo{x_1-x_2+3x_3}{-3x_1+3x_2-9x_3}.
+		\end{align*}
+		Provide a vector, $v=\ColVecTwo{v_1}{v_2}$ so that 
+			\begin{align*}
+				L(\SpanLA(\ColVecThree{1}{0}{0}, \ColVecThree{1}{1}{1} ) )= \SpanLA(v).
+			\end{align*}
+			Prove that your choice of $v$ is correct.
+			
+		
+\end{question}
+
+\vspace{.8cm}
+
+
+
+\begin{question}\label{que:LOfSpan}
+	\normalfont
+	
+	For two generic vector spaces $V$ and $W$, let $T:V\to W$ be a linear function, and assume that $S\subset V$ is any finite list of vectors, say $S=v_1,\dots, v_k$.  Prove that
+	\begin{align*}
+		L(\SpanLA(S)) = \SpanLA(L(v_1),\dots, L(v_k) ). 
+	\end{align*}
+	
+
+\end{question}
+
+\vspace{.8cm}
+
+
+\begin{question}
+	\normalfont
+	
+	Let $L: \real^4\to\real^4$ be given by the formula
+	\begin{align*}
+		L(\ColVecFour{x_1}{x_2}{x_3}{x_4}) = \ColVecFour{x_1 - 2x_2 + 3x_3 - x_4}{3x_1 -2x_2 + 9x_3 + x_4}{-2x_2 - 2x_4}{x_1 + 3x_3 + x_4}.
+	\end{align*}
+	  Give a basis for $\range(L)$.  Prove your answer.  You may use results from LADR 2.C, if you would like.  You are strongly encouraged to invoke Question \ref{que:LOfSpan}.
+	
+\end{question}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
