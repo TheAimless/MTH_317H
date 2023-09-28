@@ -1,21 +1,20 @@
 \begin{question}
-	\normalfont
-	
-Assume $V$ and $W$ are vector spaces. Prove that if $L:V\to W$ is linear and injective and \hspace{.1cm} $v_1,\dots, v_n$ \hspace{.1cm} is a linearly independent list of vectors, then \hspace{.1cm} $L(v_1),\dots L(v_n)$  \hspace{.1cm} is a linearly independent list of vectors.
-	
-	
-\noindent \emph{Note: You are free to use the following result that will be proved in class soon: for linear maps $L$, being injective is equivalent to the property that $L(v)=0$ only when $v=0$.}
+    \normalfont
 
+    Assume $V$ and $W$ are vector spaces. Prove that if $L:V\to W$ is linear and injective and \hspace{.1cm} $v_1,\dots, v_n$ \hspace{.1cm} is a linearly independent list of vectors, then \hspace{.1cm} $L(v_1),\dots L(v_n)$  \hspace{.1cm} is a linearly independent list of vectors.
 \end{question}
 
 \begin{proof}
-    Let $a_1,...a_n\in\R$ be solution to $a_1L(v_1)+...+a_nL(v_n)=\vec{0}$. Since $L$ is linear, 
+    \renewcommand{\qedsymbol}{$\blacksquare$}
+    Let $a_1,...a_n\in\R$ be solution to $a_1L(v_1)+...+a_nL(v_n)=\vec{0}$. Since $L$ is linear,
     \[
         \begin{aligned}
-            \vec{0} &= a_1L(v_1)+...+a_nL(v_n)\\
-                    &= L(a_1v_1)+...+L(a_nv_n)\\
-                    &= L(a_1v_1+...+a_nv_n)
+            \vec{0} & = a_1L(v_1)+...+a_nL(v_n) \\
+                    & = L(a_1v_1)+...+L(a_nv_n) \\
+                    & = L(a_1v_1+...+a_nv_n)
         \end{aligned}
     \]
-    Since $L$ is linear and injective, it follows that for some $v\in V$, $L(v)=\vec{0}$ only when $v=0$. Since $L(a_1v_1+...+a_nv_n)=\vec{0}$, $a_1v_1+...+a_nv_n=\vec{0}$. 
+    Since $L$ is linear and injective, it follows that for some $v\in V$, $L(v)=\vec{0}$ only when $v=0$. As $L(a_1v_1+...+a_nv_n)=\vec{0}$, $a_1v_1+...+a_nv_n=\vec{0}$.
+    However, since $a_1,...,a_n$ are linearly independent vectors, the only solution to $a_1v_1+...+a_nv_n=\vec{0}$ is $a_1=...=a_n=0$.
+    Therefore, the only solution to $a_1L(v_1)+...+a_nL(v_n)=\vec{0}$ is the trivial solution, or $L(v_1),...,L(v_n)$ is a linearly independent list of vectors.
 \end{proof}
