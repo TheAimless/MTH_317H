@@ -5,6 +5,32 @@
 	\begin{align*}
 		L(\SpanLA(S)) = \SpanLA(L(v_1),\dots, L(v_k) ). 
 	\end{align*}
-	
-
 \end{question}
+
+\begin{proof}
+	\renewcommand{\qedsymbol}{$\blacksquare$}
+	To show that $L(\spanLA(S))=\spanLA(L(v_1),...,L(v_k))$, we will show that each set is a subset of the other set.
+	Let $u\in\spanLA(S)$. Then, there exist $a_1,...,a_k\in\R$ such that $u=a_1v_1+...+a_kv_k$. Since $L$ is linear,
+	\begin{equation*}
+		\begin{aligned}
+			L(u)
+			&= L(a_1v_1+...+a_kv_k)\\
+			&= L(a_1v_1)+...+L(a_kv_k)\\
+			&= a_1L(v_1)+...+a_kL(v_k)
+		\end{aligned}
+	\end{equation*}
+	, which belongs to $\spanLA(L(v_1),...,L(v_k))$. Hence, $L(\spanLA(S))\subseteq\spanLA(L(v_1),...,L(v_k))$ (1).
+
+	Conversely, let $v\in\spanLA(L(v_1),...,L(v_k))$. Then, there exist $b_1,...,b_k$ such that $v=b_1L(v_1)+...+b_kL(v_k)$. Since $L$ is linear
+	\begin{equation*}
+		\begin{aligned}
+			v
+			&= b_1L(v_1)+...+b_kL(v_k)\\
+			&= L(b_1v_1)+...+L(b_kv_k)\\
+			&= L(b_1v_1+...+b_kv_k)
+		\end{aligned}
+	\end{equation*}
+	, which belongs to $L(\spanLA(S))$ (since $b_1v_1+...+b_kv_k$ is a linear combination of vectors in $S$). Hence, $\spanLA(L(v_1),...,L(v_k))\subseteq L(\spanLA(S))$ (2).
+
+	From (1) and (2), it follows that $L(\spanLA(S))=\spanLA(L(v_1),...,L(v_k))$.
+\end{proof}
