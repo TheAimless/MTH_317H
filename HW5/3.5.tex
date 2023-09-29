@@ -9,6 +9,20 @@
 				L(\SpanLA(\ColVecThree{1}{0}{0}, \ColVecThree{1}{1}{1} ) )= \SpanLA(v).
 			\end{align*}
 			Prove that your choice of $v$ is correct.
-			
-		
 \end{question}
+
+\begin{proof}
+	\renewcommand{\qedsymbol}{$\blacksquare$}
+	Let $u\in\SpanLA(\ColVecThree{1}{0}{0},\ColVecThree{1}{1}{1})$. Then, there exist $a,b\in\R$ such that $u=a \ColVecThree{1}{0}{0}+b \ColVecThree{1}{1}{1}=\ColVecThree{a+b}{b}{b}$.
+	We have
+	\begin{equation*}
+		\begin{aligned}
+			L(x)
+			&= L(\ColVecThree{a+b}{b}{b})\\
+			&= \ColVecTwo{(a+b)-b+3b}{-3(a+b)+3b-9b}\\
+			&= \ColVecTwo{a+3b}{-3a-9b}\\
+			&= (a+3b)\ColVecTwo{1}{-3}
+		\end{aligned}
+	\end{equation*}
+	Let $v=\ColVecTwo{1}{-3}$. Then, $L(x)\in\SpanLA(v)$ for any $a,b\in\R$. Therefore $L(\spanLA(\ColVecThree{1}{0}{0},\ColVecThree{1}{1}{1}))=\SpanLA(v)$.
+\end{proof}
