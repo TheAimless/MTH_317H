@@ -33,7 +33,22 @@
 			\end{aligned}
 		\end{equation*}
 		Therefore, $T(\ColVecTwo{3}{1})=11$
-		\item asdf
+		\item For the canonical basis $e_1,e_2$ of $\R^2$, since a linear function is uniquely determined by its values on a basis, there exist $a_1,a_2\in\R$ such that 
+        \[
+            \begin{aligned}
+                L(e_1)=a_1 \text{ and } L(e_2)=a_2
+            \end{aligned}
+        \]
+        Since $x=\ColVecTwo{x_1}{x_2}=x_1e_1+x_2e_2$, it follows that 
+        \[
+            \begin{aligned}
+                L(x) &= L(x_1e_1+x_2e_2)\\
+                     &= L(x_1e_1)+L(x_2e_2)\\
+                     &= x_1L(e_1)+x_2L(e_2)\\
+                     &= x_1a_1+x_2a_2      
+            \end{aligned}
+        \]
+        Therefore, there exist $a_1,a_2\in\R$ such that $L(x)=a_1x_1+a_2x_2$\qed
 	\end{enumerate}
 
 	\renewcommand{\qedsymbol}{}
