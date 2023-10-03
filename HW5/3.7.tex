@@ -8,3 +8,45 @@
 	  Give a basis for $\range(L)$.  Prove your answer.  You may use results from LADR 2.C, if you would like.  You are strongly encouraged to invoke Question \ref{que:LOfSpan}.
 	
 \end{question}
+
+\begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
+    Let $B=b_1,b_2$ where $b_1=\ColVecFour{1}{1}{1}{0},b_2=\ColVecFour{-1}{1}{-2}{1}$. We will prove that $B$ is a basis for range($L$).
+    To prove that $B$ is a linearly independent list, let $a_1,a_2\in\R$ such that $a_1b_1+a_2b_2=\vec{0}$. 
+    Then 
+    \[
+        \begin{aligned}
+            \vec{0} 
+            = a_1b_1+a_2b_2
+            = \ColVecFour{a_1}{a_1}{a_1}{a_1}+\ColVecFour{-a_2}{a_2}{-2a_2}{a_2}
+            = \ColVecFour{a_1-a_2}{a_1+a_2}{a_1-2a_2}{a_1+a_2}
+        \end{aligned}
+    \]
+    , which reduces to 
+    \begin{align*}
+        &\begin{cases}
+            a_1-a_2 &= 0\\
+            a_1+a_2 &= 0\\
+            a_1-2a_2 &= 0\\
+            a_1+a_2 &= 0
+        \end{cases}\\
+        \iff &\quad a_1=a_2=0
+    \end{align*}
+    Therefore, the only solution to $a_1b_1+a_2b_2=\vec{0}$ is $a_1=a_2=0$, which is the trivial solution, or $B$ is a linearly independent list (1). 
+
+    Let $x\in\R^4$ such that $x=\ColVecFour{x_1}{x_2}{x_3}{x_4}$. Then, 
+    \[
+        \begin{aligned}
+            T(x)
+            &= T(\ColVecFour{x_1}{x_2}{x_3}{x_4})\\
+            &= \ColVecFour{x_1-2x_2+3x_3-x_4}{3x_1-2x_2+9x_3+x_4}{-2x_2-2x_4}{x_1+3x_3+x_4}\\
+            &= x_1 \ColVecFour{1}{3}{0}{1}+x_2 \ColVecFour{-2}{-2}{-2}{0}+x_3 \ColVecFour{3}{9}{0}{3}+x_4 \ColVecFour{-1}{1}{-2}{1}\\
+            &= x_1(2 \ColVecFour{1}{1}{1}{0}+\ColVecFour{-1}{1}{-2}{1})-2x_2 \ColVecFour{1}{1}{1}{0}+3x_3(2 \ColVecFour{1}{1}{1}{0}+\ColVecFour{-1}{1}{-2}{1})+x_4 \ColVecFour{-1}{1}{-2}{1}\\
+            &= x_1(2b_1+b_2)-2x_2b_2+3x_3(2b_1+b_2)+x_4b_2\\
+            &= (2x_1+6x_3)b_1+(x_1-2x_2+3x_3+x_4)b_2
+        \end{aligned}
+    \]
+    or $T(x)\in\SpanLA(B)$. Therefore, $B$ spans range($L$) (2).
+
+    From (1) and (2), it follows that $B$ is a basis for range($L$).
+\end{proof}
