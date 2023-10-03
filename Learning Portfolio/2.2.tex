@@ -12,3 +12,67 @@
     \end{enumerate}
     
 \end{question}
+
+\begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
+    \begin{enumerate}[(i)]
+        \item Let $b_1=\ColVecThree{-3}{1}{2},b_2=\ColVecFour{1}{0}{0}{0},b_3=\ColVecFour{1}{0}{1}{-4}$. Let $B_1=b_1$ and $B_2=b_2,b_3$. A basis for $\nullla(T)$ and $\range(T)$ are $B_1$ and $B_2$, respectively.
+        \item We will prove that $B_1,B_2$ are a basis for $\nullla(T)$ and $\range(T)$, respectively. 
+        First, since $B_1$ contains only one vector, $B_1$ is a linearly independent list of vectors (1).
+        Let $x\in\nullla(T)$ such that $x=\ColVecThree{x_1}{x_2}{x_3}$ for some $x_1,x_2,x_3\in\R$.
+        Then, $T(x)=\vec{0}$, or 
+        \[
+            \begin{aligned}
+                \vec{0} = T(x) = T(\ColVecThree{x_1}{x_2}{x_3}) = \ColVecFour{x_1+x_2+x_3}{0}{x_3-2x_2}{8x_2-4x_3}      
+            \end{aligned}
+        \]
+        This reduces to
+        \begin{align*}
+            &\qquad \ \ \,
+            \begin{cases}
+                x_1+x_2+x_3&=0\\
+                x_3-2x_2&=0\\
+                8x_2-4x_3&=0\\
+            \end{cases}\\&\iff
+            \begin{cases}
+                x_3&=2x_2\\
+                x_1+x_2+2x_2&=0
+            \end{cases}\\&\iff
+            \begin{cases}
+                x_3&=2x_2\\
+                x_1&=-3x_2
+            \end{cases}\\
+            &\iff \frac{x_1}{-3}=x_2=\frac{x_3}{2}
+        \end{align*}
+        Let $x_1=-3k$ for some $k\in\R$. It follows that $x_2=k$ and $x_3=2k$, or $x=\ColVecThree{x_1}{x_2}{x_3}=\ColVecThree{-3k}{k}{2k}=k \ColVecThree{-3}{1}{2}$ for all $k\in\R$. Hence, $x\in\spanla(B_1)$, or $B_1$ spans $\nullla(T)$ (2).
+        From (1) and (2), it follows that $B_1$ is a basis for $\nullla(T)$.
+
+        Since $B_1$ has a length of 1, $\dim(\nullla(T))=1$. From the rank-nullity theorem, since the domain ($R^3$) has a dimension of 3,
+        \[
+            \begin{aligned}
+                \dim(\nullla(T))+\dim(\range(T))=3
+            \end{aligned}
+        \]
+        , or $\dim(\range(T))=2$. Hence, any basis of $\range(T)$ must have a length of 2, which $B_2$ satisfies. (3)
+
+        To show that $B_2$ is a linearly independent list of vectors, let $a_2,a_3\in\R$ such that $a_2b_2+a_3b_3=\vec{0}$. We have 
+        \[
+            \begin{aligned}
+                \vec{0} = a_2b_2+a_3b_3 = \ColVecFour{a_2}{0}{0}{0}+\ColVecFour{a_3}{0}{a_3}{-4a_3}= \ColVecFour{a_2+a_3}{0}{a_3}{-4a_3}      
+            \end{aligned}
+        \]
+        This reduces to 
+        \begin{align*}
+            &\begin{cases}
+                a_2+a_3 &= 0\\
+                a_3 &= 0\\
+                -4a_3 &= 0
+            \end{cases}\\
+            \iff&\quad \, a_2=a_3=0
+        \end{align*}
+        Hence, the only solution to $a_2b_2+a_3b_3=\vec{0}$ is $a_2=a_3=0$, which is the trivial solution. Thus, $B_2$ must be a linearly independent list of vectors. (4)
+
+        From (3) and (4), since $B_2$ is a linearly independent list of the right length, from Result 2.39 Section 2.C LADR it follows that $B_2$ is a basis for $\range(T)$.\qed
+    \end{enumerate}
+    \renewcommand{\qedsymbol}{}
+\end{proof}
