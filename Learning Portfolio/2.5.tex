@@ -1,0 +1,62 @@
+\begin{question}
+    \normalfont
+    This is a direct continuation of the previous LP. Assume that $L$ is the same function defined in (1).
+    \begin{enumerate}[(i)]
+        \item For $v_1,v_2,v_3,v_4$ defined below, prove that $\ell={v_1,v_2,v_3,v_4}$ is a basis for $\R^4$:
+        \begin{equation}
+            v_1=\ColVecFour{1}{0}{-5}{-1}, v_2=\ColVecFour{0}{1}{-1}{0}, v_3=\ColVecFour{0}{1}{0}{0}, v_4=\ColVecFour{1}{0}{0}{0}
+        \end{equation}
+        \item For $i=1,2,3,4$, compute the value of $L(v_i)$.
+        \item (you do nothing for this part. it is just notation.) Let us define a notation to account for the fact that in this context, we have two different ways to represent any $x\in\R^4$: 
+        \[
+            \begin{aligned}
+                x=\ColVecFour{x_1}{x_2}{x_3}{x_4}_{\{e_i\}} \text{is defined as } x=x_1e_1+x_2e_2+x_3e_3+x_4e_4
+            \end{aligned}
+        \]
+        where ${e_i}$ are the canonical basis vectors as above and 
+        \[
+            \begin{aligned}
+                x=\ColVecFour{a_1}{a_2}{a_3}{a_4}_{\{v_i\}} \text{is defined as } x=a_1v_1+a_2v_2+a_3v_3+a_4v_4
+            \end{aligned}
+        \]
+        \item For $x=a_1v_1+a_2v_2+a_3v_3+a_4v_4$, compute $L(x)$. Give your answer as a canonical vector in $\R^2$, i.e. find the values of $y_1$ and $y_2$ so that 
+        \[
+            \begin{aligned}
+                L(x)=\ColVecTwo{y_1}{y_2}
+            \end{aligned}
+        \]
+        \item Find $a_1,...,a_4$ so that when 
+        \[
+            \begin{aligned}
+                x=\ColVecFour{1}{1}{1}{1}_{\{e_i\}}, \text{you also have } x=a_1v_1+a_2v_2+a_3v_3+a_4v_4.
+            \end{aligned}
+        \]
+        \item Given $x_1,...,x_4$ fixed, find $a_1,...,a_4$ depending only on $x_i$ so that 
+        \[
+            \begin{aligned}
+                x=x_1e_1+x_2e_2+x_3e_3+x_4e_4=a_1v_1+a_2v_2+a_3v_3+a_4v_4.
+            \end{aligned}
+        \]
+        Check that your answer is correct. That is to say that you need to find 
+        \[
+            \begin{aligned}
+                a_1v_1+a_2v_2+a_3v_3+a_4v_4=\ColVecFour{x_1}{x_2}{x_3}{x_4}
+            \end{aligned}
+        \]
+        or in our new notation that 
+        \[
+            \begin{aligned}
+                \ColVecFour{a_1}{a_2}{a_3}{a_4}_{\{v_i\}}=\ColVecFour{x_1}{x_2}{x_3}{x_4}_{\{e_i\}}
+            \end{aligned}
+        \]
+        \item Write down a matrix $B$ so that 
+        \[
+            \begin{aligned}
+                &\text{if } x=\ColVecFour{x_1}{x_2}{x_3}{x_4},\text{ and } \ColVecFour{w_1}{w_2}{w_3}{w_4}=Bx\text{ as matrix multiplication,}\\
+                &\text{then } x=w_1v_1+w_2v_2+w_3v_3+w_4v_4
+            \end{aligned}
+        \]
+        \item Write down a matrix $\tilde{A}$ so that\\
+        if $x\in\R^4$ and $x=\ColVecFour{a_1}{a_2}{a_3}{a_4}_{\{v_i\}}$ and $y=\ColVecTwo{y_1}{y_2}=\tilde{A}\ColVecFour{a_1}{a_2}{a_3}{a_4}$ as matrix multiplication, then $L(x)=y_1e_1+y_2e_2$, i.e. $L(x)=\ColVecTwo{y_1}{y_2}_{\{e_i\}}$.
+    \end{enumerate}
+\end{question}

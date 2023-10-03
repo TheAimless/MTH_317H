@@ -1,0 +1,73 @@
+\begin{question}
+    \normalfont
+    This LP assumes that you have been introduced to and have worked with the dot product on $\R^2$ and that you are familiar with the definition of length of vectors in $\R^2$. Here are some relevant definitions.
+\end{question}
+
+\begin{DEF}
+    If $u,v\in\R^2$ with $u=(u_1,u_2)$ and $v=(v_1,v_2)$, the dot product (or inner product) of u and v is denoted as "$u\cdot v$" and is defined as 
+    \[
+        \begin{aligned}
+            u\cdot v=u_1v_1+u_2v_2
+        \end{aligned}
+    \]  
+\end{DEF}
+
+\begin{DEF}
+    The length of a vector $v\in\R^2,v=(v_1,v_2)$, is given by 
+    \[
+        \begin{aligned}
+            |v|=\sqrt{(v_1)^2+(v_2)^2}
+        \end{aligned}
+    \]
+    Note that 
+    \[
+        \begin{aligned}
+            |v|^2=v\cdot v
+        \end{aligned}
+    \]
+\end{DEF}
+We will now use, without proof, the following fact about the dot product:
+\begin{lem}
+    If $u,v\in\R^2$, then for $\theta\in[0,\pi]$ as the unique angle between u and v, 
+    \[
+        \begin{aligned}
+            u\cdot v=|u||v|\cos(\theta)
+        \end{aligned}
+    \]
+\end{lem}
+
+\begin{DEF}
+    If A is the matrix, 
+    \[
+        \begin{aligned}
+            A=\MatTwoTwo{a}{b}{c}{d},
+        \end{aligned}
+    \]
+    then the \text{determinant} of A is defined as 
+    \begin{equation}
+        \textnormal{det}(A)=ad-cb.
+    \end{equation}
+\end{DEF}
+In many results that follow, you will use the same linear function $L:\R^2\rightarrow\R^2$, where 
+\begin{equation}
+    \begin{aligned}
+        \text{whenever } &x=\ColVecTwo{x_1}{x_2}=x_1e_1+x_2e_2\textbf{ in the canonical basis,}\\
+                        &L(x)=Ax,\text{ defined via matrix multiplication}
+    \end{aligned}
+\end{equation}
+
+\textbf{Part (1).} Let $E$ be the cube in $\R^2$ that is the parallelogram whose two defining edges are $e_1$ and $e_2$ and whose diagonal is $e_1+e_2$. (I.e. the parallelogram whose vertices are $(0,0),(1,0),(1,1),(0,1)$.) Let $F$ be the parallelogram with defining edges $L(e_1)$ and $L(e_2)$ and whose diagonal is $L(e_1)+L(e_2)$. (I.e. the parallelogram whose vertices are $(0,0),L(e_1),L(e_1)+L(e_2),L(e_2).$)
+
+Prove that 
+\[
+    \begin{aligned}
+        \text{area of }F=|\text{det}(A)|.
+    \end{aligned}
+\]
+
+\textbf{Part (2).} Use the previous part to prove that for $L$ defined in $(4)$, 
+\[
+    \begin{aligned}
+        \text{det}(A)=0\iff\text{L is not injective.}
+    \end{aligned}
+\]

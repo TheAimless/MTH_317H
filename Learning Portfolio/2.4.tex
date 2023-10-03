@@ -1,0 +1,33 @@
+\begin{question}
+    \normalfont
+    Let $L:\R^4\rightarrow\R^4$ be the linear function defined by
+    \begin{equation}
+        L(\ColVecFour{x_1}{x_2}{x_3}{x_4})=\ColVecTwo{x_2+x_3-5x_4}{x_1+x_4}
+    \end{equation}
+    \begin{enumerate}[(i)]
+        \item In the \textit{canonical basis} for both $\R^4$ and $\R^2$ (i.e. $\R^4=\spanla({e_1,e_2,e_3,e_4})$) and, with an abuse of notation, $\R^2=\spanla({e_1,e_2})$, give the unique matrix, $A$, so that 
+        \[
+            \begin{aligned}
+                \text{whenever }&x=\ColVecFour{x_1}{x_2}{x_3}{x_4}=x_1e_1+x_2e_2+x_3e_3+x_4e_4\textbf{ in the canonical basis},\\
+                &L(x)=Ax,\text{ defined via matrix multiplication.}
+            \end{aligned}
+        \]
+        \item Without doing any computation involving $L$, give a lower bound for $\dim(\nullla(L))$. That is to say find an integer $k$ so that $\dim(\nullla(L))\geq k$ and $k>0.$
+        \item Give a basis for $\nullla(L)$. Prove that your choice of basis is correct.
+        \item Explain why, without calculating what is in $\range(L)$, that it must satisfy $\range(L)=\R^2$.
+        \item Start with the list, $\ell={L(e_1),L(e_2),L(e_3),L(e_4)}$ and use the algorithm of LADR result 2.31 to reduce $\ell$ to a basis of $\range(L)$. You must show each step of the algorithm and justify each choice. Prove that your resulting list is indeed a basis of $\range(L)$.
+        \item Find some $x_0\in\R^4$ so that 
+        \[
+            \begin{aligned}
+                L(x_0)=\ColVecTwo{5}{3}
+            \end{aligned}
+        \]
+        Check that indeed your choice of $x_0$ gives the desired output.
+        \item List all possible solutions, $v\in\R^4$, of the equation 
+        \[
+            \begin{aligned}
+                L(v)=\ColVecTwo{5}{3}
+            \end{aligned}
+        \]
+    \end{enumerate}
+\end{question}
