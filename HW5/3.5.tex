@@ -24,5 +24,20 @@
 			&= (a+3b)\ColVecTwo{1}{-3}
 		\end{aligned}
 	\end{equation*}
-	Let $v=\ColVecTwo{1}{-3}$. Then, $L(x)\in\SpanLA(v)$ for any $a,b\in\R$. Therefore $L(\spanLA(\ColVecThree{1}{0}{0},\ColVecThree{1}{1}{1}))=\SpanLA(v)$.
+	Let $v=\ColVecTwo{1}{-3}$. Then, $L(x)\in\SpanLA(v)$ for any $a,b\in\R$, or $L(\SpanLA(\ColVecThree{1}{0}{0},\ColVecThree{1}{1}{1}))\subseteq\SpanLA(v)$.
+
+    Conversely, let $x\in\SpanLA(v)$. Then, there exists $\lambda\in\R$ such that $x=\lambda v$.
+    Let $a=\lambda$ and $b=0$. We have 
+    \[
+        \begin{aligned}
+            x 
+            &= \lambda v\\
+            &= (a+3b)v\\
+            &= \ColVecTwo{a+3b}{-3a-9b}\\
+            &= L(\ColVecThree{a+b}{b}{b})\\
+            &= L(a \ColVecThree{1}{0}{0}+b \ColVecThree{1}{1}{1})\in L(\SpanLA(\ColVecThree{1}{0}{0}, \ColVecThree{1}{1}{1}))
+        \end{aligned}
+    \]
+    Hence, $\SpanLA(v)\subseteq L(\SpanLA(\ColVecThree{1}{0}{0},\ColVecThree{1}{1}{1}))$.
+    Therefore $L(\spanLA(\ColVecThree{1}{0}{0},\ColVecThree{1}{1}{1}))=\SpanLA(v)$.
 \end{proof}
