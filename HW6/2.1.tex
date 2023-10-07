@@ -9,3 +9,30 @@
 		\text{Prove that}\  U\intersect V \not= \{0\}. 
 	\end{align}
 \end{question}
+
+\begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
+    Let $B_U=u_1,u_2,u_3,u_4$ be a basis for $U$ and $B_V=v_1,v_2,v_3,v_4$ be a basis for $V$.
+    Suppose $B=u_1,...,u_4,v_1,...,v_4$ be a linearly independent list in $\R^7$. Since $\dim(R^7)=7$, a basis of $\R^7$ must have 7 vectors.
+
+    Consider the list $B'=u_1,...,u_4,v_1,v_2,v_3$. Since $B$ is a linearly independent list, it follows that $B'$ must also be linearly independent. 
+    From Theorem 2.39 LADR, it must be the case that $B'$ is a basis for $\R^7$.
+    Hence, the vector $v_4\in\R^7$ can be written as a linear combination of vectors in $B'$, or there exist $c_1,...,c_7\in\R$ such that $c_1u_1+...+c_4u_4+c_5v_1+...+c_7v_3=v_4$.
+    It follows that $c_1u_1+...+c_4u_4+c_5v_1+...+c_7v_3-v_4=0$, or $B$ is not a linearly independent list, contradicting our original claim.
+    Therefore, $B$ is linearly dependent.
+
+    We will also prove that $B$ is linearly dependent implies that $U\cap V\not=\{0\}$.
+
+    Let $c_1,...,c_4,d_1,...,d_4\in\R$, not all zero, be a solution to $c_1u_1+...+c_4u_4-d_1v_1-...-d_4v_4=0$.
+    Then, $c_1u_1+...+c_4u_4=d_1v_1+...+d_4v_4$.
+    If $c_1,...,c_4$ are all zero, $d_1v_1+...+d_4v_4=0$.
+    But since $B_V$ is a basis for $V$, it follows that $d_1=d_2=d_3=d_4=0$.
+    Hence, $c_1,...,c_4,d_1,...,d_4$ are all zero, contradicting our original claim.
+    Similarly, if $d_1,...,d_4$ are all zero, $c_1,...,c_4,d_1,...,d_4$ must also be all zero, contradicting our above claim.
+    Therefore, $c_1,...,c_4$ and $d_1,...,d_4$ are not all zero.
+    
+    Let $x=c_1u_1+...+c_4u_4=d_1v_1+...+d_4v_4$.
+    Since $c_1,...,c_4$ and $d_1,...,d_4$ are not all zero, $x\not=0$.
+    Moreover, because $x$ is a linear combination of both vectors in $U$ and $V$, $x\in U$ and $x\in V$.
+    Therefore, $x\not=0$ and $x\in U\cap V$, or $U\cap V\not=\{0\}$.
+\end{proof}
