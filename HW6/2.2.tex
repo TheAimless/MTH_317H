@@ -8,3 +8,19 @@
 		\forall\ x\in\{ v\in V\ :\ L(v)=y \},\ \exists\ z\in \NullLA(L),\ \ \text{with}\ x=x_0+z.
 	\end{align*}
 \end{question}
+
+\begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
+    Let $x\in\{v\in V:L(v)=y\}$ and $z=x-x_0$.
+    Then, $L(x)=L(x_0)=y$.
+    Since $L$ is linear, 
+    \[
+        \begin{aligned}
+            L(z)
+            &= L(x-x_0)\\
+            &= L(x)-L(x_0)\\
+            &= y-y = 0
+        \end{aligned}
+    \]
+    Therefore, $z\in\nullla(L)$, or for every $x\in\{v\in V:L(v)=y\}$, there exists $z\in\nullla(L)$ such that $x=x_0+z$.
+\end{proof}
