@@ -18,3 +18,32 @@
 		
 	\end{enumerate}
 \end{question}
+
+\begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
+    \begin{enumerate}[(i)]
+        \item Let $q\in\P_5$ such that $q(x)=ax^5+bx^4+cx^3+dx^2+ex+f$ for some $a,b,c,d,e,f\in\R$.
+        Then, 
+        \[
+            \begin{aligned}
+                (Lq)(x)
+                &= 7q''(x)+3q'(x)\\
+                &= 7(20ax^3+12bx^2+6cx+2d)+3(5ax^4+4bx^3+3cx^2+2dx+e)\\
+                &= 15ax^4+(140a+12b)x^3+(84b+9c)x^2+(42c+6d)x+(14d+3e)
+            \end{aligned}
+        \]
+        Solving for $Lq=0$,
+        \begin{align*}
+            \begin{cases}
+                15a &= 0\\
+                140a+12b &= 0\\
+                84b+9c &= 0\\
+                42c+6d &= 0\\
+                14d+e &= 0
+            \end{cases}\\\iff
+            a=b=c=d=e=0
+        \end{align*}
+        Consider the vector $p_0\in\P_5$ such that $p_0(x)=1$.
+
+    \end{enumerate}
+\end{proof}

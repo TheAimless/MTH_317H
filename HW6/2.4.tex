@@ -17,3 +17,27 @@
 		
 	\end{enumerate}
 \end{question}
+
+\begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
+    \begin{enumerate}[(i)]
+        \item Suppose $L$ is surjective. Let $v\in V$ be arbitrary.
+        Then, there exists $x=\ColVecFour{x_1}{x_2}{\vdots}{x_k}\in\R^k$ such that $v=L(x)=\mathlarger{\sum_{i=1}^{k}x_iv_i}$. Hence, $v\in\SpanLA(v_1,...,v_k)$, or $V\subseteq\SpanLA(v_1,...,v_k)$.
+        Moreover since $v_1,...v_k\in V$, $\SpanLA(v_1,...,v_k)\subseteq V$.
+        Therefore, $\SpanLA(v_1,...,v_k)=V$.\qed
+
+        \item Suppose $L$ is injective.
+        Then, $\nullla(L)=\{0\}$, or for $x=\ColVecFour{x_1}{x_2}{\vdots}{x_4}\in V$ and $x\not=0$, $L(x)=\mathlarger{\sum_{i=1}^{k}x_iv_i}\not= 0$. 
+        Therefore, the equation $\mathlarger{\sum_{i=1}^{k}x_iv_i}=0$ has no non-trivial solution, or $v_1,...,v_k$ is a linearly independent list of vectors.\qed
+
+        \item Since $L$ is surjective, $\range(L)=V$. From the rank-nullity theorem, since $\dim(R^k)=\dim(\nullla(L))+\dim(\range(L))$, 
+        \[
+            \begin{aligned}
+                k=\dim(\nullla(L))+m
+            \end{aligned}
+        \]
+        , or $m=k-\dim(\nullla(L))$.
+        
+    \end{enumerate}
+
+\end{proof}

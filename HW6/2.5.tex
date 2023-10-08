@@ -1,7 +1,42 @@
+\noindent The next collection of questions will all refer to the same matrix and function. Define the $4\times3$ matrix $A$, as
+	\begin{align}\label{eq:MatrixA}
+		A = 
+		 \begin{pmatrix}
+		  1 & 0 & 1 \\
+		  2 & 1 & 1 \\
+		  2 & 0 & 2 \\
+		  5 & 3 & 2 
+		 \end{pmatrix},
+	\end{align}
+	and define the function, $L:\real^3\to\real^4$ as
+	\begin{align}\label{eq:FunctionL}
+		\text{whenever}\ &x = \ColVecThree{x_1}{x_2}{x_3} = x_1 e_1 + x_2 e_2 + x_3 e_3\ \ \text{\textbf{in the canonical basis}},\nonumber \\
+		&L(x) = Ax,\ \ \text{defined via matrix multiplication}.
+	\end{align}
+	You should have read about matrix-vector multiplication in LADR 3C, but to be explicit, this is what we mean: for a matrix $B$, the matrix multiplication $Bx$ is given as:
+	\begin{align*}
+		\begin{pmatrix}
+	     	  b_{1,1} & b_{1,2} & b_{1,3} \\
+	     	  b_{2,1} & b_{2,2} & b_{2,3} \\
+	     	  b_{3,1} & b_{3,2} & b_{3,3} \\
+	     	  b_{4,1} & b_{4,2} & b_{4,3} \\
+		\end{pmatrix}
+		\begin{pmatrix}
+			x_1\\
+			x_2\\
+			x_3
+		\end{pmatrix}
+		= 
+		\ColVecFour{b_{1,1}x_1 + b_{1,2}x_2 + b_{1,3}x_3}
+		{b_{2,1}x_1 + b_{2,2}x_2 + b_{2,3}x_3}
+		{b_{3,1}x_1 + b_{3,2}x_2 + b_{3,3}x_3}
+		{b_{4,1}x_1 + b_{4,2}x_2 + b_{4,3}x_3}
+	\end{align*}
+	
 \begin{question}\label{que:RangeAndNullMatrixL}
 	\normalfont
 	
-	Consider the function $L$ defined in (5).
+	Consider the function $L$ defined in (\ref{eq:FunctionL}).
 	
 	\begin{enumerate}[(i)]
 		\item Prove that $[L(e_1), L(e_2)]$ is a basis for $\range(L)$.
@@ -19,3 +54,92 @@
 		Prove your answer. (Hint: is $w\in\range(L)$?)
 	\end{enumerate}
 \end{question}
+
+\begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
+    \begin{enumerate}[(i)]
+    \item 
+        Let $x=\ColVecThree{x_1}{x_2}{x_3}\in\R^3$ and $v_1,v_2,v_3$ be the column vectors of $A$. Then 
+        \[
+            \begin{aligned}
+                L(x) = Ax = x_1v_1+x_2v_2+x_3v_3
+            \end{aligned}
+        \]
+        , implying that $L(x)\in\SpanLA(v_1,v_2,v_3)$ and $x_1v_1+x_2v_2+x_3v_3\in\range(L)$ for some arbitrary $x$. Hence, $\SpanLA(v_1,v_2,v_3)\subseteq\range(L)$ and $\range(L)\subseteq\SpanLA(v_1,v_2,v_3)$, or $\range(L)=\SpanLA(v_1,v_2,v_3)$.
+        
+        Let $y\in\SpanLA(v_1,v_2,v_3)$ be arbitrary.
+        Then, there exist $a_1,a_2,a_3\in\R$ such that $y=a_1v_1+a_2v_2+a_3v_3$.
+        But since $v_3=\ColVecFour{1}{1}{2}{2}=\ColVecFour{1}{2}{2}{5}-\ColVecFour{0}{1}{0}{3}=v_1-v_2$,
+        \[
+            \begin{aligned}
+                y=a_1v_1+a_2v_2+a_3(v_1-v_2)=(a_1+a_3)v_1+(a_2-a_3)v_2\in\SpanLA(v_1,v_2)
+            \end{aligned}
+        \]
+        it follows that $v_1,v_2$ spans $\SpanLA(v_1,v_2,v_3)$.
+        In addition, since $v_2$ cannot be written as a linear combination of $v_1$ (if there exists one, the first term of $v_2$ implies that $v_2=0v_1$, which is not true), $v_1,v_2$ is a linearly independent list of vectors.
+        Hence, $v_1,v_2$ is a basis for $\SpanLA(v_1,v_2,v_3)$, or $v_1,v_2$ is a basis for $\range(L)$.
+
+        To show that $v_1=L(e_1)$ and $v_2=L(e_2)$, we have 
+        \[
+            \begin{aligned}
+                L(e_1)=1\times v_1+0\times v_2+0\times v_3=v_1
+            \end{aligned}
+        \]
+        and 
+        \[
+            \begin{aligned}
+                L(e_2)=0\times v_1+1\times v_2+0\times v_3=v_2
+            \end{aligned}
+        \]
+        Therefore, $[L(e_1),L(e_2)]=[v_1,v_2]$, or $[L(e_1),L(e_2)]$ is a basis for $\range(L)$\qed
+        \item 
+        Since $v_1,v_2$ is a basis for $\range(L)$ and has two vectors, $\dim(\range(L))=2$.
+        From the rank-nullity theorem, since the domain of $L$ is $\R^3$, 
+        \[
+            \begin{aligned}
+                \dim(\R^3)=\dim(\nullla(L))+\dim(\range(L))
+            \end{aligned}
+        \]
+        or $\dim(\nullla(L))=3-2=1$. Hence, a basis for $\nullla(L)$ must have one vector.
+
+        Let $v=\ColVecThree{1}{-1}{-1}$. Then,  
+        \[
+            \begin{aligned}
+                L(v)
+                &= Av\\
+                &= \ColVecFour{1}{2}{2}{5}-\ColVecFour{0}{1}{0}{3}-\ColVecFour{1}{1}{2}{2}\\
+                &= \ColVecFour{1-0-1}{2-1-1}{2-1-1}{5-3-2}=0
+            \end{aligned}
+        \]
+        Thus, $v\in\nullla(L)$.
+        Since $v$ is a linearly independent list of vectors and $v\in\nullla(L)$, that list can be extended into a basis for $\nullla(L)$.
+        But since $\dim(\nullla(L))=1$, any basis for $\nullla(L)$ can only contain one element.
+        Therefore, $v$ is a basis for $\nullla(L)$.\qed
+        \item 
+        Suppose there exists $v\in\R^3$ such that $L(v)=w$.
+        Then, $w\in\range(L)$.
+        But since $v_1,v_2$ is a basis for $\range(L)$ and $v_1,v_2$ is a basis for $\range(L)$, it follows that there exist $a_1,a_2\in\R$ such that $w=a_1v_1+a_2v_2$.
+        We have 
+        \[
+            \begin{aligned}
+                w
+                &= \ColVecFour{0}{0}{1}{0}\\
+                &= a_1v_1+a_2v_2\\
+                &= \ColVecFour{a_1}{2a_1}{2a_1}{5a_1}+\ColVecFour{0}{a_2}{0}{3a_2} &= \ColVecFour{a_1}{2a_1+a_2}{2a_1}{5a_1+3a_2}
+            \end{aligned}
+        \]
+        , which can be reduced to 
+        \begin{align*}
+            &\qquad \ \begin{cases}
+                a_1 &= 0\\
+                2a_1+a_2 &= 0\\
+                2a_1 &= 1\\
+                5a_1+3a_2 &= 0
+            \end{cases}\\
+            &\implies a_1=0\text{ and } a_1=0.5
+        \end{align*}
+        , which is impossible.
+        Therefore, $w\not\in\range(L)$, or there does not exist $v\in\R^3$ such that $L(v)=w$.\qed
+    \end{enumerate}
+    \renewcommand{\qedsymbol}{}
+\end{proof}
