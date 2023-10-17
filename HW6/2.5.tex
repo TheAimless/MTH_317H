@@ -62,10 +62,20 @@
         Let $x=\ColVecThree{x_1}{x_2}{x_3}\in\R^3$ and $v_1,v_2,v_3$ be the column vectors of $A$. Then 
         \[
             \begin{aligned}
-                L(x) = Ax = x_1v_1+x_2v_2+x_3v_3
+                L(x) &= Ax\\
+                &= \begin{pmatrix}
+                    1 & 0 & 1 \\
+                    2 & 1 & 1 \\
+                    2 & 0 & 2 \\
+                    5 & 3 & 2 
+                   \end{pmatrix}\ColVecThree{x_1}{x_2}{x_3}\\
+                &= \ColVecFour{1x_1+0x_2+1x_3}{2x_1+1x_2+1x_3}{2x_1+0x_2+2x_3}{5x_1+3x_2+2x_3}\\
+                &= x_1 \ColVecFour{1}{2}{2}{5}+x_2 \ColVecFour{0}{1}{0}{3}+ x_3 \ColVecFour{1}{1}{2}{2}\\
+                &= x_1v_1+x_2v_2+x_3v_3
             \end{aligned}
         \]
-        , implying that $L(x)\in\SpanLA(v_1,v_2,v_3)$ and $x_1v_1+x_2v_2+x_3v_3\in\range(L)$ for some arbitrary $x$. Hence, $\SpanLA(v_1,v_2,v_3)\subseteq\range(L)$ and $\range(L)\subseteq\SpanLA(v_1,v_2,v_3)$, or $\range(L)=\SpanLA(v_1,v_2,v_3)$.
+        , where $v_1=\ColVecFour{1}{2}{2}{5},v_2=\ColVecFour{0}{1}{0}{3},v_3=\ColVecFour{1}{1}{2}{2}$.
+        This implies that $L(x)\in\SpanLA(v_1,v_2,v_3)$ and $x_1v_1+x_2v_2+x_3v_3\in\range(L)$ for some arbitrary $x$. Hence, $\SpanLA(v_1,v_2,v_3)\subseteq\range(L)$ and $\range(L)\subseteq\SpanLA(v_1,v_2,v_3)$, or $\range(L)=\SpanLA(v_1,v_2,v_3)$.
         
         Let $y\in\SpanLA(v_1,v_2,v_3)$ be arbitrary.
         Then, there exist $a_1,a_2,a_3\in\R$ such that $y=a_1v_1+a_2v_2+a_3v_3$.
