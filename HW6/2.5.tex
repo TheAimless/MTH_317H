@@ -85,25 +85,25 @@
                 y=a_1v_1+a_2v_2+a_3(v_1-v_2)=(a_1+a_3)v_1+(a_2-a_3)v_2\in\SpanLA(v_1,v_2)
             \end{aligned}
         \]
-        it follows that $v_1,v_2$ spans $\SpanLA(v_1,v_2,v_3)$.
+        meaning $v_1,v_2$ spans $\SpanLA(v_1,v_2,v_3)$.
         In addition, since $v_2$ cannot be written as a linear combination of $v_1$ (if there exists one, the first term of $v_2$ implies that $v_2=0v_1$, which is not true), $v_1,v_2$ is a linearly independent list of vectors.
         Hence, $v_1,v_2$ is a basis for $\SpanLA(v_1,v_2,v_3)$, or $v_1,v_2$ is a basis for $\range(L)$.
 
         To show that $v_1=L(e_1)$ and $v_2=L(e_2)$, we have 
         \[
             \begin{aligned}
-                L(e_1)=1\times v_1+0\times v_2+0\times v_3=v_1
+                L(e_1)=1v_1+0v_2+0v_3=v_1
             \end{aligned}
         \]
         and 
         \[
             \begin{aligned}
-                L(e_2)=0\times v_1+1\times v_2+0\times v_3=v_2
+                L(e_2)=0v_1+1v_2+0v_3=v_2
             \end{aligned}
         \]
         Therefore, $[L(e_1),L(e_2)]=[v_1,v_2]$, or $[L(e_1),L(e_2)]$ is a basis for $\range(L)$\qed
         \item 
-        Since $v_1,v_2$ is a basis for $\range(L)$ and has two vectors, $\dim(\range(L))=2$.
+        Since $v_1,v_2$ is a basis for $\range(L)$ and contains two vectors, $\dim(\range(L))=2$.
         From the rank-nullity theorem, since the domain of $L$ is $\R^3$, 
         \[
             \begin{aligned}
@@ -122,9 +122,7 @@
             \end{aligned}
         \]
         Thus, $v\in\nullla(L)$.
-        Since $v$ is a linearly independent list of vectors and $v\in\nullla(L)$, that list can be extended into a basis for $\nullla(L)$.
-        But since $\dim(\nullla(L))=1$, any basis for $\nullla(L)$ can only contain one element.
-        Therefore, $v$ is a basis for $\nullla(L)$.\qed
+        Since $v$ is a linearly independent list of vectors with length 1, from Theorem 2.39 Section 2C LADR it follows that $v$ is a basis for $\nullla(L)$.\qed
         \item 
         Suppose there exists $v\in\R^3$ such that $L(v)=w$.
         Then, $w\in\range(L)$.
@@ -133,9 +131,8 @@
         \[
             \begin{aligned}
                 w
-                &= \ColVecFour{0}{0}{1}{0}\\
-                &= a_1v_1+a_2v_2\\
-                &= \ColVecFour{a_1}{2a_1}{2a_1}{5a_1}+\ColVecFour{0}{a_2}{0}{3a_2} &= \ColVecFour{a_1}{2a_1+a_2}{2a_1}{5a_1+3a_2}
+                = a_1v_1+a_2v_2
+                = \ColVecFour{a_1}{2a_1}{2a_1}{5a_1}+\ColVecFour{0}{a_2}{0}{3a_2} &= \ColVecFour{a_1}{2a_1+a_2}{2a_1}{5a_1+3a_2}
             \end{aligned}
         \]
         , which can be reduced to 

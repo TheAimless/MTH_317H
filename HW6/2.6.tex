@@ -22,13 +22,13 @@
 \begin{proof}
     \renewcommand{\qedsymbol}{$\blacksquare$}
     \begin{enumerate}[(i)]
-        \item From problem 5, we have calculated $L(e_1)=v_1$, $L(e_2)=v_2$.
+        \item From problem 5, we have: $L(e_1)=v_1$, $L(e_2)=v_2$.
         Let $a_1=4, a_2=-2$. Then, 
         \[
             \begin{aligned}
-                &\quad \ a_1L(e_1)+a_2L(e_2)\\
-                &= 4v_1-2v_2\\
-                &= \ColVecFour{4}{6}{8}{14}=y
+                a_1L(e_1)+a_2L(e_2)
+                = 4v_1-2v_2
+                = \ColVecFour{4}{6}{8}{14}=y
             \end{aligned}
         \]
         Hence, $a_1,a_2$ satisfy $y=a_1L(e_1)+a_2L(e_2)$.
@@ -38,7 +38,16 @@
                 L(x_0)=4v_1-2v_2+0v_3=y
             \end{aligned}
         \]
-        \item 
+        Hence, $x_0$ satisfies $L(x_0)=y$.
+        \item Let $z_0=\ColVecThree{1}{-1}{-1}$ and $x=x_0+\lambda z_0$, where $\lambda\in\R$. Since $L(z_0)=L(\ColVecThree{1}{-1}{-1})=0$, 
+        \[
+            \begin{aligned}
+                L(x)&=L(x_0+\lambda z_0)\\
+                    &=L(x_0)+\lambda L(z_0)\\
+                    &=L(x_0)=y
+            \end{aligned}
+        \]
+        for all $\lambda\in\R$. Therefore, the solution to the equation $L(x)=y$ is $x=\ColVecThree{4}{-2}{0}+\lambda \ColVecThree{1}{-1}{-1}=\ColVecThree{4+\lambda}{-2-\lambda}{-\lambda}$ for all $\lambda\in\R$.\qed
     \end{enumerate}
     
     \renewcommand{\qedsymbol}{}
