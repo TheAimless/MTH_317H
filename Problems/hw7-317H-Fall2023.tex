@@ -1,0 +1,401 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb}
+\usepackage{epsfig}
+\usepackage{psfrag}
+\usepackage{fullpage}
+\usepackage{color}
+\usepackage{amsfonts,epsf}
+\usepackage{amsmath,amssymb,
+amscd,amsbsy, bbm, amsthm, enumerate, url}
+\usepackage{wasysym}
+
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{question}[thm]{Question}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{DEF}[thm]{Definition}
+\newtheorem{rem}[thm]{Remark}
+\newenvironment{sol}{\paragraph{Solution:}\color{red}}{\hfill$\square$}
+\newenvironment{grade}{\paragraph{grading:}\color{blue}}{\hfill$\square$}
+
+
+
+\def\real{{\mathbb R}}
+\def\Natural{\mathbb{N}}
+\def\Z{\mathbb{Z}}
+\def\integer{\mathbb{Z}}
+\def\dx{\textnormal{dx}}
+\def\dy{\textnormal{dy}}
+\def\dz{\textnormal{dz}}
+\def\dt{\textnormal{dt}}
+\def\ds{\textnormal{ds}}
+\def\dw{\textnormal{dw}}
+\def\Re{\textnormal{Re}}
+\def\Im{\textnormal{Im}}
+\def\Id{\textnormal{Id}}
+\def\exp{\textnormal{exp}}
+\def\dim{\textnormal{dim}}
+\def\interior{\textnormal{interior}}
+\def\NullLA{\textnormal{null}}
+\def\SpanLA{\textnormal{span}}
+\def\range{\textnormal{range}}
+\def\al{\alpha}
+\def\del{\delta}
+\def\Del{\Delta}
+\def\gam{\gamma}
+\def\Gam{\Gamma}
+\def\Om{\Omega}
+\def\ep{\varepsilon}
+\def\lam{\lambda}
+\def\rational{{\mathbb Q}}
+\def\integer{{\mathbb Z}}
+\def\grad{\nabla}
+
+
+\def\B{\mathcal B}
+\def\C{\mathcal C}
+\def\I{\mathcal I}
+\def\M{\mathcal M}
+\def\N{\mathbb N}
+\def\P{\mathcal P}
+\def\R{\mathbb R}
+\def\T{\mathcal T}
+\def\Z{\mathbb Z}
+
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\ColVecTwo}[2]{\begin{pmatrix} #1\\ #2\end{pmatrix}}
+\newcommand{\ColVecThree}[3]{\begin{pmatrix} #1\\ #2\\ #3\end{pmatrix}}
+\newcommand{\ColVecFour}[4]{\begin{pmatrix} #1\\ #2\\#3 \\ #4\end{pmatrix}}
+\newcommand{\MatrixTwoTwo}[4]{\begin{pmatrix} #1 &#2\\ #3 &#4 \end{pmatrix}}
+\newcommand{\inner}[2]{\langle #1 , #2 \rangle}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\spanvect}{\textnormal{span}}
+\newcommand{\union}{\cup}
+\newcommand{\Union}{\bigcup}
+\newcommand{\intersect}{\cap}
+\newcommand{\Intersect}{\bigcap}
+
+\DeclareMathOperator*{\Limsup}{LIMSUP}
+
+
+
+\pagestyle{empty}
+\begin{document}
+
+	\begin{LARGE}
+	\begin{center}
+		
+		
+
+		
+	
+	\textbf{Homework 7; Due Thursday 11/2}
+	
+
+	(MTH 317H, Honors Linear Algebra;  Fall 2023)
+	\end{center}
+	\end{LARGE}
+	\vspace{0.15in}
+	
+	
+	
+
+\section{Commentary}
+
+This assignment covers invertible linear transformations, isomorphisms, and matrices associated to a transformation. We will also start solving systems of linear equations using matrices. 
+
+\subsection{required reading}
+
+\begin{itemize}
+	\item LADW (Linear Algebra Done Wrong) sections 2.3, 2.4, and 2.6.
+\end{itemize}
+
+
+
+
+\section{Questions}
+
+
+\begin{question}
+	\normalfont
+	For each of the linear maps below, find the matrix of the linear map with respect to the indicated bases. \\
+	
+	
+	\noindent (a) Find the matrix of the linear map $T: \real^4 \to \real^3$ defined by
+	\[
+	T(\ColVecFour{x_1}{x_2}{x_3}{x_4}) = \ColVecThree{x_1+x_2+x_3+x_4}{x_2-x_4}{x_1+3x_2+6x_4},
+	\]
+with respect to the standard bases of $\real^4$ and $\real^3$. \\
+
+\vspace{.2cm}
+\noindent (b) Find the matrix of the linear map $S: \P_3 \to \P_3$ defined by \[(Sp)(x) = 2p(x) + 3p'(x) - 4 p^{''}(x),\] with respect to the standard basis of $\P_3$. \\
+
+\vspace{.2cm}
+	
+	\noindent	(c) Consider the linear map $H:\mathbb{R}^3 \rightarrow \mathbb{R}^3$ defined by $$H\left( \begin{array}{c}
+v_1 \\
+v_2 \\
+v_3 \\
+\end{array} \right)
+= \left( \begin{array}{c}
+ v_3\\
+ v_2 - v_1\\
+ 2v_1 \\
+ \end{array} \right)$$
+\noindent Give the matrix for $H$ with respect to the following basis $\mathcal{C}$ for both the domain and the target: 
+
+\[
+\mathcal{C}= \Bigg\{\left( \begin{array}{c}
+0 \\
+1 \\
+1\\
+ \end{array}  \right), \left( \begin{array}{c}
+1 \\
+1 \\
+0\\
+ \end{array} \right), \left( \begin{array}{c}
+0 \\
+-1 \\
+1\
+ \end{array} \right)\Bigg\}.
+ \]
+
+	\vspace{.4cm}	
+		
+\noindent (d) Consider the linear map $J:\P_2 \rightarrow \mathbb{R}^3$ defined by 
+\[
+J(a_0+a_1x+a_2x^2)= \left( \begin{array}{c}
+a_1 + a_0\\
+a_2-2a_1 \\
+a_0 \\
+ \end{array} \right)
+ \]
+\noindent Write the matrix for $J$ with respect to the standard bases $\{1,x,x^2\}$ for $\P_2$, and $\{\textbf{e}_1,\textbf{e}_2,\textbf{e}_3\}$ for $\mathbb{R}^3$.\\ 
+ \vspace{0.5cm}
+
+\noindent (e) Given the linear map $J$ in part (d), find the matrix for $J$ with respect to the bases $\mathcal{A} = \{2,1+x, x^2\}$ for $\P_2$, and 
+\[
+\mathcal{B} = \Bigg\{\left( \begin{array}{c}
+1 \\
+0 \\
+1\
+ \end{array}  \right), \left( \begin{array}{c}
+1 \\
+-1 \\
+0\\
+ \end{array} \right), \left( \begin{array}{c}
+0 \\
+1 \\
+0\\
+ \end{array} \right)\Bigg\} 
+ \]
+ for $\mathbb{R}^3.$
+
+ 
+ 
+\end{question}
+
+
+\vspace{.5cm}
+
+\begin{question}
+
+\normalfont
+(a) Consider the linear map $D: \P_3 \to \P_2$ given by differentiation. In other words $(Dp)(x) = p'(x)$. Find a basis of $\P_3$ and a basis of $\P_2$ such that the matrix of $D$ with respect to these bases is 
+\[
+\left( \begin{array}{rrrr}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+\end{array}\right)
+\]
+
+
+\vspace{.4cm}
+
+\noindent (b) Suppose $V$ and $W$ are finite-dimensional vector spaces, and $T$ is a linear map $T: V \to W$. Prove that there exists a basis of $V$ and a basis of $W$ such that all entries of the matrix of $T$ with respect to these bases are 0 except that the entry in row $j$, column $j$ is 1 for all $1\leq j \leq \dim (\textup{range} T$). 
+
+\end{question}
+
+
+
+
+
+
+\vspace{.5cm}
+
+\begin{question}
+	\normalfont
+	
+	Suppose $T \in \mathcal{L}(U,V)$ and $S \in \mathcal{L}(V,W)$ are both invertible linear maps. Prove that $ST \in \mathcal{L}(U,W)$ is invertible and that $(ST)^{-1} = T^{-1}S^{-1}$. 
+	
+	
+	\end{question}
+
+
+
+
+
+
+
+\vspace{.5cm}
+
+\begin{question}
+\normalfont
+\noindent Without citing LADR result 3.59, show explicitly that  $\P_3$ is isomorphic to the vector space of $2\times2$ matrices with entries in the real numbers, $M_{2\times 2}(\real)$. In other words, define linear maps (and prove that they are linear)
+\[
+T: \P_3 \to M_{2\times2}(\real)
+\]
+and 
+\[
+S: M_{2\times2}(\real) \to \P_3
+\]
+such that $ST$ is the identity map on $\P_3$ and $TS$ is the identity map on $M_{2\times2}(\real)$.  \\ 
+
+
+\end{question}
+
+
+
+
+\vspace{.5cm}
+
+\begin{question}	\normalfont
+	
+For each of the following systems of equations: \\
+
+\noindent (i) Express the system in matrix form $Ax =b$. \\
+
+\noindent (ii) 	Use row reduction to reach {\bf reduced row echelon} form,
+and then  determine all solutions to the
+system.  \\ \\	
+	
+\noindent (a) 	
+\[
+\begin{array}{r}
+x_1 + 2x_2 - x_3 = -1\\ 
+2x_1 + 2x_2 + x_3 = 1 \\
+3x_1 + 5x_2 - 2x_3 = -1 \\
+\end{array}
+\]
+
+\vspace{.2cm}
+
+\noindent (b)
+\[
+\begin{array}{r}
+x_1 - 4x_2 - x_3 + x_4 = 3 \\
+2x_1 - 8 x_2 + x_3 -4x_4 = 9 \\
+-2x_1 + 8 x_2 + 2x_3 -2x_4 = -6 \\
+\end{array}
+\]	
+
+\vspace{.2cm}
+
+\noindent (c) 
+\[
+\begin{array}{r}
+x_1 -2x_2 -x_3 = 1\\
+2x_1 - 3x_2 + x_3 = 6 \\
+-x_1 -5x_3 = 4 \\
+\end{array}
+\]
+
+
+\end{question}
+	
+	
+	\vspace{1cm}
+	
+
+
+
+
+
+\vspace{.5cm}
+
+\begin{question}
+	\normalfont
+	
+	Consider the following system of equations in variables $x_1,x_2,x_3,x_4$:
+	\[
+	\begin{array}{r}
+	x_1 + 3x_2 + 2x_3 = a \\
+	x_3 + 5 x_4 = b \\
+	3x_1 + 9x_2 + 7x_3 + 5x_4 = c \\
+	\end{array}
+	\]
+	
+\noindent (a) Describe all triples $(a,b,c)$ for which this system will have a solution \\
+
+
+\noindent (b) Find all solutions to the equation when  $(a,b,c)=(1,1,4)$. 
+	
+	
+\end{question}
+
+
+\vspace{.5cm}
+
+
+
+
+
+\begin{question}
+	\normalfont
+	
+	Use mathematical induction to prove the following statement:
+	\begin{align*}
+		\textnormal{for all}\ n\in\Natural,\ \ 
+		\MatrixTwoTwo{2}{0}{-1}{1}^n
+		= \MatrixTwoTwo{2^n}{0}{1-2^n}{1}.
+	\end{align*}
+	Note, in this class we are using the convention that $\Natural = \{1,2,3,\dots\}$, i.e. $0\not\in\Natural$.
+	Also, we are using the notation for the power of a matrix that if $A$ is a square matrix, then by $A^n$, we mean $A$ multiplied by itself $n$ times; i.e.
+	\begin{align*}
+		A^2 = AA,\ \ A^3 = AAA,\ \ A^n = A\cdots A\ \ \textnormal{with $n$ terms in the product}.
+	\end{align*}
+	
+	Your inductive proof must include the following steps:
+	\begin{enumerate}[(i)]
+		\item identify and state what is the conditional statement, $P(n)$, for $n\in \Natural$.
+		\item state which natural number you will use as the base case, and prove that the conditional statement is true for the base case.
+		\item for a fixed $k\in\Natural$, state the inductive assumption.
+		\item prove the inductive step.  That is to say, prove that $P(k+1)$ is also true.
+		\item conclude.
+	\end{enumerate}
+\end{question}
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
