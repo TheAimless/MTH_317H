@@ -7,18 +7,49 @@
 		\MatTwoTwo{2}{0}{-1}{1}^n
 		= \MatTwoTwo{2^n}{0}{1-2^n}{1}.
 	\end{align*}
-	Note, in this class we are using the convention that $\Natural = \{1,2,3,\dots\}$, i.e. $0\not\in\Natural$.
-	Also, we are using the notation for the power of a matrix that if $A$ is a square matrix, then by $A^n$, we mean $A$ multiplied by itself $n$ times; i.e.
-	\begin{align*}
-		A^2 = AA,\ \ A^3 = AAA,\ \ A^n = A\cdots A\ \ \textnormal{with $n$ terms in the product}.
-	\end{align*}
-	
-	Your inductive proof must include the following steps:
-	\begin{enumerate}[(i)]
-		\item identify and state what is the conditional statement, $P(n)$, for $n\in \Natural$.
-		\item state which natural number you will use as the base case, and prove that the conditional statement is true for the base case.
-		\item for a fixed $k\in\Natural$, state the inductive assumption.
-		\item prove the inductive step.  That is to say, prove that $P(k+1)$ is also true.
-		\item conclude.
-	\end{enumerate}
 \end{question}
+
+\begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
+    Let $P(n)$ be defined as the statement 
+    \[
+        \begin{aligned}
+            \MatTwoTwo{2}{0}{-1}{1}^n=\MatTwoTwo{2^n}{0}{1-2^n}{1}
+        \end{aligned}
+    \]
+    for all $n\in\N$. 
+
+    Base case: Consider $n=1\in\N$. Then 
+    \[
+        \begin{aligned}
+            \MatTwoTwo{2}{0}{-1}{1}^n=\MatTwoTwo{2}{0}{-1}{1}=\MatTwoTwo{2^n}{0}{1-2^n}{1}
+        \end{aligned}
+    \]
+    , or $P(1)$ is true.
+
+    Induction step: Assume $P(n)$ is true for some $n=k\in\N$. That is, $P(k)$ is true, or 
+    \[
+        \begin{aligned}
+            \MatTwoTwo{2}{0}{-1}{1}^k=\MatTwoTwo{2^k}{0}{1-2^k}{1}
+        \end{aligned}
+    \] 
+    We have: the statement $P(k+1)$ is 
+    \[
+        \begin{aligned}
+            \MatTwoTwo{2}{0}{-1}{1}^{k+1}=\MatTwoTwo{2^{k+1}}{0}{1-2^{k+1}}{1}
+        \end{aligned}
+    \]
+    However,
+    \[
+        \begin{aligned}
+            &\MatTwoTwo{2}{0}{-1}{1}^{k+1}\\
+            =&\MatTwoTwo{2}{0}{-1}{1}^k\MatTwoTwo{2}{0}{-1}{1}\\
+            =&\MatTwoTwo{2^k}{0}{1-2^k}{1}\MatTwoTwo{2}{0}{-1}{1}\\
+            =&\MatTwoTwo{2^{k+1}+0\times-1}{2^k\times 0+0\times 1}{2-2^{k+1}-1}{0(1-2^k)+1\times 1}\\
+            =&\MatTwoTwo{2^{k+1}}{0}{1-2^{k+1}}{1}
+        \end{aligned}
+    \]
+    Hence, $P(k+1)$ must also be true.
+
+    From the principle of mathematical induction, it follows that the statement $P(n)$ is true for all $n\in\N$.
+\end{proof}
