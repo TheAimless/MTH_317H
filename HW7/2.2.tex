@@ -16,3 +16,61 @@
 \noindent (b) Suppose $V$ and $W$ are finite-dimensional vector spaces, and $T$ is a linear map $T: V \to W$. Prove that there exists a basis of $V$ and a basis of $W$ such that all entries of the matrix of $T$ with respect to these bases are 0 except that the entry in row $j$, column $j$ is 1 for all $1\leq j \leq \dim (\textup{range} T$). 
 
 \end{question}
+\begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
+    \begin{enumerate}[(a)]
+    \item
+    Let $P=p_0,p_1,p_2,p_3$ and $Q=q_0,q_1,q_2$ such that $P$ is the canonical basis for $\P_3$ ($p_0(x)=1, p_1(x)=x, p_2(x)=x^2, p_3(x)=x^3$ $\forall x\in\R$), $q_0,q_1,q_2\in\P_2$ and for every $x\in\R$, $q_0(x)=3x^2$, $q_1(x)=2x$ and $q_2(x)=1$.
+    Let $c_0,c_1,c_2\in\R$ be the solution to $c_0q_0+c_1q_1+c_2q_2=0$.
+    Then 
+    \[
+        \begin{aligned}
+            &c_0q_0(x)+c_1q_1(x)+c_2q_2(x)=0\\
+            \Leftrightarrow\
+            &3c_0x^2+2c_1x+c_2=0\\
+            \Leftrightarrow\
+            &3c_0=2c_1=c_2=0\\
+            \Leftrightarrow\
+            &c_0=c_1=c_2=0
+        \end{aligned}
+    \]
+    Thus, the only solution to $c_0q_0+c_1q_1+c_2q_2=0$ is $c_0=c_1=c_2=0$, or $Q$ is a linearly independent list of vectors.
+    Combined with the fact that $\dim(\P_2)=3$, which is equal to the length of list $Q$, it follows that $Q$ is a basis for $P_2$.
+
+    Consider the linear map $D$. For every $x\in\R$, 
+    \[
+        \begin{aligned}
+            (Dp_0)(x)=p_0'(x)=3x^2=q_0(x)+0q_1(x)+0q_2(x)\\
+            (Dp_1)(x)=p_1'(x)=2x=0q_0(x)+q_1(x)+0q_2(x)\\
+            (Dp_2)(x)=p_2'(x)=1=0q_0(x)+0q_1(x)+q_2(x)\\
+            (Dp_3)(x)=p_3'(x)=0=0q_0(x)+0q_1(x)+0q_2(x)
+        \end{aligned}
+    \]
+    Therefore, for given $P$ and $Q$, the matrix of $D$ with respect to these bases is 
+    \[
+        \begin{pmatrix}
+            1 & 0 & 0 & 0\\
+            0 & 1 & 0 & 0\\
+            0 & 0 & 1 & 0
+        \end{pmatrix}    
+    \]
+    \item Let $n=\dim(V)$ and $m=\dim(W)$. Since a basis for $V$ must have a length of $n$ and a basis for $W$ must have a length of $m$, let $B_1=v_1,...,v_n$ and $B_2=w_1,...w_m$ be bases for $V$ and $W$, respectively.
+    Then, for all $i=1,...,n$, $T(v_i)$ can be written as a linear combination of $w_1,...,w_m$; i.e., there exist $c_{1,i},c{2,i},...,c_{m,i}\in\R$ such that 
+    \[
+        \begin{aligned}
+            Tv_i=c_{1,i}w_1+c_{2,i}w_2+...+c_{m,i}w_m
+        \end{aligned}
+    \]
+    It follows that the matrix for $T$ with respect to $B_1$ and $B_2$ is 
+    \[
+        \begin{aligned}
+            A=\begin{pmatrix}
+                c_{1,1} & \cdots & c_{1,n}\\
+                \vdots & \ddots & \vdots\\
+                c_{m,1} & \cdots & c_{m,n}
+            \end{pmatrix}
+        \end{aligned}
+    \]
+    
+    \end{enumerate}
+\end{proof}

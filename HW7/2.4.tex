@@ -12,3 +12,30 @@ such that $ST$ is the identity map on $\P_3$ and $TS$ is the identity map on $M_
 
 
 \end{question}
+
+\begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
+    Let $B_1=p_0,p_1,p_2,p_3$ be the canonical basis for $\P_3$ such that for all $x\in\R$, $p_0(x)=1$, $p_1(x)=x$, $p_2(x)=x^2$ and $p_3(x)=x^3$.
+
+    Define $m_1=\MatTwoTwo{1}{0}{0}{0},m_2=\MatTwoTwo{0}{1}{0}{0},m_3=\MatTwoTwo{0}{0}{1}{0},m_4=\MatTwoTwo{0}{0}{0}{1}$. Let $c_1,c_2,c_3,c_4\in\R$ such that $c_1m_1+c_2m_2+c_3m_3+c_4m_4=0$. Then 
+    \[
+        \begin{aligned}
+            \MatTwoTwo{0}{0}{0}{0} 
+            = c_1m_1+c_2m_2+c_3m_3+c_4m_4
+            = \MatTwoTwo{c_1}{c_2}{c_3}{c_4}
+        \end{aligned}
+    \]
+    This implies that $c_1=c_2=c_3=c_4=0$, or $B_2=m_1,m_2,m_3,m_4$ is a linearly independent list in $M_{2\times 2}(\R)$.
+    Moreover, since $\dim(M_{2\times 2}(\R))=4$ and $B_2$ contains four vectors, from Theorem 2.39 Section 2C LADR, it follows that $B_2$ is a basis for $M_{2\times 2}(\R)$.
+    
+    Let $a,b,c,d\in\R$. 
+    Let $p\in\P_3$ and $m\in\M_{2\times 2}(\R)$ such that $p(x)=a+bx+cx^2+dx^3$ for all $x\in\R$ and $m=\MatTwoTwo{a}{b}{c}{d}$.
+    Define $T:\P_3\to M_{2\times 2}(\R)$ and $S:\M_{2\times 2}(\R)\to\P_3$ to be
+    \[
+        \begin{aligned}
+            T(p)=m \text{ and } S(m)=p
+        \end{aligned}
+    \]
+    for all $a,b,c,d\in\R$.
+    To show that $S$ and $T$ are linear, let $q_1,q_2\in\P_3$, $n_1,n_2\in$
+\end{proof}
