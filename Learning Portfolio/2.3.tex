@@ -11,7 +11,7 @@
         $L$ has the values: 
         \[
             \begin{aligned}
-                [L(p_0)](x)=x^4,\ [L(p_1)](x)=3,\ [L(p_2)](x)=x.
+                [L(p_0)](x)=x^4,\ [L(p_1)](x)=3x^3,\ [L(p_2)](x)=x.
             \end{aligned}
         \]
         \item For $p_3(x)=x^3$ and $p_4(x)=x^4,L(p_3+p_4)=$ zero polynomial.
@@ -34,9 +34,8 @@
     \begin{enumerate}[(i)]
         \item Let $L:\P_4\rightarrow\P_4$ such that $L$ satisfies (a); $L(p_3), L(p_4)\in\P_4$ such that $L(p_3)(x)=b_0+b_1x+b_2x^2+b_3x^3+b_4x^4$, $L(p_4)(x)=c_0+c_1x+c_2x^2+c_3x^3+c_4x^4$ and
         \begin{enumerate}[(1)]
-            \item $b_i,c_i\in\R$ for all $i=0,...,4$
-            \item $b_i+c_i=0$ for all $i=0,...,4$.
-            \item $b_2,b_3$ are not all zero and $c_2,c_3$ are not all zero
+            \item $b_i+c_i=0$ for all $i=0,...,4$
+            \item $b_0,b_2$ are not all zero
         \end{enumerate}
         \item Let $L:P_4\rightarrow\P_4$ such that $L$ satisfies the conditions stated in (i). Then, $L$ satisfies (a).
         We have 
@@ -50,14 +49,75 @@
         \]
         Thus, $L(p_3+p_4)=$ zero polynomial, or $L$ satisfies (b).
         
-        To show that $\dim(\nullla(L))=1$, from the rank-nullity theorem it is equivalent to prove that 
+        To show that $\dim(\nullla(L))=1$, we will show that $B=p_3+p_4$ is a basis for $L$.
+        Let $p\in\nullla(L)$ such that for all $x\in\R$, $p(x)=a_0+a_1x+a_2x^2+a_3x^3+a_4x^4$ for some $a_0,a_1,a_2,a_3,a_4\in\R$.
+        Then, $p=a_0p_0+a_1p_1+a_2p_2+a_3p_3+a_4p_4$. 
+        We have 
         \[
             \begin{aligned}
-                \dim(\range(L))=\dim(\P_4)-\dim(\nullla(L))=4
+                &(Lp)(x)=(L(a_0p_0+a_1p_1+a_2p_2+a_3p_3+a_4p_4))(x)\\
+                &= a_0L(p_0)(x)+a_1L(p_1)(x)+a_2L(p_2)(x)+a_3L(p_3)(x)+a_4L(p_4)(x)\\
+                &= a_0x^4+3a_1x^3+a_2x+(a_3-a_4)L(p_3)(x)+a_4(L(p_3+p_4))(x)\\
+                &= a_0x^4+3a_1x^3+a_2x+(a_3-a_4)(b_0+b_1x+b_2x^2+b_3x^3+b_4x^4)\\
+                &= (a_3-a_4)b_0+(a_2+(a_3-a_4)b_1)x+(a_3-a_4)b_2x^2+(3a_1+(a_3-a_4)b_3)x^3\\
+                & +(a_0+(a_3-a_4)b_4)x^4=0
             \end{aligned}
         \]
-        Consider the vectors $B=L(p_0),L(p_1),L(p_2),L(p_3)$. We will show that $B$ is a basis for $\range(L)$.
+        It follows that $(a_3-a_4)b_0=(a_3-a_4)b_2=0$. But since $b_0$ and $b_2$ are not all zero, WLOG assume $b_0\not=0$.
+        Then, $a_3-a_4=0$, or $a_3=a_4$.
+        Hence,
+        \begin{align*}
+            &\qquad\begin{cases}
+                a_2 &= 0\\
+                3a_1 &= 0\\
+                a_0 &= 0
+            \end{cases}\\
+            &\iff a_0=a_1=a_2=0
+        \end{align*}
+        , or $p=a_3(p_3+p_4)$. It must be the case that the list $B$ spans $\nullla(L)$.
+        Moreover, since $B$ is a list of one vector, $B$ is a linearly independent list of vectors.
+        Therefore, $B$ is a basis for $\nullla(L)$, or $\dim(\nullla(L))=1$ (since $B$ contains one vector), which satisfies (c).
+        Thereby, for any given $L:\P_4\rightarrow\P_4$ satisfying (1), (2) and (3), $L$ satisfies (a), (b) and (c).
 
-        Let 
+        Conversely, let $L:\P_4\rightarrow\P_4$ satisfying (a), (b), (c). 
+        Let $b_0,...,b_4,c_0,...,c_4\in\R$ such that $(Lp_3)(x)=b_0+b_1x+b_2x^2+b_3x^3+b_4x^4$ and $(Lp_4)(x)=c_0+c_1x+c_2x^2+c_3x^3+c_4x^4$ for all $x\in\R$.
+        Since $L$ is linear, 
+        \[
+            \begin{aligned}
+                0&= L(p_3+p_4)(x)\\
+                &= L(p_3)(x)+L(p_4)(x)\\
+                &= (b_0+b_1x+b_2x^2+b_3x^3+b_4x^4)+(c_0+c_1x+c_2x^2+c_3x^3+c_4x^4)\\
+                &= (b_0+c_0)+(b_1+c_1)x+(b_2+c_2)x^2+(b_3+c_3)x^3+(b_4+c_4)x^4\\
+            \end{aligned}
+        \]
+        It follows that $b_i+c_i=0$ for all $i=1,...,4$, or (1) holds.
+
+        Finally, to show that $b_0,b_2$ are not all zero, assume the contrary.
+        Then, $(Lp_3)(x)=b_1x+b_3x^3+b_4x^4$. We have 
+        \[
+            \begin{aligned}
+                (Lp_3)(x)&=b_1x+b_3x^3+b_4x^4\\
+                &= \frac{b_3}{3}3x^3+b_1(Lp_2)(x)+b_4(Lp_0)(x)\\
+                &= \frac{b_3}{3}(Lp_1)(x)+(L(b_1p_2))(x)+(L(b_4p_0))(x)\\
+                &= (L(\frac{b_3p_1}{3}+b_1p_2+b_4p_0))(x)\\
+                \implies Lp_3&=L(\frac{b_3p_1}{3}+b_1p_2+b_4p_0)
+            \end{aligned}
+        \]
+        , or $L(p_3-\frac{b_3p_1}{3}-b_1p_2-b_4p_0)=0$. Hence, $p_3-\frac{b_3p_1}{3}-b_1p_2-b_4p_0\in\nullla(L)$.
+
+        Additionally, since $L(p_3+p_4)=0$, $p_3+p_4\in\nullla(L)$. But since $\dim(\nullla(L))=1$ and $B=p_3+p_4$ is a linearly independent list of vectors in $\nullla(L)$, from Theorem 2.39 Section 2C LADR it follows that $B$ is a basis for $\nullla(L)$.
+        By definition, $p_3+p_4$ spans $\nullla(L)$, or $p_3-\frac{b_3p_1}{3}-b_1p_2-b_4p_0=k(p_3+p_4)$ for some $k\in\R$.
+        Hence, $-b_4p_0-\frac{b_3p_1}{3}-b_1p_2+(1-k)p_3-kp_4=0$.
+
+        We have: $k$ cannot be equal to both $0$ and $1$, meaning $1-k$ and $k$ cannot be both zero.
+        Moreover, since $p_0,...,p_4$ is the canonical basis for $\P_4$, $p_0,...,p_4$ is a linearly independent list of vectors.
+        Thus, for $-b_4p_0-\frac{b_3p_1}{3}-b_1p_2+(1-k)p_3-kp_4$ to be zero, $-b_4=\frac{-b_3p_1}{3}=-b_1=1-k=-k=0$, which is impossible (since $1-k$ and $-k$ cannot be both zero).
+        This leads to a contradiction, or our assumption that $b_0,b_2$ are both zero must be false.
+        Hence, $b_0,b_2$ are not all zero, or (2) holds.
+
+        Therefore, given $L:\P_4\rightarrow\P_4$ satisfying (a), (b) and (c), $L$ satisfies the conditions given in (i).
+        It follows that the characterization of $L$ given above is correct.\qed
+        \item The bases for $\nullla(L)$ and $\range(L)$ are $B_1=p_3+p_4$ and $B_2=p_0,p_1,p_2,p_3$, respectively.
     \end{enumerate}
+    \renewcommand{\qedsymbol}{}
 \end{proof}
