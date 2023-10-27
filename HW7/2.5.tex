@@ -55,6 +55,7 @@ x_1 -2x_2 -x_3 = 1\\
                 \end{pmatrix}x=\ColVecThree{-1}{1}{-1}
             \end{aligned}
         \]
+        where $A$ is the matrix and $b=\ColVecThree{-1}{1}{-1}$.
         Solving for the above system,
         \[
         \begin{aligned}
@@ -109,7 +110,8 @@ x_1 -2x_2 -x_3 = 1\\
         \end{aligned}
         \]
         Therefore, the solution to $Ax=b$ is $x=\ColVecThree{4}{-3}{-1}$.\qed
-        \item The system of equations is equivalent to 
+        \item Let $x=\ColVecFour{x_1}{x_2}{x_3}{x_4}$.
+        The system of equations is equivalent to 
         \[
             \begin{aligned}
                 \begin{pmatrix}
@@ -122,7 +124,7 @@ x_1 -2x_2 -x_3 = 1\\
         Solving for the above system, 
         \[
             \begin{aligned}
-                \left(
+                &\left(
                     \begin{array}{cccc|c}
                         1 & -4 & -1 & 1 & 3\\
                         2 & -8 & 1 & -4 & 9\\
@@ -144,15 +146,68 @@ x_1 -2x_2 -x_3 = 1\\
                         0 & 0 & 1 & -2 & 1\\
                         0 & 0 & 0 & 0 & 0
                     \end{array}
-                \right)
+                \right)\\
                 \Leftrightarrow
-                \left(
+                &\left(
                     \begin{array}{cccc|c}
-                        
+                        1 & -4 & 0 & -1 & 4\\
+                        0 & 0 & 1 & -2 & 1\\
+                        0 & 0 & 0 & 0 & 0
                     \end{array}
                 \right)
             \end{aligned}
         \]
+        It follows that
+        \begin{align*}
+            \begin{cases}
+                &x_1=4x_2+x_4+4\\
+                &x_2,x_4\text{ are free}\\
+                &x_3=2x_4+1
+            \end{cases}
+        \end{align*}
+        , or $x=\ColVecFour{4x_2+x_4+4}{x_2}{2x_4+1}{x_4}$ for some $x_2,x_4\in\R$.
+        Therefore, the solution to $Ax=b$ is $x=\ColVecFour{4x_2+x_4+4}{x_2}{2x_4+1}{x_4}$ for some $x_2,x_4\in\R$.\qed
+        \item Let $x=\ColVecThree{x_1}{x_2}{x_3}$. The system of equations is equivalent to 
+        \[
+            \begin{aligned}
+                \begin{pmatrix}
+                    1 & -2 & -1\\
+                    2 & -3 & 1\\
+                    -1 & 0 & -5
+                \end{pmatrix}
+                x=\ColVecThree{1}{6}{4}
+            \end{aligned}
+        \]
+        , where $A$ is the matrix and $b=\ColVecThree{1}{6}{4}$.
+        Solving for the above system,
+        \[
+            \begin{aligned}
+                \left(
+                    \begin{array}{ccc|c}
+                        1 & -2 & -1 & 1\\
+                        2 & -3 & 1 & 6\\
+                        -1 & 0 & -5 & 4
+                    \end{array}
+                \right)
+                \Leftrightarrow
+                \left(
+                    \begin{array}{ccc|c}
+                        1 & -2 & -1 & 1\\
+                        0 & 1 & 3 & 4\\
+                        0 & -2 & -6 & 5
+                    \end{array}
+                \right)
+                \Leftrightarrow
+                \left(
+                    \begin{array}{ccc|c}
+                        1 & -2 & -1 & 1\\
+                        0 & 1 & 3 & 4\\
+                        0 & 0 & 0 & 13
+                    \end{array}
+                \right)
+            \end{aligned}  
+        \]
+        , which is impossible (since 0 cannot be equal to 13). Therefore, the system of equations has no solutions.\qed
     \end{enumerate}
     \renewcommand{\qedsymbol}{}   
 \end{proof}

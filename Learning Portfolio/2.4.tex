@@ -1,6 +1,6 @@
 \begin{question}
     \normalfont
-    Let $L:\R^4\rightarrow\R^4$ be the linear function defined by
+    Let $L:\R^4\rightarrow\R^2$ be the linear function defined by
     \begin{equation}
         L(\ColVecFour{x_1}{x_2}{x_3}{x_4})=\ColVecTwo{x_2+x_3-5x_4}{x_1+x_4}
     \end{equation}
@@ -31,3 +31,44 @@
         \]
     \end{enumerate}
 \end{question}
+
+\begin{proof}
+    \begin{enumerate}[(i)]
+        \item $A$ is given by 
+        \[
+            \begin{aligned}
+                A = \begin{pmatrix}
+                    0 & 1 & 1 & -5\\
+                    1 & 0 & 0 & 1
+                \end{pmatrix}
+            \end{aligned}
+        \]
+        \item A lower bound $k$ for $\dim(\nullla(L))$ is $k=2$.
+        \item Let $B=u_1,u_2$ such that $u_1=\ColVecFour{0}{1}{-1}{0}$ and $u_2=\ColVecFour{-1}{5}{0}{1}$.
+        We will show that $B$ is a basis for $\nullla(L)$.
+        
+        Let $a_1,a_2\in\R$ such that $a_1u_1+a_2u_2=0$. We have 
+        \[
+            \begin{aligned}
+                0
+                &= a_1u_1+a_2u_2\\
+                &= \ColVecFour{-a_2}{a_1+5a_2}{-a_1}{a_2}
+            \end{aligned}
+        \]
+        , which reduces to
+        \begin{align*}
+            &\begin{cases}
+                -a_2&=0\\
+                a_1+5a_2&=0\\
+                -a_1&=0\\
+                a_2&=0
+            \end{cases}\\&\implies
+            a_1=a_2=0
+        \end{align*}
+        Hence, the only solution to $a_1u_1+a_2u_2=0$ is the trivial solution, or $B$ is a linearly independent list of vectors (1).
+        
+        Moreover, let $u\in\nullla(L)$. Then, $u$ can be written as $u=\ColVecFour{v_1}{v_2}{v_3}{v_4}$, where $v_1,v_2,v_3,v_4\in\R$.
+        It follows that $L(u)=\ColVecTwo{v_2+v_3-5v_4}{v_1+v_4}=$ 
+    \end{enumerate}
+    
+\end{proof}

@@ -19,6 +19,7 @@
 \end{question}
 
 \begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
     \begin{enumerate}[(a)]
         \item We have 
         \[
@@ -27,6 +28,18 @@
                 &=3x_1+9x_2+7x_3+5x_4=c
             \end{aligned}
         \]
-        Therefore, $c=3a+b$ for the system to have a solution.
+        Therefore, $c=3a+b$ for the system to have a solution, or $(a,b,c)=(a,b,3a+b)$ for $a,b\in\R$.\qed
+        \item When $(a,b,c)=(1,1,4)$, $c=3a+b=4$, or the system must have a solution. Let $x=\ColVecFour{x_1}{x_2}{x_3}{x_4}$.
+        The system of equations is equivalent to 
+        \[
+            \begin{aligned}
+                \begin{pmatrix}
+                    1 & 3 & 2 & 0\\
+                    0 & 0 & 1 & 5\\
+                    3 & 9 & 7 & 5
+                \end{pmatrix}x=\ColVecThree{1}{1}{4}
+            \end{aligned}
+        \]
     \end{enumerate}
+    \renewcommand{\qedsymbol}{}
 \end{proof}
