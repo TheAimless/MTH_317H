@@ -11,8 +11,6 @@
 	\]
 	
 \noindent (a) Describe all triples $(a,b,c)$ for which this system will have a solution \\
-
-
 \noindent (b) Find all solutions to the equation when  $(a,b,c)=(1,1,4)$. 
 	
 	
@@ -29,7 +27,7 @@
             \end{aligned}
         \]
         Therefore, $c=3a+b$ for the system to have a solution, or $(a,b,c)=(a,b,3a+b)$ for $a,b\in\R$.\qed
-        \item When $(a,b,c)=(1,1,4)$, $c=3a+b=4$, or the system must have a solution. Let $x=\ColVecFour{x_1}{x_2}{x_3}{x_4}$.
+        \item Let $x=\ColVecFour{x_1}{x_2}{x_3}{x_4}$.
         The system of equations is equivalent to 
         \[
             \begin{aligned}
@@ -40,6 +38,35 @@
                 \end{pmatrix}x=\ColVecThree{1}{1}{4}
             \end{aligned}
         \]
+        Solving for the system, we have 
+        \begin{alignat*}{2}
+            \begin{sysmatrix}{cccc|c}
+                1 & 3 & 2 & 0 & 1\\
+                0 & 0 & 1 & 5 & 1\\
+                3 & 9 & 7 & 5 & 4
+            \end{sysmatrix}
+            \;\ro{R_3-3R_1-R_2}
+            \begin{sysmatrix}{cccc|c}
+                1 & 3 & 2 & 0 & 1\\
+                0 & 0 & 1 & 5 & 1\\
+                0 & 0 & 0 & 0 & 0
+            \end{sysmatrix}
+            \!\ro{R_1-2R_2}
+            \begin{sysmatrix}{cccc|c}
+                1 & 3 & 0 & -10 & -1\\
+                0 & 0 & 1 & 5 & 1\\
+                0 & 0 & 0 & 0 & 0
+            \end{sysmatrix}
+        \end{alignat*}{2}
+        Hence, the solution to the system of equations is
+        \begin{align*}
+            \begin{cases}
+                &x_1=-3x_2+10x_4-1\\
+                &x_3=-5x_4+1\\
+                &x_2,x_4\text{ are free}
+            \end{cases}
+        \end{align*}
+        , or $x=\ColVecFour{-3x_4+10x_4-1}{x_2}{-5x_4+1}{x_4}$ for some $x_2,x_4\in\R$ when $(a,b,c)=(1,1,4)$.\qed
     \end{enumerate}
     \renewcommand{\qedsymbol}{}
 \end{proof}

@@ -20,7 +20,9 @@
     \renewcommand{\qedsymbol}{$\blacksquare$}
     \begin{enumerate}[(a)]
     \item
-    Let $P=p_0,p_1,p_2,p_3$ and $Q=q_0,q_1,q_2$ such that $P$ is the canonical basis for $\P_3$ ($p_0(x)=1, p_1(x)=x, p_2(x)=x^2, p_3(x)=x^3$ $\forall x\in\R$), $q_0,q_1,q_2\in\P_2$ and for every $x\in\R$, $q_0(x)=3x^2$, $q_1(x)=2x$ and $q_2(x)=1$.
+    Let $P=\{p_0,p_1,p_2,p_3\}$ such that for every $x\in\R$, $p_0(x)=x^3$, $p_1(x)=x^2$, $p_2(x)=x$ and $p_3(x)=1$.
+    Then, $P$ is the canonical basis for $\P_3$ by definition.
+    Let $Q=\{q_0,q_1,q_2\}\subseteq\P_2$ such that for every $x\in\R$, $q_0(x)=3x^2$, $q_1(x)=2x$ and $q_2(x)=1$.
     Let $c_0,c_1,c_2\in\R$ be the solution to $c_0q_0+c_1q_1+c_2q_2=0$.
     Then 
     \[
@@ -35,15 +37,15 @@
         \end{aligned}
     \]
     Thus, the only solution to $c_0q_0+c_1q_1+c_2q_2=0$ is $c_0=c_1=c_2=0$, or $Q$ is a linearly independent list of vectors.
-    Combined with the fact that $\dim(\P_2)=3$, which is equal to the length of list $Q$, it follows that $Q$ is a basis for $P_2$.
+    Combined with the fact that $\dim(\P_2)=3$, which is equal to the length of list $Q$, it follows that $Q$ is a basis for $\P_2$.
 
     Consider the linear map $D$. For every $x\in\R$, 
     \[
         \begin{aligned}
-            (Dp_0)(x)=p_0'(x)=3x^2=q_0(x)+0q_1(x)+0q_2(x)\\
-            (Dp_1)(x)=p_1'(x)=2x=0q_0(x)+q_1(x)+0q_2(x)\\
-            (Dp_2)(x)=p_2'(x)=1=0q_0(x)+0q_1(x)+q_2(x)\\
-            (Dp_3)(x)=p_3'(x)=0=0q_0(x)+0q_1(x)+0q_2(x)
+            &(Dp_0)(x)=p_0'(x)=3x^2=q_0(x)+0q_1(x)+0q_2(x)\\
+            &(Dp_1)(x)=p_1'(x)=2x=0q_0(x)+q_1(x)+0q_2(x)\\
+            &(Dp_2)(x)=p_2'(x)=1=0q_0(x)+0q_1(x)+q_2(x)\\
+            &(Dp_3)(x)=p_3'(x)=0=0q_0(x)+0q_1(x)+0q_2(x)
         \end{aligned}
     \]
     Therefore, for given $P$ and $Q$, the matrix of $D$ with respect to these bases is 
@@ -53,24 +55,42 @@
             0 & 1 & 0 & 0\\
             0 & 0 & 1 & 0
         \end{pmatrix}    
-    \]
-    \item Let $n=\dim(V)$ and $m=\dim(W)$. Since a basis for $V$ must have a length of $n$ and a basis for $W$ must have a length of $m$, let $B_1=v_1,...,v_n$ and $B_2=w_1,...w_m$ be bases for $V$ and $W$, respectively.
-    Then, for all $i=1,...,n$, $T(v_i)$ can be written as a linear combination of $w_1,...,w_m$; i.e., there exist $c_{1,i},c{2,i},...,c_{m,i}\in\R$ such that 
+    \]\qed
+    \item Let $n=\dim(V)$ and $m=\dim(W)$.
+    Let $\dim(\nullla(T))=k$ and $B_u=\{u_1,u_2,...,u_k\}$ be a basis for $\nullla(T)$.
+    Since $B_u$ is a basis for $\nullla(T)$, $B_u$ is a linearly independent list in $V$.
+    From Theorem 2.33 Section 2B LADR, $B_u$ can be extended to a basis for $V$.
+
+    Let $B_V=\{v_1,...,v_{n-k},u_1,...,u_k\}$ be a basis for $V$ after extending $B_u$.
+    Then, $\spanvect(B_V)=V$. From the nice lemma, we have 
     \[
         \begin{aligned}
-            Tv_i=c_{1,i}w_1+c_{2,i}w_2+...+c_{m,i}w_m
+            T(\spanvect(B_V))=\spanvect(T(v_1),...,T(v_{n-k}),T(u_1),...,T(u_k))
         \end{aligned}
     \]
-    It follows that the matrix for $T$ with respect to $B_1$ and $B_2$ is 
-    \[
-        \begin{aligned}
-            A=\begin{pmatrix}
-                c_{1,1} & \cdots & c_{1,n}\\
-                \vdots & \ddots & \vdots\\
-                c_{m,1} & \cdots & c_{m,n}
-            \end{pmatrix}
-        \end{aligned}
-    \]
-    
+    But since $T(\spanvect(B_V))=T(V)=\range(T)$ and $T(u_i)=0$ for all $i=1,...,k$, it follows that $\range(T)=\spanvect(T(v_1),...,T(v_{n-k}),0,...,0)$, or the vectors $T(v_1),...,T(v_{n-k})$ span $\range(T)$.
+    Moreover, from the rank-nullity theorem, $\dim(\range(T))=\dim(V)-\dim(\nullla(T))=n-k$.
+    Therefore, from Theorem 2.42 Section 2C LADR, since $T(v_1),...,T(v_{n-k})$ is a spanning list of $\range(T)$ of the right length, it follows that $T(v_1),...,T(v_{n-k})$ is a basis for $\range(T)$.
+
+    Let $w_i=T(v_i)$ for all $i=1,...,n-k$ and $B_w=\{w_i\ |\ i=1,...,n-k\}$.
+    By definition, $B_w$ is a basis for $\range(T)$.
+    Since $B_w$ is a basis for $\range(T)$ and $\range(T)$ is a subspace of $W$, $B_w$ must be a linearly independent list in $W$.
+    Thus, $B_w$ can be extended to a basis for $W$ from Theorem 2.33 Section 2B LADR.
+
+    Let $B_W=\{w_1,...,w_{n-k},w_{n-k+1},...,w_m\}$ be a basis for $W$ after extending $B_w$.
+    Consider the matrix $M$ for $T$ with respect to $B_V$ and $B_W$. We have
+    \begin{align*}
+        \begin{cases}
+            &T(v_1)=w_1=1w_1+0w_2+...+0w_m\\
+            &T(v_2)=w_2=0w_1+1w_2+...+0w_m\\
+            &\vdots\\
+            &T(v_{n-k})=w_{n-k}=0w_1+0w_2+...+1w_{n-k}+0w_{n-k+1}+...+0w_m\\
+            &T(u_1)=0=0w_1+0w_2+...+0w_m\\
+            &\vdots\\
+            &T(u_k)=0=0w_1+0w_2+...+0w_m
+        \end{cases}
+    \end{align*}
+    , or such matrix $M$ has all entries 0 except that the entry in row $j$, column $j$ is 1 for all $1\leq j\leq \dim(\range(T))$.\qed
     \end{enumerate}
+    \renewcommand{\qedsymbol}{}
 \end{proof}

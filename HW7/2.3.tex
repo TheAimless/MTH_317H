@@ -8,33 +8,26 @@
 \begin{proof}
     \renewcommand{\qedsymbol}{$\blacksquare$}
     Let $T\in\mathcal{L}(U,V)$ and $S\in\mathcal{L}(V,W)$ be invertible and $id_U,id_V,id_W$ be the identity linear transformation for $U,V,W$, respectively.
-    Then there exist $T^{-1}\in\mathcal{L}(V,U)$ and $S^{-1}\in\mathcal{L}(W,V)$ such that for $id_U,id_V,id_W$ be the identity mapping of $U,V$ and $W$, respectively, 
-    it follows that 
-    \[
-        \begin{aligned}
-            TT^{-1}=S^{-1}S=id_V, \ T^{-1}T=id_U \text{ and } SS^{-1}=id_W
-        \end{aligned}
-    \] 
+    Then, there exist $T^{-1}\in\mathcal{L}(V,U)$ and $S^{-1}\in\mathcal{L}(W,V)$ such that $TT^{-1}=S^{-1}S=id_V, \ T^{-1}T=id_U \text{ and } SS^{-1}=id_W$.
+
     Moreover, since $S^{-1}\in\mathcal{L}(W,V)$ and $id_V\in\mathcal{L}(V,V)$, $id_V S^{-1}$ is defined and $id_V S^{-1}=S^{-1}$.
     Similarly, $id_V T$ is defined and $id_V T=T$.\\
     From the definition of $T$ and $S$, it follows that $ST\in\mathcal{L}(U,W)$. Hence,
     \[
         \begin{aligned}
             (ST)(T^{-1}S^{-1})
-            &= S(TT^{-1})S^{-1}\\
-            &= S(id_V)S^{-1}\\
-            &= S(id_V S^{-1})\\
-            &= S(S^{-1})=id_W
+            = S((TT^{-1})S^{-1})
+            = S(id_VS^{-1})
+            = SS^{-1}=id_W
         \end{aligned}
     \]
     and 
     \[
         \begin{aligned}
             (T^{-1}S^{-1})(ST)
-            &= T^{-1}(S^{-1}S)T\\
-            &= T^{-1}(id_V)T\\
-            &= T^{-1}(id_V T)\\
-            &= T^{-1}T=id_U
+            = T^{-1}((S^{-1}S)T)
+            = T^{-1}(id_VT)
+            = T^{-1}T=id_U
         \end{aligned}
     \]
     Thus, $T^{-1}S^{-1}$ is both the left inverse and right inverse of $ST$, or $ST$ is invertible and $(ST)^{-1}=T^{-1}S^{-1}$.

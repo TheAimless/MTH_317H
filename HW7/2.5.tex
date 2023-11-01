@@ -1,12 +1,9 @@
 \begin{question}	\normalfont
-	
 For each of the following systems of equations: \\
-
-\noindent (i) Express the system in matrix form $Ax =b$. \\
-
-\noindent (ii) 	Use row reduction to reach {\bf reduced row echelon} form,
+(i) Express the system in matrix form $Ax =b$. \\
+(ii) Use row reduction to reach {\bf reduced row echelon} form,
 and then  determine all solutions to the
-system.  \\ \\	
+system. 
 	
 \noindent (a) 	
 \[
@@ -16,9 +13,7 @@ x_1 + 2x_2 - x_3 = -1\\
 3x_1 + 5x_2 - 2x_3 = -1 \\
 \end{array}
 \]
-
 \vspace{.2cm}
-
 \noindent (b)
 \[
 \begin{array}{r}
@@ -27,9 +22,7 @@ x_1 - 4x_2 - x_3 + x_4 = 3 \\
 -2x_1 + 8 x_2 + 2x_3 -2x_4 = -6 \\
 \end{array}
 \]	
-
 \vspace{.2cm}
-
 \noindent (c) 
 \[
 \begin{array}{r}
@@ -38,7 +31,6 @@ x_1 -2x_2 -x_3 = 1\\
 -x_1 -5x_3 = 4 \\
 \end{array}
 \]
-
 
 \end{question}
 \begin{proof}
@@ -57,58 +49,54 @@ x_1 -2x_2 -x_3 = 1\\
         \]
         where $A$ is the matrix and $b=\ColVecThree{-1}{1}{-1}$.
         Solving for the above system,
-        \[
-        \begin{aligned}
-        &\left(
-            \begin{array}{ccc|c}
-                1 & 2 & -1 & -1\\
-                2 & 2 & 1 & 1\\
-                3 & 5 & -2 & -1
-            \end{array}
-        \right)
-        \Leftrightarrow
-        \left(
-            \begin{array}{ccc|c}
-                1 & 2 & -1 & -1\\
-                0 & -2 & 3 & 3\\
-                0 & -1 & 1 & 2
-            \end{array}
-        \right)
-        &&\Leftrightarrow
-        \left(
-            \begin{array}{ccc|c}
-                1 & 2 & -1 & -1\\
-                0 & 1 & -1 & -2\\
-                0 & -2 & 3 & 3
-            \end{array}
-        \right)
-        \\
-        \Leftrightarrow
-        &\left(
-            \begin{array}{ccc|c}
-                1 & 2 & -1 & -1\\
-                0 & 1 & -1 & -2\\
-                0 & 0 & 1 & -1
-            \end{array}
-        \right)
-        \Leftrightarrow
-        \left(
-            \begin{array}{ccc|c}
-                1 & 2 & 0 & -2\\
-                0 & 1 & 0 & -3\\
-                0 & 0 & 1 & -1
-            \end{array}
-        \right)
-        &&\Leftrightarrow
-        \left(
-            \begin{array}{ccc|c}
-                1 & 0 & 0 & 4\\
-                0 & 1 & 0 & -3\\
-                0 & 0 & 1 & -1
-            \end{array}
-        \right)
+        \begin{alignat*}{2}
+        \begin{sysmatrix}{ccc|c}
+            1 & 2 & -1 & -1\\
+            2 & 2 & 1 & 1\\
+            3 & 5 & -2 & -1
+        \end{sysmatrix}
+        &\!\begin{aligned}
+            &\ro{R_2-2R_1}\\
+            &\ro{R_3-3R_1}
         \end{aligned}
-        \]
+        \begin{sysmatrix}{ccc|c}
+            1 & 2 & -1 & -1\\
+            0 & -2 & 3 & 3\\
+            0 & -1 & 1 & 2
+        \end{sysmatrix}
+        &&\!\begin{aligned}
+            &\ro{R_2\rightarrow -R_3}\\
+            &\ro{R_3\rightarrow R_2}
+        \end{aligned}
+        \begin{sysmatrix}{ccc|c}
+            1 & 2 & -1 & -1\\
+            0 & 1 & -1 & -2\\
+            0 & -2 & 3 & 3
+        \end{sysmatrix}
+        \\
+        &\!\ro{R_3+2R_2}
+        \begin{sysmatrix}{ccc|c}
+            1 & 2 & -1 & -1\\
+            0 & 1 & -1 & -2\\
+            0 & 0 & 1 & -1
+        \end{sysmatrix}
+        &&\!\begin{aligned}
+            &\ro{R_1+R_3}\\
+            &\ro{R_2+R_3}
+        \end{aligned}
+        \begin{sysmatrix}{ccc|c}
+            1 & 2 & 0 & -2\\
+            0 & 1 & 0 & -3\\
+            0 & 0 & 1 & -1
+        \end{sysmatrix}\\
+        &\!\ro{R_1-2R_2}
+        \begin{sysmatrix}{ccc|c}
+            1 & 0 & 0 & 4\\
+            0 & 1 & 0 & -3\\
+            0 & 0 & 1 & -1
+        \end{sysmatrix}
+        \end{alignat*}
+
         Therefore, the solution to $Ax=b$ is $x=\ColVecThree{4}{-3}{-1}$.\qed
         \item Let $x=\ColVecFour{x_1}{x_2}{x_3}{x_4}$.
         The system of equations is equivalent to 
@@ -121,42 +109,36 @@ x_1 -2x_2 -x_3 = 1\\
                 \end{pmatrix}x=\ColVecThree{3}{9}{-6}
             \end{aligned}
         \]
-        Solving for the above system, 
-        \[
-            \begin{aligned}
-                &\left(
-                    \begin{array}{cccc|c}
-                        1 & -4 & -1 & 1 & 3\\
-                        2 & -8 & 1 & -4 & 9\\
-                        -2 & 8 & 2 & -2 & -6
-                    \end{array}
-                \right)
-                \Leftrightarrow
-                \left(
-                    \begin{array}{cccc|c}
-                        1 & -4 & -1 & 1 & 3\\
-                        0 & 0 & 3 & -6 & 3\\
-                        0 & 0 & 0 & 0 & 0
-                    \end{array}
-                \right)
-                \Leftrightarrow
-                \left(
-                    \begin{array}{cccc|c}
-                        1 & -4 & -1 & 1 & 3\\
-                        0 & 0 & 1 & -2 & 1\\
-                        0 & 0 & 0 & 0 & 0
-                    \end{array}
-                \right)\\
-                \Leftrightarrow
-                &\left(
-                    \begin{array}{cccc|c}
-                        1 & -4 & 0 & -1 & 4\\
-                        0 & 0 & 1 & -2 & 1\\
-                        0 & 0 & 0 & 0 & 0
-                    \end{array}
-                \right)
+        for the matrix $A$ and vector $b=\ColVecThree{3}{9}{-6}$. Solving for the above system, 
+        \begin{alignat*}{2}
+            \begin{sysmatrix}{cccc|c}
+                1 & -4 & -1 & 1 & 3\\
+                2 & -8 & 1 & -4 & 9\\
+                -2 & 8 & 2 & -2 & -6
+            \end{sysmatrix}
+            \newline
+            &\!\begin{aligned}
+                &\ro{R_2-2R_1}\\
+                &\ro{R_3+2R_1}
             \end{aligned}
-        \]
+            \begin{sysmatrix}{cccc|c}
+                1 & -4 & -1 & 1 & 3\\
+                0 & 0 & 3 & -6 & 3\\
+                0 & 0 & 0 & 0 & 0
+            \end{sysmatrix}
+            \!\ro{R_2/3}
+            \begin{sysmatrix}{cccc|c}
+                1 & -4 & -1 & 1 & 3\\
+                0 & 0 & 1 & -2 & 1\\
+                0 & 0 & 0 & 0 & 0
+            \end{sysmatrix}\\
+            &\!\ro{R_1+R_2}
+            \begin{sysmatrix}{cccc|c}
+                1 & -4 & 0 & -1 & 4\\
+                0 & 0 & 1 & -2 & 1\\
+                0 & 0 & 0 & 0 & 0
+            \end{sysmatrix}
+        \end{alignat*}
         It follows that
         \begin{align*}
             \begin{cases}
@@ -180,34 +162,29 @@ x_1 -2x_2 -x_3 = 1\\
         \]
         , where $A$ is the matrix and $b=\ColVecThree{1}{6}{4}$.
         Solving for the above system,
-        \[
-            \begin{aligned}
-                \left(
-                    \begin{array}{ccc|c}
-                        1 & -2 & -1 & 1\\
-                        2 & -3 & 1 & 6\\
-                        -1 & 0 & -5 & 4
-                    \end{array}
-                \right)
-                \Leftrightarrow
-                \left(
-                    \begin{array}{ccc|c}
-                        1 & -2 & -1 & 1\\
-                        0 & 1 & 3 & 4\\
-                        0 & -2 & -6 & 5
-                    \end{array}
-                \right)
-                \Leftrightarrow
-                \left(
-                    \begin{array}{ccc|c}
-                        1 & -2 & -1 & 1\\
-                        0 & 1 & 3 & 4\\
-                        0 & 0 & 0 & 13
-                    \end{array}
-                \right)
-            \end{aligned}  
-        \]
-        , which is impossible (since 0 cannot be equal to 13). Therefore, the system of equations has no solutions.\qed
+        \begin{alignat*}{2}
+            \begin{sysmatrix}{ccc|c}
+                1 & -2 & -1 & 1\\
+                2 & -3 & 1 & 6\\
+                -1 & 0 & -5 & 4
+            \end{sysmatrix}
+            \!\begin{aligned}
+                &\ro{R_2-2R_1}\\
+                &\ro{R_3+R_1}
+            \end{aligned}
+            \begin{sysmatrix}{ccc|c}
+                1 & -2 & -1 & 1\\
+                0 & 1 & 3 & 4\\
+                0 & -2 & -6 & 5
+            \end{sysmatrix}
+            \!\ro{R_3+2R_2}
+            \begin{sysmatrix}{ccc|c}
+                1 & -2 & -1 & 1\\
+                0 & 1 & 3 & 4\\
+                0 & 0 & 0 & 13
+            \end{sysmatrix}
+        \end{alignat*}
+        , which is impossible since $0\not=13$. Therefore, the system of equations has no solutions.\qed
     \end{enumerate}
     \renewcommand{\qedsymbol}{}   
 \end{proof}

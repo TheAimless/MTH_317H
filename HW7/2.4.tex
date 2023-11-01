@@ -15,9 +15,10 @@ such that $ST$ is the identity map on $\P_3$ and $TS$ is the identity map on $M_
 
 \begin{proof}
     \renewcommand{\qedsymbol}{$\blacksquare$}
-    Let $B_1=p_0,p_1,p_2,p_3$ be the canonical basis for $\P_3$ such that for all $x\in\R$, $p_0(x)=1$, $p_1(x)=x$, $p_2(x)=x^2$ and $p_3(x)=x^3$.
+    Let $P=\{p_0,p_1,p_2,p_3\}$ be the canonical basis for $\P_3$ such that for all $x\in\R$, $p_0(x)=1$, $p_1(x)=x$, $p_2(x)=x^2$ and $p_3(x)=x^3$.
 
-    Define $m_1=\MatTwoTwo{1}{0}{0}{0},m_2=\MatTwoTwo{0}{1}{0}{0},m_3=\MatTwoTwo{0}{0}{1}{0},m_4=\MatTwoTwo{0}{0}{0}{1}$. Let $c_1,c_2,c_3,c_4\in\R$ such that $c_1m_1+c_2m_2+c_3m_3+c_4m_4=0$. Then 
+    Let $m_1=\MatTwoTwo{1}{0}{0}{0},m_2=\MatTwoTwo{0}{1}{0}{0},m_3=\MatTwoTwo{0}{0}{1}{0},m_4=\MatTwoTwo{0}{0}{0}{1}$ and\\
+    $M=\{m_1,m_2,m_3,m_4\}$. Let $c_1,c_2,c_3,c_4\in\R$ such that $c_1m_1+c_2m_2+c_3m_3+c_4m_4=0$. Then 
     \[
         \begin{aligned}
             \MatTwoTwo{0}{0}{0}{0} 
@@ -25,19 +26,63 @@ such that $ST$ is the identity map on $\P_3$ and $TS$ is the identity map on $M_
             = \MatTwoTwo{c_1}{c_2}{c_3}{c_4}
         \end{aligned}
     \]
-    This implies that $c_1=c_2=c_3=c_4=0$, or $B_2=m_1,m_2,m_3,m_4$ is a linearly independent list in $M_{2\times 2}(\R)$.
-    Moreover, since $\dim(M_{2\times 2}(\R))=4$ and $B_2$ contains four vectors, from Theorem 2.39 Section 2C LADR, it follows that $B_2$ is a basis for $M_{2\times 2}(\R)$.
+    This implies that $c_1=c_2=c_3=c_4=0$, or $M$ is a linearly independent list of vectors in $M_{2\times 2}(\R)$.
+    Moreover, since $\dim(M_{2\times 2}(\R))=4$ and $M$ contains four vectors, from Theorem 2.39 Section 2C LADR it follows that $M$ is a basis for $M_{2\times 2}(\R)$.
     
     Let $a,b,c,d\in\R$. 
-    Let $p\in\P_3$ and $m\in\M_{2\times 2}(\R)$ such that $p(x)=a+bx+cx^2+dx^3$ for all $x\in\R$ and $m=\MatTwoTwo{a}{b}{c}{d}$.
-    Define $T:\P_3\to M_{2\times 2}(\R)$ and $S:\M_{2\times 2}(\R)\to\P_3$ to be
+    Let $p\in\P_3$ and $m\in M_{2\times 2}(\R)$ such that $p(x)=a+bx+cx^2+dx^3$ for all $x\in\R$ and $m=\MatTwoTwo{a}{b}{c}{d}$.
+    Define $T:\P_3\to M_{2\times 2}(\R)$ and $S:M_{2\times 2}(\R)\to\P_3$ to be
     \[
         \begin{aligned}
             T(p)=m \text{ and } S(m)=p
         \end{aligned}
     \]
-    for all $a,b,c,d\in\R$.
+    for all $a,b,c,d\in\R$. Then, $T$ and $S$ are well-defined.
 
-    Let $q\in\P_3$, $n\in\M_{2\times 2}(\R)$ such that 
-    To show that $S$ and $T$ are linear, let $q_1,q_2\in\P_3$, $n_1,n_2\in$
+    To show that $T$ is linear, let $q_1,q_2\in\P_3$ such that
+    $q_1(x)=a_0+a_1x+a_2x^2+a_3x^3$ and $q_2(x)=b_0+b_1x+b_2x^2+b_3x^3$ for all $x\in\R$.
+    Let $\lambda\in\R$.
+    By definition, it follows that $T(q_1)=\MatTwoTwo{a_0}{a_1}{a_2}{a_3}$ and $T(q_2)=\MatTwoTwo{b_0}{b_1}{b_2}{b_3}$.
+    We have 
+    \[
+        \begin{aligned}
+            T(q_1+q_2)=\MatTwoTwo{a_0+b_0}{a_1+b_1}{a_2+b_2}{a_3+b_3}=\MatTwoTwo{a_0}{a_1}{a_2}{a_3}+\MatTwoTwo{b_0}{b_1}{b_2}{b_3}=T(q_1)+T(q_2)
+        \end{aligned}
+    \]
+    and 
+    \[
+        \begin{aligned}
+            T(\lambda q_1)=\MatTwoTwo{\lambda a_0}{\lambda a_1}{\lambda a_2}{\lambda a_3}=\lambda \MatTwoTwo{a_0}{a_1}{a_2}{a_3}=\lambda T(q_1)
+        \end{aligned}
+    \]
+    Thus, $T$ is a linear transformation since $T$ satisfies additivity and homogeneity.
+
+    Similarly, let $n_1=\MatTwoTwo{a_0}{a_1}{a_2}{a_3}$, $n_2=\MatTwoTwo{b_0}{b_1}{b_2}{b_3}$ and $\lambda\in\R$ be arbitrary.
+    Then, $S(n_1)=q_1\in\P_3$ and $S(n_2)=q_2\in\P_3$ such that $q_1(x)=a_0+a_1x+a_2x^2+a_3x^3$ and $q_2(x)=b_0+b_1x+b_2x^2+b_3x^3$ for all $x\in\R$.
+    We have
+    \[
+        \begin{aligned}
+            &(S(n_1+n_2))(x)=(a_0+b_0)+(a_1+b_1)x+(a_2+b_2)x^2+(a_3+b_3)x^3\\
+            &=(a_0+a_1x+a_2x^2+a_3x^3)+(b_0+b_1x+b_2x^2+b_3x^3)\\
+            &=(S(n_1))(x)+(S(n_2))(x)
+        \end{aligned}
+    \]
+    and 
+    \[
+        \begin{aligned}
+            S(\lambda n_1)(x)&=\lambda a_0+\lambda a_1x+\lambda a_2x^2+\lambda a_3x^3\\
+            &=\lambda(a_0+a_1x+a_2x^2+a_3x^3)=\lambda S(n_1)
+        \end{aligned}
+    \]
+    Hence, $S$ is a linear transformation since $S$ satisfies additivity and homogeneity.
+
+    Consider the composite mapping $ST$ and $TS$. Since $T:\P_3\rightarrow M_{2\times 2}(\R)$ and $S:M_{2\times 2}(\R)\rightarrow\P_3$ are both linear,
+    $ST\in\mathcal{L}(\P_3,\P_3)$ and $TS\in\mathcal{L}(M_{2\times 2}(\R), M_{2\times 2}(\R))$.
+
+    Let $n\in M_{2\times 2}(\R)$. 
+    Then, for $S(n)=q\in\P_3$, by the definition of $T$ it follows that $(TS)(n)=T(S(n))=T(q)=s$, or $TS\in\mathcal{L}(M_{2\times 2}(\R), M_{2\times 2}(\R))$ is the identity map on $M_{2\times 2}(\R)$.
+
+    Similarly, let $q\in\P_3$.
+    Then, for $T(q)=n\in\M_{2\times 2}(\R)$, by the definition of $S$ it follows that $(ST)(q)=S(T(q))=S(n)=q$, or $ST\in\mathcal{L}(\P_3,\P_3)$ is the identity mapping on $\P_3$.
+    Therefore, $T$ is invertible, meaning $T$ is an isomorphism from $\P_3$ to $M_{2\times 2}(\R)$, or $\P_3$ is isomorphic to $M_{2\times 2}(\R)$.
 \end{proof}
