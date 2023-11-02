@@ -16,8 +16,42 @@
               \end{align*}
               If you answer is ``yes'', then prove that there is a solution for each $b$, and if your answer is ``no'', then you must give an example of a particular $b$ so that there is no vector $x$ that solves the equation, and prove that there is no solution.
     \end{enumerate}
-
-
-
-
 \end{question}
+
+\begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
+    \begin{enumerate}[(i)]
+        \item We have 
+        \[
+            \begin{aligned}
+                \det(A)&=1(-1)^{1+1}\det(A_{1,1})+1(-1)^{1+3}\det(A_{1,3})\\
+                &=\begin{vmatrix}
+                    3 & 0\\
+                    3 & 2
+                \end{vmatrix}+\begin{vmatrix}
+                    1 & 3\\
+                    3 & 3
+                \end{vmatrix}=(6-0)+(3-9)=0
+            \end{aligned}
+        \]
+        \item It is not possible to solve the equation $Ax=b$ for all $b\in\R^3$.
+        Let $b=\ColVecThree{0}{0}{1}$. Solving for $Ax=b$, 
+        \[
+            \begin{aligned}
+                \begin{sysmatrix}{ccc|c}
+                    1 & 0 & 1 & 0\\
+                    1 & 3 & 0 & 0\\
+                    3 & 3 & 2 & 1
+                \end{sysmatrix}
+                \ro{R_3-R_2-2R_1}
+                \begin{sysmatrix}{ccc|c}
+                    1 & 0 & 1 & 0\\
+                    1 & 3 & 0 & 0\\
+                    0 & 0 & 0 & 1
+                \end{sysmatrix} 
+            \end{aligned}
+        \]
+        which is impossible. Hence, it is not possible to solve, for all $b\in\R^3$, the equation $Ax=b$.\qed
+    \end{enumerate}
+    \renewcommand{\qedsymbol}{}
+\end{proof}
