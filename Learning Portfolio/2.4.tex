@@ -33,6 +33,7 @@
 \end{question}
 
 \begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
     \begin{enumerate}[(i)]
         \item $A$ is given by 
         \[
@@ -44,23 +45,18 @@
             \end{aligned}
         \]
         \item A lower bound $k$ for $\dim(\nullla(L))$ is $k=2$.
-        \item Let $B=u_1,u_2$ such that $u_1=\ColVecFour{0}{1}{-1}{0}$ and $u_2=\ColVecFour{-1}{5}{0}{1}$.
+        \item Let $B=\{u_1,u_2\}$ such that $u_1=\ColVecFour{0}{-1}{1}{0}$ and $u_2=\ColVecFour{-1}{5}{0}{1}$.
         We will show that $B$ is a basis for $\nullla(L)$.
         
-        Let $a_1,a_2\in\R$ such that $a_1u_1+a_2u_2=0$. We have 
-        \[
-            \begin{aligned}
-                0
-                &= a_1u_1+a_2u_2\\
-                &= \ColVecFour{-a_2}{a_1+5a_2}{-a_1}{a_2}
-            \end{aligned}
-        \]
+        Let $a_1,a_2\in\R$ such that $a_1u_1+a_2u_2=0$. We have: $0
+        = a_1u_1+a_2u_2
+        = \ColVecFour{-a_2}{-a_1+5a_2}{a_1}{a_2}$
         , which reduces to
         \begin{align*}
             &\begin{cases}
                 -a_2&=0\\
-                a_1+5a_2&=0\\
-                -a_1&=0\\
+                -a_1+5a_2&=0\\
+                a_1&=0\\
                 a_2&=0
             \end{cases}\\&\implies
             a_1=a_2=0
@@ -68,7 +64,22 @@
         Hence, the only solution to $a_1u_1+a_2u_2=0$ is the trivial solution, or $B$ is a linearly independent list of vectors (1).
         
         Moreover, let $u\in\nullla(L)$. Then, $u$ can be written as $u=\ColVecFour{v_1}{v_2}{v_3}{v_4}$, where $v_1,v_2,v_3,v_4\in\R$.
-        It follows that $L(u)=\ColVecTwo{v_2+v_3-5v_4}{v_1+v_4}=$ 
+        It follows that $L(u)=\ColVecTwo{v_2+v_3-5v_4}{v_1+v_4}=0$, or $v_2+v_3-5v_4=v_1+v_4=0$.
+        Hence, $u=\ColVecFour{-v_4}{5v_4-v_3}{v_3}{v_4}=v_3 \ColVecFour{0}{-1}{1}{0}+v_4 \ColVecFour{-1}{5}{0}{1}=v_3u_1+v_4u_2$, or $B$ spans $\nullla(L)$ (2).
+
+        From (1) and (2), it follows that $B$ is a basis for $\nullla(L)$.\qed
+        \item Let $x=\ColVecTwo{x_1}{x_2}\in\R^2$ be arbitrary. Then, $L(\ColVecFour{x_2}{x_1}{0}{0})=\ColVecTwo{x_1}{x_2}=x$, or $\R^2\subseteq\range(L)$.
+        But since $\range(L)\subseteq\R^2$, it follows that $\range(L)=\R^2$.\qed
+        \item Let $l_i=L(e_i)$ for $i=1,2,3,4$.
+        Then, $\ell=\{l_1,l_2,l_3,l_4\}$ and 
+        \[
+            \begin{aligned}
+                L(e_1)=\ColVecTwo{0}{1},\,L(e_2)=\ColVecTwo{1}{0},\,L(e_3)=\ColVecTwo{1}{0},\,L(e_4)=\ColVecTwo{-5}{1}
+            \end{aligned}
+        \]
+        The algorithm to reduce $\ell$ to a basis of $\range(L)$ is as follows:
+        Step 1: Since $l_1\not=0$, $l_1$ remains in the list.
+        Step 2: Since 
     \end{enumerate}
-    
+    \renewcommand{\qedsymbol}{}
 \end{proof}

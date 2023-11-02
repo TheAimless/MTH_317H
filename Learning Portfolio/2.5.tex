@@ -60,3 +60,30 @@
         if $x\in\R^4$ and $x=\ColVecFour{a_1}{a_2}{a_3}{a_4}_{\{v_i\}}$ and $y=\ColVecTwo{y_1}{y_2}=\tilde{A}\ColVecFour{a_1}{a_2}{a_3}{a_4}$ as matrix multiplication, then $L(x)=y_1e_1+y_2e_2$, i.e. $L(x)=\ColVecTwo{y_1}{y_2}_{\{e_i\}}$.
     \end{enumerate}
 \end{question}
+
+\begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
+    \begin{enumerate}[(i)]
+        \item Let $a_1,a_2,a_3,a_4\in\R$ such that $a_1v_1+a_2v_2+a_3v_3+a_4v_4=0$.
+        Solving for the above equation, 
+        \[
+            \begin{aligned}
+                \ColVecFour{a_1}{0}{-5a_1}{-a_1}+\ColVecFour{0}{a_2}{-a_2}{0}+\ColVecFour{0}{a_3}{0}{0}+\ColVecFour{a_4}{0}{0}{0}=\ColVecFour{a_1+a_4}{a_2+a_3}{-5a_1-a_2}{-a_1}=0
+            \end{aligned}
+        \]
+        which reduces to
+        \begin{align*}
+            &\begin{cases}
+                &a_1+a_4=0\\
+                &a_2+a_3=0\\
+                &-5a_1-a_2=0\\
+                &-a_1=0
+            \end{cases}\\\iff
+            &a_1=a_2=a_3=a_4=0
+        \end{align*}
+        Hence, $\ell$ is a linearly independent list of vectors. 
+        Combined with the fact that $\ell$ has a length of 4 and $\dim(\R^4)=4$, it follows that $\ell$ is a basis for $\R^4$.\qed
+        \item We have: $L(v_1)=\ColVecTwo{0-5+5}{1-1}=0$, $L(v_2)=\ColVecTwo{1-1}{0}=0$, $L(v_3)=\ColVecTwo{1}{0}$ and $L(v_4)=\ColVecTwo{0}{1}$.
+    \end{enumerate}
+    \renewcommand{\qedsymbol}{}
+\end{proof}
