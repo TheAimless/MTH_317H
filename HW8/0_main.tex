@@ -1,0 +1,30 @@
+\documentclass[12pt]{article}
+
+\usepackage{EngReport}
+\usepackage{Defines}
+
+\onehalfspacing
+\geometry{letterpaper, portrait, includeheadfoot=false, hmargin=1in, vmargin=1in}
+
+\begin{document}
+\pagenumbering{gobble}
+\renewcommand{\familydefault}{\rmdefault}
+
+\input{titlepage}
+\pagebreak
+
+% % % % % % % % % % % % % % % % % % % %
+% % % % %  REPORT CONTENT   % % % % % %
+% % % % % % % % % % % % % % % % % % % %
+
+\fontsize{12}{20}\selectfont{
+    \input{2.1}
+    \input{2.2}
+    \input{2.3}
+    \input{2.4}
+    \input{2.5}
+    \input{2.6}
+    \input{2.7}
+}
+
+\end{document}
