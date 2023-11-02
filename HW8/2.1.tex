@@ -1,0 +1,71 @@
+\begin{question}\label{que:MatrixInverseShowSteps}
+    \normalfont
+    Use the algorithm of LADW Chp 2, Sec 4 to compute the inverse of the following matrix $A$.  Show your steps and confirm that your answer is correct.  To confirm, this means that if you claim $B$ is the inverse of $A$, then you must show that $AB=BA=\Id$ (where $\Id$ is the identity matrix).
+    \begin{align*}
+        A =
+        \MatrixThreeThree{1}{0}{1}{1}{3}{0}{1}{2}{1}
+    \end{align*}
+\end{question}
+
+\begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
+    We have \begin{alignat*}{2}
+        \begin{sysmatrix}{ccc|ccc}
+            1 & 0 & 1 & 1 & 0 & 0\\
+            1 & 3 & 0 & 0 & 1 & 0\\
+            1 & 2 & 1 & 0 & 0 & 1
+        \end{sysmatrix}
+        &\begin{aligned}
+                & \ro{R_2-R_3} \\
+                & \ro{R_3-R_1}
+           \end{aligned}
+        \begin{sysmatrix}{ccc|ccc}
+            1 & 0 & 1 & 1 & 0 & 0\\
+            0 & 1 & -1 & 0 & 1 & -1\\
+            0 & 2 & 0 & -1 & 0 & 1
+        \end{sysmatrix}
+        &&\begin{aligned}
+            &\ro{R_1+R_2}\\
+            &\ro{R_2\rightarrow R_3/2}\\
+            &\ro{R_3\rightarrow R_2}
+        \end{aligned}
+        \begin{sysmatrix}{ccc|ccc}
+            1 & 1 & 0 & 1 & 1 & -1\\
+            0 & 1 & 0 & \frac{-1}{2} & 0 & \frac{1}{2}\\
+            0 & 1 & -1 & 0 & 1 & -1
+        \end{sysmatrix}\\
+        &\begin{aligned}
+            &\ro{R_1-R_2}\\
+            &\ro{R_3-R_2}
+        \end{aligned}
+        \begin{sysmatrix}{ccc|ccc}
+            1 & 0 & 0 & \frac{3}{2} & 1 & \frac{-3}{2}\\
+            0 & 1 & 0 & \frac{-1}{2} & 0 & \frac{1}{2}\\
+            0 & 0 & -1 & \frac{1}{2} &  1 & \frac{-3}{2}
+        \end{sysmatrix}
+        &&\ro{-R_3}
+        \begin{sysmatrix}{ccc|ccc}
+            1 & 0 & 0 & \frac{3}{2} & 1 & \frac{-3}{2}\\
+            0 & 1 & 0 & \frac{-1}{2} & 0 & \frac{1}{2}\\
+            0 & 0 & 1 & \frac{-1}{2} & -1 & \frac{3}{2}
+        \end{sysmatrix}
+    \end{alignat*}
+    Let $B=\MatrixThreeThree{\frac{3}{2}}{1}{\frac{-3}{2}}{\frac{-1}{2}}{0}{\frac{1}{2}}{\frac{-1}{2}}{-1}{\frac{3}{2}}$.
+    Then, 
+    \[
+        \begin{aligned}
+            AB=\MatrixThreeThree{1}{0}{1}{1}{3}{0}{1}{2}{1}\MatrixThreeThree{\frac{3}{2}}{1}{\frac{-3}{2}}{\frac{-1}{2}}{0}{\frac{1}{2}}{\frac{-1}{2}}{-1}{\frac{3}{2}}
+            =\MatrixThreeThree{\frac{3}{2}-\frac{1}{2}}{1-1}{\frac{-3}{2}+\frac{3}{2}}{\frac{3}{2}-\frac{3}{2}}{1}{\frac{-3}{2}+\frac{3}{2}}{\frac{3}{2}-1-\frac{1}{2}}{1-1}{\frac{-3}{2}+1+\frac{3}{2}}
+            =\MatrixThreeThree{1}{0}{0}{0}{1}{0}{0}{0}{1}=Id
+        \end{aligned}
+    \]
+    and 
+    \[
+        \begin{aligned}
+            BA=\MatrixThreeThree{\frac{3}{2}}{1}{\frac{-3}{2}}{\frac{-1}{2}}{0}{\frac{1}{2}}{\frac{-1}{2}}{-1}{\frac{3}{2}}\MatrixThreeThree{1}{0}{1}{1}{3}{0}{1}{2}{1}
+            =\MatrixThreeThree{\frac{3}{2}+1-\frac{3}{2}}{3-3}{\frac{3}{2}-\frac{3}{2}}{\frac{-1}{2}+\frac{1}{2}}{1}{\frac{-1}{2}+\frac{1}{2}}{\frac{-1}{2}-1+\frac{3}{2}}{-3+3}{\frac{-1}{2}+\frac{3}{2}}
+            =\MatrixThreeThree{1}{0}{0}{0}{1}{0}{0}{0}{1}=Id
+        \end{aligned}
+    \]
+    Hence, $AB=BA=Id$, or $B$ is the inverse of $A$.
+\end{proof}

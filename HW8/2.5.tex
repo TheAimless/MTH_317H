@@ -1,0 +1,63 @@
+\begin{question}
+    \normalfont
+
+    Let $A$ be the following matrix:
+    \begin{align*}
+        A =
+        \begin{pmatrix}
+            1 & 0 & 3 & 1 \\
+            1 & 1 & 0 & 2 \\
+            1 & 0 & 3 & 1
+        \end{pmatrix}.
+    \end{align*}
+
+    \begin{enumerate}[(i)]
+        \item Let $R$ be the matrix that is the reduced echelon form of $A$.  Write down $R$.  You do not need to show your steps.
+
+
+
+        \item Define the linear function, $L_A:\real^4\to\real^3$, given by
+              \begin{align*}
+                  L_A(x) = Ax\ \ \ \text{as matrix multiplication in the canonical bases}.
+              \end{align*}
+              Use the reduction algorithm of LADR 2.31, starting with the ordered list,
+              \begin{align*}
+                  [L_A(e_1), L_A(e_2), L_A(e_3), L_A(e_4)],
+              \end{align*}
+              to give a basis for $\range(L_A)$.  You \textbf{do not} need to show your steps in the algorithm, just state the resulting basis.
+
+
+        \item Let $b\in\real^3$ be given as
+              \begin{align*}
+                  b=\ColVecThree{4}{-1}{4}.
+              \end{align*}
+              Represent $b$ uniquely using the basis vectors for $\range(L_A)$ from part (ii).  Use this to solve for $x$, in the equation
+              \begin{align*}
+                  L_A(x) = b.
+              \end{align*}
+
+        \item For the same $b$ as in part (iii), use the row reduction algorithm in LADW section 2.2 to solve for one solution, $x$, in the equation
+              \begin{align*}
+                  Ax=b.
+              \end{align*}
+              (Because $\NullLA(L_A)\not=\{0\}$, there are infinitely many solutions, but you just need to give one here.)
+
+
+        \item For the matrix, $R$, from part (i), define the linear function, $L_R:\real^4\to\real^3$, given by
+              \begin{align*}
+                  L_R(x) = Rx\ \ \ \text{as matrix multiplication in the canonical bases}.
+              \end{align*}
+
+              Why will solving for $x$ in the equation
+              \begin{align*}
+                  L_R(x)=b
+              \end{align*}
+              not give the correct solution to $L_A(x)=b$?  Give a new vector, $z$, so that
+
+              \begin{align*}
+                  L_A(x)=b\ \ \ \iff\ \ \ L_R(x)=z.
+              \end{align*}
+    \end{enumerate}
+
+
+\end{question}

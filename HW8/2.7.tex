@@ -1,0 +1,38 @@
+\begin{question}
+    \normalfont
+
+    Assume that $V$ and $L$ are as in Question \ref{que:PrimePlusPrimePrime}. Let $p_0,\dots, p_3$ be the canonical basis polynomials for $\P_3$
+    \begin{align*}
+        p_0(x) = 1,\ \ \
+        p_1(x) = x,\ \ \
+        p_2(x) = x^2,\ \ \
+        p_3(x) = x^3.
+    \end{align*}
+    Let the following $q_1,\dots, q_4$ be a choice of basis for $V$:
+    \begin{align*}
+        q_1(x) = x,\ \ \
+        q_2(x) = x^2,\ \ \
+        q_3(x) = x^3,\ \ \
+        q_4(x) = x^4.
+    \end{align*}
+
+    \begin{enumerate}[(i)]
+        \item Write down a matrix, $A$, so that in the bases for $V$ and $\P_3$ given above,
+              \begin{align*}
+                   & \text{if}\ \
+                  p = a_1q_1+ \cdots + a_4 q_4,\ \ \text{i.e.}\ \ p=\ColVecThree{a_1}{\vdots}{a_4}_{[q_i]}, \\
+                   & \ \ \text{and}\ \
+                  L(p) = b_0p_0 + \cdots + b_3p_3 = \ColVecThree{b_0}{\vdots}{b_3}_{[p_i]},                 \\
+                   & \text{then}
+                  \ColVecThree{b_0}{\vdots}{b_3}
+                  = A\ColVecThree{a_1}{\vdots}{a_4}\ \ \text{as matrix multiplication}
+              \end{align*}
+
+        \item Using the algorithm of LADW Chp 2, Sec 4, compute the inverse matrix, $A^{-1}$.  Confirm by matrix multiplication that your answer is correct.  No need to show your steps, as you have done a similar computation in Question \ref{que:MatrixInverseShowSteps}.  Just write the matrix and confirm.
+
+        \item  For the sake of comparing methods, do this part pretending you have not done Question 3.6 yet.
+
+
+              Using the matrix $A^{-1}$, write down the formula for $L^{-1}$.  Given that a linear function is uniquely determined by its action on a basis, it is OK to specify $L^{-1}$ by specifying $L^{-1}(p_i)$.  Or, you can just write down a formula for $L^{-1}(q)$ for a generic $q$.
+    \end{enumerate}
+\end{question}

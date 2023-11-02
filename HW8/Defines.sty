@@ -55,7 +55,8 @@
 \newcommand{\ColVecTwo}[2]{\begin{pmatrix} #1\\ #2\end{pmatrix}}
 \newcommand{\ColVecThree}[3]{\begin{pmatrix} #1\\ #2\\ #3\end{pmatrix}}
 \newcommand{\ColVecFour}[4]{\begin{pmatrix} #1\\ #2\\#3 \\ #4\end{pmatrix}}
-\newcommand{\MatTwoTwo}[4]{\begin{pmatrix} #1 &#2\\ #3 &#4 \end{pmatrix}}
+\newcommand{\MatrixTwoTwo}[4]{\begin{pmatrix} #1 &#2\\ #3 &#4 \end{pmatrix}}
+\newcommand{\MatrixThreeThree}[9]{\begin{pmatrix} #1 &#2 &#3\\ #4 &#5 &#6\\ #7 &#8 &#9 \end{pmatrix}}
 \newcommand{\inner}[2]{\langle #1 , #2 \rangle}
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \newcommand{\spanvect}{\textnormal{span}}
@@ -67,8 +68,8 @@
 \DeclareMathOperator*{\Limsup}{LIMSUP}
 
 \newenvironment{sysmatrix}[1]
- {\left(\begin{array}{@{}#1@{}}}
- {\end{array}\right)}
+{\left(\begin{array}{@{}#1@{}}}
+    {\end{array}\right)}
 \newcommand{\ro}[1]{%
   \xrightarrow{\mathmakebox[\rowidth]{#1}}%
 }
