@@ -5,6 +5,7 @@
 
 # PDF output - usually a bad idea to keep this in Git
 *.pdf
+!HW8/2.3.pdf
 
 # Problems folder *should* be included
 !Problems/*
