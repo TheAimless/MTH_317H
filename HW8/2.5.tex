@@ -47,13 +47,11 @@
               \begin{align*}
                   L_R(x) = Rx\ \ \ \text{as matrix multiplication in the canonical bases}.
               \end{align*}
-
               Why will solving for $x$ in the equation
               \begin{align*}
                   L_R(x)=&b
               \end{align*}
               not give the correct solution to $L_A(x)=b$?  Give a new vector, $z$, so that
-
               \begin{align*}
                   L_A(x)=b\ \ \ \iff\ \ \ L_R(x)=z.
               \end{align*}
@@ -81,7 +79,7 @@
         \]
         But since $b$ is uniquely equal to $4L_A(e_1)-5L_A(e_2)$, it must be the case that $x_1+3x_3+x_4=4$ and $x_2-3x_3+x_4=-5$.
         Hence, $x=\ColVecFour{-3x_3-x_4+4}{3x_3-x_4-5}{x_3}{x_4}$ for some $x_3,x_4\in\R$
-        \item Solving for the equation $Ax=b$ given $b$ as in part (iii), 
+        \item For $x=\ColVecFour{x_1}{x_2}{x_3}{x_4}$, solving for the equation $Ax=b$ given $b$ as in part (iii), 
         \begin{alignat*}{2}
             \begin{sysmatrix}{cccc|c}
                 1 & 0 & 3 & 1 & 4\\
@@ -98,6 +96,18 @@
                 0 & 0 & 0 & 0 & 0
             \end{sysmatrix}
         \end{alignat*}
+        It follows that 
+        \begin{align*}
+            \begin{cases}
+                &x_1=-3x_3-x_4+4\\
+                &x_2=3x_3-x_4-5\\
+                &x_3,x_4\text{ are free}
+            \end{cases}
+        \end{align*}
+        Let $x_3=x_4=0$. Then, $x_1=4$ and $x_2=-5$, meaning $x=\ColVecFour{4}{-5}{0}{0}$ is a solution to $Ax=b$.
+        \item Let $z=\ColVecThree{4}{-5}{0}$. From the row reduction in part (iv), $x$ must be a solution to both augmented matrices.
+        Hence, $x$ is a solution to both $Ax=b$ and $Rx=z$ (since the rightmost column of the row reduced matrix is $z$), or $L_A(x)=b\iff L_R(x)=z$.\qed
     \end{enumerate}
+    \renewcommand{\qedsymbol}{}
 \end{proof}
  
