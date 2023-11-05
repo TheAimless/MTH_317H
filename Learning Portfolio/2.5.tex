@@ -84,6 +84,77 @@
         Hence, $\ell$ is a linearly independent list of vectors. 
         Combined with the fact that $\ell$ has a length of 4 and $\dim(\R^4)=4$, it follows that $\ell$ is a basis for $\R^4$.\qed
         \item We have: $L(v_1)=\ColVecTwo{0-5+5}{1-1}=0$, $L(v_2)=\ColVecTwo{1-1}{0}=0$, $L(v_3)=\ColVecTwo{1}{0}$ and $L(v_4)=\ColVecTwo{0}{1}$.
+        \item Duly noted
+        \item We have 
+        \[
+            \begin{aligned}
+                L(x)&=L(a_1v_1+a_2v_2+a_3v_3+a_4v_4)\\
+                &=a_1L(v_1)+a_2L(v_2)+a_3L(v_3)+a_4L(v_4)\\
+                &=\ColVecTwo{a_3}{0}+\ColVecTwo{0}{a_4}\\
+                &=\ColVecTwo{a_3}{a_4}
+            \end{aligned}
+        \]
+        Hence, for $y_1=a_3$ and $y_2=a_4$ it follows that $L(x)=\ColVecTwo{y_1}{y_2}$.\qed
+        \item We have: $x=\ColVecFour{1}{1}{1}{1}_{\{e_i\}}=e_1+e_2+e_3+e_4=\ColVecFour{1}{1}{1}{1}$
+        Moreover, $x=a_1v_1+a_2v_2+a_3v_3+a_4v_4=\ColVecFour{a_1}{0}{-5a_1}{-a_1}+\ColVecFour{0}{a_2}{-a_2}{0}+\ColVecFour{0}{a_3}{0}{0}+\ColVecFour{a_4}{0}{0}{0}=\ColVecFour{a_1+a_4}{a_2+a_3}{-5a_1-a_2}{-a_1}$.
+        Hence, we must have
+        \begin{align*}
+            &\begin{cases}
+                &a_1+a_4=1\\
+                &a_2+a_3=1\\
+                &-5a_1-a_2=1\\
+                &-a_1=1
+            \end{cases}\\\iff
+            &\begin{cases}
+                &a_1=-1\\
+                &a_2=-5a_1-1=4\\
+                &a_3=1-a_2=-3\\
+                &a_4=1-a_1=2
+            \end{cases}
+        \end{align*}
+        Therefore, $(a_1,a_2,a_3,a_4)=(-1,4,-3,2)$ for $x=\ColVecFour{1}{1}{1}{1}_{\{e_i\}}=a_1v_1+a_2v_2+a_3v_3+a_4v_4$.\qed
+        \item We have: $x=a_1v_1+a_2v_2+a_3v_3+a_4v_4=\ColVecFour{a_1+a_4}{a_2+a_3}{-5a_1-a_2}{-a_1}$
+        and $x=x_1e_1+x_2e_2+x_3e_3+x_4e_4=\ColVecFour{x_1}{x_2}{x_3}{x_4}$.
+        Thus,
+        \begin{align*}
+            &\begin{cases}
+                &a_1+a_4=x_1\\
+                &a_2+a_3=x_2\\
+                &-5a_1-a_2=x_3\\
+                &-a_1=x_4
+            \end{cases}\\\iff
+            &\begin{cases}
+                &a_1=-x_4\\
+                &a_2=-5a_1-x_3=5x_4-x_3\\
+                &a_3=x_2-a_2=x_2+x_3-5x_4\\
+                &a_4=x_1-a_1=x_1+x_4
+            \end{cases}
+        \end{align*}
+        Hence, $(a_1,a_2,a_3,a_4)=(-x_4,5x_4-x_3,x_2+x_3-5x_4,x_1+x_4)$ so that $\ColVecFour{a_1}{a_2}{a_3}{a_4}_{\{v_i\}}=\ColVecFour{x_1}{x_2}{x_3}{x_4}_{\{e_i\}}$.\qed
+        \item Since $x=\ColVecFour{x_1}{x_2}{x_3}{x_4}=w_1v_1+w_2v_2+w_3v_3+w_4v_4$, from (vi) it follows that $(w_1,w_2,w_3,w_4)=(-x_4,5x_4-x_3,x_2+x_3-5x_4,x_1+x_4)$.
+        Let $B=\begin{pmatrix}
+            0 & 0 & 0 & -1\\
+            0 & 0 & -1 & 5\\
+            0 & 1 & 1 & -5\\
+            1 & 0 & 0 & 1
+        \end{pmatrix}$.
+        Then, 
+        \[
+            \begin{aligned}
+                Bx=\ColVecFour{-x_4}{-x_3+5x_4}{x_2+x_3-5x_4}{x_1+x_4}=\ColVecFour{w_1}{w_2}{w_3}{w_4}
+            \end{aligned}
+        \]
+        Hence, given $B$ as above, it follows that for $\ColVecFour{w_1}{w_2}{w_3}{w_4}=Bx$, $x=w_1v_1+w_2v_2+w_3v_3+w_4v_4$.\qed
+        \item Let $\tilde{A}=\begin{pmatrix}
+            0 & 0 & 1 & 0\\
+            0 & 0 & 0 & 1
+        \end{pmatrix}$.
+        Then, $\tilde{A}x=\begin{pmatrix}
+            0 & 0 & 1 & 0\\
+            0 & 0 & 0 & 1
+        \end{pmatrix}\ColVecFour{a_1}{a_2}{a_3}{a_4}=\ColVecTwo{a_3}{a_4}$.
+        However, from (iv), if $x=\ColVecFour{a_1}{a_2}{a_3}{a_4}_{\{v_i\}}$ then $L(x)=\ColVecTwo{a_3}{a_4}$
+        Hence, the matrix $\tilde{A}$ satisfies $\tilde{A}\ColVecFour{a_1}{a_2}{a_3}{a_4}=\ColVecTwo{y_1}{y_2}=y$ such that $L(x)=y_1e_1+y_2e_2$.\qed
     \end{enumerate}
     \renewcommand{\qedsymbol}{}
 \end{proof}

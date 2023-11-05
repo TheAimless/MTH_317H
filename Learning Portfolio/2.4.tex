@@ -78,8 +78,28 @@
             \end{aligned}
         \]
         The algorithm to reduce $\ell$ to a basis of $\range(L)$ is as follows:
-        Step 1: Since $l_1\not=0$, $l_1$ remains in the list.
-        Step 2: Since 
+        \begin{enumerate}[Step (1):]
+        \item Since $l_1\not=0$, $l_1$ remains in the list.
+        \item For any $a\in\R$, $l_2=\ColVecTwo{1}{0}\not=al_1=\ColVecTwo{0}{a}$. Hence, $l_2\not\in\spanla(l_1)$, or $l_2$ belongs in the final list.
+        \item Since $l_3=l_2$, $l_3\in\spanla(l_1,l_2)$. Thus, $l_3$ is deleted.
+        \item Since $l_4=l_1-5l_2$, $l_4\in\spanla(l_1,l_2)$. Hence, $l_4$ is deleted.
+        \end{enumerate}
+        Since the original list has four entries, the process is stopped. From there, we have obtained a basis for $\range(L)$, which is $\ell'=\{l_1,l_2\}$.\qed
+
+        \item Let $x_0=\ColVecFour{3}{5}{0}{0}$. Then. $L(x_0)=\ColVecTwo{5+0-0}{3+0}=\ColVecTwo{5}{3}$, satisfying the problem statement.
+        \item Let $v=\ColVecFour{v_1}{v_2}{v_3}{v_4}$. Solving for $L(v)=\ColVecTwo{5}{3}$, 
+        \begin{align*}
+            &\begin{cases}
+                &v_2+v_3-5v_4=5\\
+                &v_1+v_4=3
+            \end{cases}\\\iff
+            &\begin{cases}
+                &v_2=-v_3+5v_4+5\\
+                &v_1=3-v_4\\
+                &v_3,v_4\text{ are free}
+            \end{cases}
+        \end{align*}
+        Hence, $v=\ColVecFour{3-v_4}{-v-3+5v_4+5}{v_3}{v_4}$ for some $v_3,v_4\in\R$.\qed
     \end{enumerate}
     \renewcommand{\qedsymbol}{}
 \end{proof}

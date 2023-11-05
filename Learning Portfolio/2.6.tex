@@ -71,3 +71,104 @@ Prove that
         \text{det}(A)=0\iff\text{L is not injective.}
     \end{aligned}
 \]
+
+\begin{sol}
+\begin{lem}
+    \normalfont
+    Let $\triangle ABC$ be a triangle, $b=\overline{\rm AB}$, $c=\overline{\rm AC}$ and $S$ be the area of $ABC$. Then, 
+    \[
+        \begin{aligned}
+            S=\frac{1}{2}bc\sin{A}
+        \end{aligned}
+    \]
+\end{lem}
+\begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
+    %\begin{tikzpicture}
+    %    \amongUsI{red}{cyan}
+    %\end{tikzpicture}
+    \[
+        \begin{tikzpicture}
+            \tkzDefPoints{1/4/A,0/0/B,5/0/C,2.5/2.5/H}
+            \tkzDrawPolygon(A,B,C)
+            \tkzDrawPoints(A,B,C,H)
+            \tkzLabelPoints(B,C)
+            \tkzLabelPoints[above](A)
+            \tkzLabelPoints[above right](H)
+            \tkzDrawSegment(B,H)
+            \tkzMarkRightAngle(B,H,C)
+            \tkzMarkAngle[size=0.4](B,A,C)
+        \end{tikzpicture}
+    \]
+    Let $\overline{\rm BH}$ be the altitude of $\triangle ABC$.
+    Then, $\angle BHA=90^{\circ}$, or $\triangle BHA$ is a right triangle.
+    It follows that $\frac{BH}{BA}=\sin{A}$, or $b\sin{A}=\overline{\rm BH}$.
+    Therefore, 
+    \[
+        \begin{aligned}
+            \frac{1}{2}bc\sin{A}=\frac{1}{2}\overline{\rm BH}\cdot\overline{\rm AC}=S
+        \end{aligned}
+    \] , by the definition of the area of a triangle.
+\end{proof}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+Back to our original problem, let $v_1=L(e_1)=\ColVecTwo{a}{b}$ and $v_2=L(e_2)=\ColVecTwo{c}{d}$ for some $a,b,c,d\in\R$.
+Let $v_3=\ColVecTwo{d}{-c}\in\R^2$.
+It follows that $v_2\cdot v_3=cd-cd=0=|v_2||v_3|\cos{(v_2,v_3)}$.
+
+If $|v_2|=0$, since $|v_2|=\sqrt{c^2+d^2}\geq 0$ for all $c,d\in\R$, equality only happens when $c=d=0$.
+Hence, $L(e_2)=(0,0)$, or the parallelogram has two points that coincides.
+It follows that the area of $F$ is 0, which is also equal to $|\det(A)|=ad-bc=0a-0b$.
+
+Denote $\angle(u,v)$ as the angle between the vectors $u$ and $v$.
+If $|v_2|\not=0$, since $|v_2|=|v_3|=\sqrt{c^2+d^2}$, it must be the case that $\cos{(v_2,v_3)}=0$.
+Thus, $\angle(v_2,v_3)=90^{\circ}$ or $\angle(v_2,v_3)=-90^{\circ}$.
+But since $\angle(v_1,v_3)=\angle(v_1,v_2)+\angle(v_2,v_3)$, $\angle(v_1,v_2)=\angle(v_1,v_3)-90^{\circ}$ or $\angle(v_1,v_2)=\angle(v_1,v_3)+90^{\circ}$.
+
+We have 
+\[
+    \begin{aligned}
+        |\det(A)|&=|ad-bc|=|v_1\cdot v_3|\\&=||v_1||v_2|\cos(v_1,v_3)|=|v_1||v_3||\cos(\angle(v_1,v_2)+\angle(v_2,v_3))|
+    \end{aligned}
+\]
+If $\angle(v_2,v_3)=90^{\circ}$, $|\cos(\angle(v_1,v_2)+\angle(v_2,v_3))|=|\cos(\angle(v_1,v_2)+90^{\circ})|=|-\sin(v_1,v_2)|=|\sin(v_1,v_2)|$.
+If $\angle(v_2,v_3)=-90^{\circ}$, $|\cos(\angle(v_1,v_2)+\angle(v_2,v_3))|=|\cos(\angle(v_1,v_2)-90^{\circ})|=|\cos(90^{\circ}-\angle(v_1,v_2))|=|\sin(v_1,v_2)|$
+
+Thus, $|\det(A)|=|v_1||v_2||sin(v_1,v_2)|$.
+However, by the lemma, $|v_1||v_2||\sin(v_1,v_2)|$ is twice the area of the triangle bound by the origin, $v_1,v_2$, which is also the area of the parallelogram $F$.
+Therefore, $|\det(A)|=\text{ area of }F$.\qed
+
+For the second part, assume $\det(A)=0$.
+From part (1), it follows that the area of the parallelogram $F$ constructed as above is 0.
+Thus, $L(e_1)$ and $L(e_2)$ must be scalar multiple of each other, or there exists $\lambda\in\R$ such that $L(e_2)=\lambda L(e_1)$.
+
+Let $x_1=\lambda e_1$ and $x_2=e_2$. Then, $x_1\not=x_2$, but 
+\[
+    \begin{aligned}
+        L(x_1)=L(\lambda e_1)=\lambda L(e_1)=L(e_2)=L(x_2)
+    \end{aligned}
+\]
+Hence, there exists $x_1,x_2\in\R^2$ such that $x_1\not=x_2$ yet $L(x_1)=L(x_2)$. Thus, $L$ is not injective.
+
+Conversely, suppose $L$ is not injective.
+Then, there exists $x_1=\ColVecTwo{a_1}{a_2}\in\R^2,x_2=\ColVecTwo{b_1}{b_2}\in\R^2$ such that $x_1\not=x_2$ and $L(x_1)=L(x_2)$.
+Since $x_1\not=x_2$, $a_1\not=a_2$ or $b_1\not=b_2$.
+WLOG, suppose $b_2\not=a_2$.
+Then, $b_2-a_2\not=0$.
+
+We have: $L(x_1)=L(a_1e_1+a_2e_2)=a_1L(e_1)+a_2L(e_2)$.
+Similarly, $L(x_2)=L(b_1e_1+b_2e_2)=b_1L(e_1)+b_2L(e_2)$.
+Since $L(x_1)=L(x_2)$, $a_1L(e_1)+a_2L(e_2)=b_1L(e_1)+b_2L(e_2)$
+, or $(a_1-b_1)L(e_1)=(b_2-a_2)L(e_2)$.
+But since $b_2-a_2\not=0$, it follows that $L(e_2)=\dfrac{a_1-b_1}{b_2-a_2}L(e_1)$.
+Hence, $L(e_2)$ is a scalar multiple of $L(e_1)$, or the area of $F$ must be zero.
+But as the area of $F$ equals zero implies $|\det(A)|=0$.
+Hence, if $L$ is not injective then $\det(A)=0$.
+Therefore, 
+\[
+    \begin{aligned}
+        \det(A)=0\iff L\text{ is not injective.}
+    \end{aligned}
+\]
+\end{sol}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\qed
