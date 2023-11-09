@@ -36,3 +36,94 @@
               Using the matrix $A^{-1}$, write down the formula for $L^{-1}$.  Given that a linear function is uniquely determined by its action on a basis, it is OK to specify $L^{-1}$ by specifying $L^{-1}(p_i)$.  Or, you can just write down a formula for $L^{-1}(q)$ for a generic $q$.
     \end{enumerate}
 \end{question}
+
+\begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
+    \begin{enumerate}[(i)]
+        \item 
+        The matrix $A$ for $L$ with respect to the basis $\{q_1,q_2,q_3,q_4\}$ for $V$ and the canonical basis for $\P_3$ is given by
+        \[
+            \begin{aligned}
+                A=\begin{pmatrix}
+                    1 & 2 & 0 & 0\\
+                    0 & 2 & 6 & 0\\
+                    0 & 0 & 3 & 12\\
+                    0 & 0 & 0 & 4
+                \end{pmatrix}
+            \end{aligned}
+        \]
+        \item Let $A^{-1}=\begin{pmatrix}
+            1 & -1 & 2 & -6\\
+            0 & \frac{1}{2} & -1 & 3\\
+            0 & 0 & \frac{1}{3} & -1\\
+            0 & 0 & 0 & \frac{1}{4}
+        \end{pmatrix}$. Then, 
+        \[
+            \begin{aligned}
+                AA^{-1}&=\begin{pmatrix}
+                    1 & 2 & 0 & 0\\
+                    0 & 2 & 6 & 0\\
+                    0 & 0 & 3 & 12\\
+                    0 & 0 & 0 & 4
+                \end{pmatrix}
+                \begin{pmatrix}
+                    1 & -1 & 2 & -6\\
+                    0 & \frac{1}{2} & -1 & 3\\
+                    0 & 0 & \frac{1}{3} & -1\\
+                    0 & 0 & 0 & \frac{1}{4}
+                \end{pmatrix}\\
+                &=\begin{pmatrix}
+                    1 & -1+1 & 2-2 & -6+6\\
+                    0 & -2+3 & -2+2 & 6-6\\
+                    0 & 0 & 1 & -3+3\\
+                    0 & 0 & 0 & 1
+                \end{pmatrix}\\
+                &=\begin{pmatrix}
+                    1 & 0 & 0 & 0\\
+                    0 & 1 & 0 & 0\\
+                    0 & 0 & 1 & 0\\
+                    0 & 0 & 0 & 1
+                \end{pmatrix}
+            \end{aligned}
+        \]
+        and 
+        \[
+            \begin{aligned}
+                A^{-1}A&=\begin{pmatrix}
+                    1 & -1 & 2 & -6\\
+                    0 & \frac{1}{2} & -1 & 3\\
+                    0 & 0 & \frac{1}{3} & -1\\
+                    0 & 0 & 0 & \frac{1}{4}
+                \end{pmatrix}
+                \begin{pmatrix}
+                    1 & 2 & 0 & 0\\
+                    0 & 2 & 6 & 0\\
+                    0 & 0 & 3 & 12\\
+                    0 & 0 & 0 & 4
+                \end{pmatrix}\\
+                &=\begin{pmatrix}
+                    1 & 2-2 & -6+6 & 24-24\\
+                    0 & 1 & 3-3 & -12+12\\
+                    0 & 0 & 1 & 4-4\\
+                    0 & 0 & 0 & 1
+                \end{pmatrix}\\
+                &=\begin{pmatrix}
+                    1 & 0 & 0 & 0\\
+                    0 & 1 & 0 & 0\\
+                    0 & 0 & 1 & 0\\
+                    0 & 0 & 0 & 1
+                \end{pmatrix}
+            \end{aligned}
+        \]
+        Therefore, $AA^{-1}=A^{-1}A=id_4$, where $id_4$ is the $4\times 4$ identity matrix.\qed
+        \item The matrix $A^{-1}$ is the matrix for $L^{-1}$ with respect to the canonical basis for $\P_3$ and the basis $\{q_1,q_2,q_3,q_4\}$ for $V$.
+        It follows that $L^{-1}$ must satisfy 
+        \[
+            \begin{aligned}
+                &L^{-1}(p_0)=q_1,\ &&L^{-1}(p_1)=-q_1+\frac{1}{2}q_2\\ 
+                &L^{-1}(p_2)=2q_1-q_2+\frac{1}{3}q_3,\ &&L^{-1}(p_3)=-6q_1+3q_2-q_3+\frac{1}{4}q_4
+            \end{aligned}
+        \]\qed
+    \end{enumerate}
+    \renewcommand{\qedsymbol}{}
+\end{proof}
