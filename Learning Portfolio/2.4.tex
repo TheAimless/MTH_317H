@@ -35,15 +35,10 @@
 \begin{proof}
     \renewcommand{\qedsymbol}{$\blacksquare$}
     \begin{enumerate}[(i)]
-        \item $A$ is given by 
-        \[
-            \begin{aligned}
-                A = \begin{pmatrix}
-                    0 & 1 & 1 & -5\\
-                    1 & 0 & 0 & 1
-                \end{pmatrix}
-            \end{aligned}
-        \]
+        \item $A=\begin{pmatrix}
+            0 & 1 & 1 & -5\\
+            1 & 0 & 0 & 1
+        \end{pmatrix}$
         \item A lower bound $k$ for $\dim(\nullla(L))$ is $k=2$.
         \item Let $B=\{u_1,u_2\}$ such that $u_1=\ColVecFour{0}{-1}{1}{0}$ and $u_2=\ColVecFour{-1}{5}{0}{1}$.
         We will show that $B$ is a basis for $\nullla(L)$.
@@ -58,12 +53,13 @@
                 -a_1+5a_2&=0\\
                 a_1&=0\\
                 a_2&=0
-            \end{cases}\\&\implies
+            \end{cases}\\&\iff
             a_1=a_2=0
         \end{align*}
         Hence, the only solution to $a_1u_1+a_2u_2=0$ is the trivial solution, or $B$ is a linearly independent list of vectors (1).
         
-        Moreover, let $u\in\nullla(L)$. Then, $u$ can be written as $u=\ColVecFour{v_1}{v_2}{v_3}{v_4}$, where $v_1,v_2,v_3,v_4\in\R$.
+        Moreover, let $u\in\nullla(L)$.
+        Then, $u=\ColVecFour{v_1}{v_2}{v_3}{v_4}$ for some $v_1,v_2,v_3,v_4\in\R$.
         It follows that $L(u)=\ColVecTwo{v_2+v_3-5v_4}{v_1+v_4}=0$, or $v_2+v_3-5v_4=v_1+v_4=0$.
         Hence, $u=\ColVecFour{-v_4}{5v_4-v_3}{v_3}{v_4}=v_3 \ColVecFour{0}{-1}{1}{0}+v_4 \ColVecFour{-1}{5}{0}{1}=v_3u_1+v_4u_2$, or $B$ spans $\nullla(L)$ (2).
 
@@ -86,20 +82,20 @@
         \end{enumerate}
         Since the original list has four entries, the process is stopped. From there, we have obtained a basis for $\range(L)$, which is $\ell'=\{l_1,l_2\}$.\qed
 
-        \item Let $x_0=\ColVecFour{3}{5}{0}{0}$. Then. $L(x_0)=\ColVecTwo{5+0-0}{3+0}=\ColVecTwo{5}{3}$, satisfying the problem statement.
+        \item Let $x_0=\ColVecFour{3}{5}{0}{0}$. Then. $L(x_0)=\ColVecTwo{5+0-0}{3+0}=\ColVecTwo{5}{3}$.\qed
         \item Let $v=\ColVecFour{v_1}{v_2}{v_3}{v_4}$. Solving for $L(v)=\ColVecTwo{5}{3}$, 
         \begin{align*}
-            &\begin{cases}
+            \begin{cases}
                 &v_2+v_3-5v_4=5\\
                 &v_1+v_4=3
-            \end{cases}\\\iff
-            &\begin{cases}
+            \end{cases}\iff
+            \begin{cases}
                 &v_2=-v_3+5v_4+5\\
                 &v_1=3-v_4\\
                 &v_3,v_4\text{ are free}
             \end{cases}
         \end{align*}
-        Hence, $v=\ColVecFour{3-v_4}{-v-3+5v_4+5}{v_3}{v_4}$ for some $v_3,v_4\in\R$.\qed
+        Hence, $v=\ColVecFour{3-v_4}{-v_3+5v_4+5}{v_3}{v_4}$ for some $v_3,v_4\in\R$.\qed
     \end{enumerate}
     \renewcommand{\qedsymbol}{}
 \end{proof}

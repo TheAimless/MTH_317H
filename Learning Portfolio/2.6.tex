@@ -111,16 +111,13 @@ Prove that
     \] , by the definition of the area of a triangle.
 \end{proof}
 \renewcommand{\qedsymbol}{$\blacksquare$}
-Back to our original problem, let $v_1=L(e_1)=\ColVecTwo{a}{b}$ and $v_2=L(e_2)=\ColVecTwo{c}{d}$ for some $a,b,c,d\in\R$.
+Back to our original problem, let $v_1=L(e_1)=\ColVecTwo{a}{b}$ and $v_2=L(e_2)=\ColVecTwo{c}{d}$ for some $a,b,c,d>0$.
 Let $v_3=\ColVecTwo{d}{-c}\in\R^2$.
 It follows that $v_2\cdot v_3=cd-cd=0=|v_2||v_3|\cos{(v_2,v_3)}$.
 
-If $|v_2|=0$, since $|v_2|=\sqrt{c^2+d^2}\geq 0$ for all $c,d\in\R$, equality only happens when $c=d=0$.
-Hence, $L(e_2)=(0,0)$, or the parallelogram has two points that coincides.
-It follows that the area of $F$ is 0, which is also equal to $|\det(A)|=ad-bc=0a-0b$.
+Since $c,d>0$, $\sqrt{c^2+d^2}>0$, or $|v_2|=|v_3|>0$. It follows that $\cos(v_2,v_3)=0$
 
 Denote $\angle(u,v)$ as the angle between the vectors $u$ and $v$.
-If $|v_2|\not=0$, since $|v_2|=|v_3|=\sqrt{c^2+d^2}$, it must be the case that $\cos{(v_2,v_3)}=0$.
 Thus, $\angle(v_2,v_3)=90^{\circ}$ or $\angle(v_2,v_3)=-90^{\circ}$.
 But since $\angle(v_1,v_3)=\angle(v_1,v_2)+\angle(v_2,v_3)$, $\angle(v_1,v_2)=\angle(v_1,v_3)-90^{\circ}$ or $\angle(v_1,v_2)=\angle(v_1,v_3)+90^{\circ}$.
 
@@ -134,12 +131,12 @@ If $\angle(v_2,v_3)=90^{\circ}$, $|\cos(\angle(v_1,v_2)+\angle(v_2,v_3))|=|\cos(
 If $\angle(v_2,v_3)=-90^{\circ}$, $|\cos(\angle(v_1,v_2)+\angle(v_2,v_3))|=|\cos(\angle(v_1,v_2)-90^{\circ})|=|\cos(90^{\circ}-\angle(v_1,v_2))|=|\sin(v_1,v_2)|$
 
 Thus, $|\det(A)|=|v_1||v_2||sin(v_1,v_2)|$.
-However, by the lemma, $|v_1||v_2||\sin(v_1,v_2)|$ is twice the area of the triangle bound by the origin, $v_1,v_2$, which is also the area of the parallelogram $F$.
+However, by the lemma, $|v_1||v_2||\sin(v_1,v_2)|$ is twice the area of the triangle bounded by $0,v_1,v_2$; which is also the area of the parallelogram $F$.
 Therefore, $|\det(A)|=\text{ area of }F$.\qed
 
 For the second part, assume $\det(A)=0$.
-From part (1), it follows that the area of the parallelogram $F$ constructed as above is 0.
-Thus, $L(e_1)$ and $L(e_2)$ must be scalar multiple of each other, or there exists $\lambda\in\R$ such that $L(e_2)=\lambda L(e_1)$.
+From part (1), it follows that the area of the parallelogram $F$ constructed as above is 0, whence the angle between $L(e_1)$ and $L(e_2)$ must be zero.
+Thus, $L(e_1)$ and $L(e_2)$ must be collinear, meaning $L(e_1)$ and $L(e_2)$ must be scalar multiple of each other, or there exists $\lambda\in\R$ such that $L(e_2)=\lambda L(e_1)$.
 
 Let $x_1=\lambda e_1$ and $x_2=e_2$. Then, $x_1\not=x_2$, but 
 \[
@@ -159,9 +156,10 @@ We have: $L(x_1)=L(a_1e_1+a_2e_2)=a_1L(e_1)+a_2L(e_2)$.
 Similarly, $L(x_2)=L(b_1e_1+b_2e_2)=b_1L(e_1)+b_2L(e_2)$.
 Since $L(x_1)=L(x_2)$, $a_1L(e_1)+a_2L(e_2)=b_1L(e_1)+b_2L(e_2)$
 , or $(a_1-b_1)L(e_1)=(b_2-a_2)L(e_2)$.
-But since $b_2-a_2\not=0$, it follows that $L(e_2)=\dfrac{a_1-b_1}{b_2-a_2}L(e_1)$.
-Hence, $L(e_2)$ is a scalar multiple of $L(e_1)$, or the area of $F$ must be zero.
-But as the area of $F$ equals zero implies $|\det(A)|=0$.
+But as $b_2-a_2\not=0$, it follows that $L(e_2)=\dfrac{a_1-b_1}{b_2-a_2}L(e_1)$.
+Hence, $L(e_2)$ is a scalar multiple of $L(e_1)$, or the vectors $L(e_1)$, $L(e_2)$ are collinear.
+It follows that the angle between $L(e_1)$ and $L(e_2)$ is zero, or the area of $F$ must be zero.
+However, the area of $F$ equals zero implies $|\det(A)|=0$.
 Hence, if $L$ is not injective then $\det(A)=0$.
 Therefore, 
 \[
