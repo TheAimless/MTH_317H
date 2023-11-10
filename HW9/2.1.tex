@@ -14,3 +14,17 @@
  \end{enumerate}
  
 \end{question}
+
+\begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
+    \begin{enumerate}[(i)]
+        \item Let $A=\MatTwoTwo{1}{0}{0}{1}$ and $B=\MatTwoTwo{-1}{0}{0}{-1}$.
+        Then, $\det(A)=1=\det(B)$ and $\det(A+B)=\begin{vmatrix}
+            0 & 0\\
+            0 & 0
+        \end{vmatrix}=0$.
+        It follows that $\det(A+B)\not=\det(A)+\det(B)$.\qed
+        \item From Result 3.6.12 Section 3.2 LADW, $\det(5A)=5^n\det A$.\qed
+    \end{enumerate}
+    \renewcommand{\qedsymbol}{}
+\end{proof}

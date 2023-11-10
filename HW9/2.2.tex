@@ -39,3 +39,45 @@ C= \left( \begin{array}{cccccc}
 \end{enumerate}
 
 \end{question}
+
+\begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
+
+    \begin{enumerate}[(i)]
+        \item Since $A$ is a diagonal matrix, $\det A=1\times 2\times 1\times 3\times 1\times 1=6$.\qed
+        \item Using cofactor expansion, 
+        \[
+            \begin{aligned}
+                \det B&=\sum_{j=1}^{6}(-1)^{6+j}b_{6,j}B_{6,j}\\
+                &=-\begin{vmatrix}
+                    2 & 3 & 2 & -3 & 1\\
+                    0 & 9 & -1 & -9 & 3.4\\
+                    0 & 0 & 2 & -7 & 2\\
+                    0 & 0 & 0 & -1 & 2\\
+                    0 & 0 & 0 & 0 & 1 
+                \end{vmatrix}
+                -2\begin{vmatrix}
+                    1 & 2 & 2 & -3 & 1\\
+                    0 & 0 & -1 & -9 & 3.4\\
+                    0 & 0 & 2 & -7 & 2\\
+                    0 & 0 & 0 & -1 & 2\\
+                    0 & 0 & 0 & 0 & 1
+                \end{vmatrix}
+                +\begin{vmatrix}
+                    1 & 2 & 3 & 2 & -3\\
+                    0 & 0 & 9 & -1 & -9\\
+                    0 & 0 & 0 & 2 & -7\\
+                    0 & 0 & 0 & 0 & -1\\
+                    0 & 0 & 0 & 0 & 0
+                \end{vmatrix}\\
+                &= -(2\times 9\times 2\times -1\times 1)+0+0=36
+            \end{aligned}\\
+        \]
+        since the three $5\times 5$ above matrices are diagonal.
+        Therefore, $\det B=36$.\qed
+        \item Let $c_3$ and $c_5$ be the third and fifth row of $C$, respectively.
+        Since $c_3=-c_5$, from property 3.6.6 Section 3.2 LADW, $C$ is not invertible or $\det C=0$.\qed
+   \end{enumerate}
+   
+   \renewcommand{\qedsymbol}{}
+\end{proof}
