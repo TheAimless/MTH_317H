@@ -14,9 +14,37 @@
 	\begin{enumerate}[(i)]
 		\item Suppose $A$ and $B$ are similar.
 		Then, there exists an invertible matrix $Q$ such that $A=Q^{-1}BQ$.
-		Since $Q$ is invertible, $Q$ must be an $n\times n$ square matrix.
+		Since $Q$ is invertible, $Q$ and $Q^{-1}$ must be two $n\times n$ square matrices for some $n\in\N$.
+        
 		Suppose $B$ is an $a\times b$ matrix.
-		
- 	\end{enumerate}
+        Since $A=Q^{-1}BQ$, matrix multiplication must be defined for $Q^{-1}BQ$.
+        But since matrix multiplication is associative, $A=(Q^{-1}B)Q$ or $A=Q^{-1}(BQ)$.
+        It follows that $Q^{-1}B$ or $BQ$ must be defined.
+
+        If $Q^{-1}B$ is defined, since $Q^{-1}$ is an $n\times n$ matrix and $B$ is an $a\times b$ matrix, $a=n$ and $Q^{-1}B$ is an $n\times b$ matrix.
+        But then, $A=(Q^{-1}B)Q$, or $(Q^{-1}B)Q$ must be defined.
+        As $Q^{-1}B$ is an $n\times b$ matrix and $Q$ is an $n\times n$ matrix, $b=n$ and $A=(Q^{-1}B)Q$ is an $n\times n$ matrix.
+        Hence, $a=b=n$.
+
+        If $BQ$ is defined, since $Q$ is an $n\times n$ matrix and $B$ is an $a\times b$ matrix, $b=n$ and $BQ$ is an $a\times n$ matrix.
+        As $BQ$ is an $a\times n$ matrix and $Q^{-1}$ is an $n\times n$ matrix, $a=n$ and $A=Q^{-1}(BQ)$ is an $n\times n$ matrix.
+        Hence, $a=b=n$.
+
+        Therefore, $A$ and $B$ are both $n\times n$ square matrices.\qed
+        \item From Theorem 3.5 Section 3.3 LADW, for any $n\times n$ matrices $X,Y$,
+        \[
+            \begin{aligned}
+                \det(XY)=\det X\det Y
+            \end{aligned}
+        \]
+        For some $n\times n$ matrix $Q$, since $Q^{-1}Q=I$, where $I$ is the identity $n\times n$ matrix, $\det I=\det(QQ^{-1})=\det Q\det Q^{-1}$, or $\det Q\det Q^{-1}=1$.
+        Hence, 
+        \[
+            \begin{aligned}
+                \det A=\det(Q^{-1}BQ)=\det Q^{-1}\det B\det Q=(\det Q^{-1}\det Q)\det B=\det B
+            \end{aligned}
+        \]
+        Therefore, $\det A=\det B$.\qed
+     	\end{enumerate}
 	\renewcommand{\qedsymbol}{}
 \end{proof}

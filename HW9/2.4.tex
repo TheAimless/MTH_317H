@@ -8,9 +8,59 @@
 	\]
 	
 	\item A square matrix is called \emph{nilpotent} if $A^k =0$ for some positive integer $k$. Prove that for a nilpotent matrix $A$, det$(A)=0$. 
-	
-	
-	
-	
 	\end{enumerate}
 	\end{question}
+
+\begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
+    \begin{enumerate}[(i)]
+        \item Since $\det Q^T=\det Q$ from Property $3.6.10$ Section 3.4 LADW, it follows that 
+        \[
+            \begin{aligned}
+                \det I=\det(Q^TQ)=\det(Q^T)\det(Q)=\det(Q)^2
+            \end{aligned}
+        \]
+        or $\det(Q)^2=1$. Therefore, $\det(Q)=\pm 1$.\qed
+        \item We will prove the following lemma:\\
+        \textit{Lemma: }Let $A$ be an $n\times n$ matrix. Then, for any $k\in\N$, 
+        \[
+            \begin{aligned}
+                \det(A^k)=(\det A)^k
+            \end{aligned}
+        \]
+        \textit{Proof: } For any $k\in\N$, let $P(k)$ be defined as 
+        \[
+            \begin{aligned}
+                P(k)\iff \det(A^k)=(\det A)^k
+            \end{aligned}
+        \]
+        Base case: When $k=1$, $\det(A^1)=\det A=(\det A)^1$.
+
+        Induction step: Assume $P(k)$ is true for some $k=t\in\N$.
+        Then, $\det(A^t)=(\det A)^t$.
+        When $k=t+1$, from Theorem 3.5 Section 3.3 LADW, $\det(A^tA)=\det A^t\det A$ and
+        \[
+            \begin{aligned}
+                \det(A^{t+1})=\det(A^tA)=\det A^t\det A=(\det A)^t\det A=(\det A)^{t+1}
+            \end{aligned}
+        \]
+        or $P(k+1)$ holds.
+        From the principle of mathematical induction, it follows that 
+        \[
+            \begin{aligned}
+                \det(A^k)=(\det A)^k
+            \end{aligned}
+        \]
+        for all $k\in\N$.\qed
+
+        Back to the original problem, since $A^k=0$, 
+        \[
+            \begin{aligned}
+                0=\det(A^k)=(\det A)^k
+            \end{aligned}
+        \]
+        by the lemma, or $\det A=0$. Therefore, for a nilpotent matrix $A$, $\det A=0$.\qed
+    \end{enumerate}
+    
+    \renewcommand{\qedsymbol}{}
+\end{proof}
