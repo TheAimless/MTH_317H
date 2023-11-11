@@ -52,3 +52,14 @@ In this problem you will verify the following properties of the determinant in t
 \end{enumerate}
 
 \end{question}
+
+\begin{proof}
+	\renewcommand{\qedsymbol}{$\blacksquare$}
+	\begin{enumerate}[(i)]
+		\item We have: $\det \MatTwoTwo{b}{a}{d}{c}=bc-ad$ and $\det \MatTwoTwo{a}{b}{c}{d}=ad-bc$.
+		Since $bc-ad=-(ad-bc)$, it follows that $\det \MatTwoTwo{b}{a}{d}{c}=-\det \MatTwoTwo{a}{b}{c}{d}$.\qed
+		\item We have: $\det \MatTwoTwo{\alpha a_1+\beta a_2}{b}{\alpha c_1+\beta c_2}{d}=(\alpha a_1+\beta a_2)d-(\alpha c_1+\beta c_2)b=\alpha(a_1d-bc_1)+\beta(a_2d-bc_2)=\det \MatTwoTwo{a_1}{b}{c_1}{d}+\beta\det \MatTwoTwo{a_2}{b}{c_2}{d}$.\qed
+		\item We have: $\det \MatTwoTwo{1}{0}{0}{1}=1\times 1-0\times 0=1$.\qed
+	\end{enumerate}
+	\renewcommand{\qedsymbol}{}
+\end{proof}
