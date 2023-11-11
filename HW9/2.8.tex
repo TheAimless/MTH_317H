@@ -21,7 +21,23 @@ Your inductive proof must include the following steps:
         \begin{aligned}
             P(n)\iff(SDS^{-1})^n=SD^nS^{-1}
         \end{aligned}
-    \] for all $n\in\N$. For the base case, 
+    \] for all $n\in\N$.
     
+    Base case: When $n=1$, $(SDS^{-1})^1=SD^1S^{-1}$, or the base case holds.
+
+    Induction step: Let $I_l$ be the $l\times l$ identity matrix. Let $k\in\N$ and assume $P(n)$ is true for $n=k$.
+    Then, for $n=k+1$, 
+    \[
+        \begin{aligned}
+            &(SDS^{-1})^{k+1}
+            =(SDS^{-1})^k(SDS^{-1})
+            =(SD^kS^{-1})(SDS^{-1})
+            =(SD^k)(S^{-1}S)(DS^{-1})\\
+            =&(SD^k)(I_lDS^{-1})
+            =SD^kDS^{-1}
+            =SD^{k+1}S^{-1}
+        \end{aligned}
+    \]
+    Hence, $P(k+1)$ is also true. From the principle of mathematical induction, it follows that $P(n)$ holds for all $n\in\N$.\qed
     \renewcommand{\qedsymbol}{}
 \end{proof}
