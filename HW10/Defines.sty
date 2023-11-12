@@ -1,0 +1,78 @@
+\setcounter{section}{2}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{question}[thm]{Question}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{DEF}[thm]{Definition}
+\newtheorem{rem}[thm]{Remark}
+\newenvironment{sol}{\paragraph{Solution:}\color{black}}{\hfill}
+\newenvironment{grade}{\paragraph{grading:}\color{blue}}{\hfill$\blacksquare$}
+
+
+\def\real{{\mathbb R}}
+\def\Natural{\mathbb{N}}
+\def\Z{\mathbb{Z}}
+\def\integer{\mathbb{Z}}
+\def\dx{\textnormal{dx}}
+\def\dy{\textnormal{dy}}
+\def\dz{\textnormal{dz}}
+\def\dt{\textnormal{dt}}
+\def\ds{\textnormal{ds}}
+\def\dw{\textnormal{dw}}
+\def\Re{\textnormal{Re}}
+\def\Im{\textnormal{Im}}
+\def\Id{\textnormal{Id}}
+\def\exp{\textnormal{exp}}
+\def\dim{\textnormal{dim}}
+\def\interior{\textnormal{interior}}
+\def\NullLA{\textnormal{null}}
+\def\nullla{\textnormal{null}}
+\def\SpanLA{\textnormal{span}}
+\def\range{\textnormal{range}}
+\def\al{\alpha}
+\def\del{\delta}
+\def\Del{\Delta}
+\def\gam{\gamma}
+\def\Gam{\Gamma}
+\def\Om{\Omega}
+\def\ep{\varepsilon}
+\def\lam{\lambda}
+\def\rational{{\mathbb Q}}
+\def\integer{{\mathbb Z}}
+\def\grad{\nabla}
+
+\def\C{\mathcal C}
+\def\I{\mathcal I}
+\def\M{\mathcal M}
+\def\N{\mathbb N}
+\def\P{\mathcal P}
+\def\R{\mathbb R}
+\def\T{\mathcal T}
+\def\Z{\mathbb Z}
+\def\F{\mathbb F}
+
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\ColVecTwo}[2]{\begin{pmatrix} #1\\ #2\end{pmatrix}}
+\newcommand{\ColVecThree}[3]{\begin{pmatrix} #1\\ #2\\ #3\end{pmatrix}}
+\newcommand{\ColVecFour}[4]{\begin{pmatrix} #1\\ #2\\#3 \\ #4\end{pmatrix}}
+\newcommand{\MatrixTwoTwo}[4]{\begin{pmatrix} #1 &#2\\ #3 &#4 \end{pmatrix}}
+\newcommand{\MatTwoTwo}[4]{\begin{pmatrix} #1 &#2\\ #3 &#4 \end{pmatrix}}
+\newcommand{\MatrixThreeThree}[9]{\begin{pmatrix} #1 &#2 &#3\\ #4 &#5 &#6\\ #7 &#8 &#9 \end{pmatrix}}
+\newcommand{\inner}[2]{\langle #1 , #2 \rangle}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\spanvect}{\textnormal{span}}
+\newcommand{\union}{\cup}
+\newcommand{\Union}{\bigcup}
+\newcommand{\intersect}{\cap}
+\newcommand{\Intersect}{\bigcap}
+
+\DeclareMathOperator*{\Limsup}{LIMSUP}
+
+\newenvironment{sysmatrix}[1]
+{\left(\begin{array}{@{}#1@{}}}
+    {\end{array}\right)}
+\newcommand{\ro}[1]{%
+  \xrightarrow{\mathmakebox[\rowidth]{#1}}%
+}
+\newlength{\rowidth}% row operation width
+\AtBeginDocument{\setlength{\rowidth}{3em}}
