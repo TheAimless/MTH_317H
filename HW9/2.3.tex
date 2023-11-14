@@ -65,23 +65,39 @@ B= \begin{pmatrix}
                 0 & 0 & 2 & 1\\
                 2 & 0 & 3 & 1
             \end{sysmatrix}
-            \begin{aligned}
-                &\ro{-R_2}\\
-                &\ro{R_3/2}\\
-                &\ro{R_4-2R_1}
-            \end{aligned}
+            &\ro{R_4-2R_1}
             \begin{sysmatrix}{cccc}
                 1 & 2 & 3 & 2\\
-                0 & 1 & -7 & 2\\
-                0 & 0 & 1 & 0.5\\
+                0 & -1 & 7 & -2\\
+                0 & 0 & 2 & 1\\
                 0 & -4 & -3 & -3
             \end{sysmatrix}
-            \begin{aligned}
-                &\ro{R_1-2R_2}\\
-                &\ro{R_2+7R_3}\\
-                &\ro{R_4+4R_2}
-            \end{aligned}
+            \ro{R_4-4R_2}
+            \begin{sysmatrix}{cccc}
+                1 & 2 & 3 & 2\\
+                0 & -1 & 7 & -2\\
+                0 & 0 & 2 & 1\\
+                0 & 0 & -31 & 5
+            \end{sysmatrix}\\
+            &\ro{R_4+15.5R_3}
+            \begin{sysmatrix}{cccc}
+                1 & 2 & 3 & 2\\
+                0 & -1 & 7 & -2\\
+                0 & 0 & 2 & 1\\
+                0 & 0 & 0 & 20.5
+            \end{sysmatrix}
         \end{alignat*}
+        Since every elementary row operation consists of adding one row with a scalar multiple of another row, the determinant stays the same. Moreover, since the row echolon matrix is triangular, it follows that 
+        \[
+            \begin{aligned}
+                |A|=\begin{vmatrix}
+                    1 & 2 & 3 & 2\\
+                    0 & -1 & 7 & -2\\
+                    0 & 0 & 2 & 1\\
+                    0 & 0 & 0 & 20.5
+                \end{vmatrix}=1\times -1\times 2\times 20.5=-41
+            \end{aligned}
+        \]
         \item (a) We have 
         \[
             \begin{aligned}
