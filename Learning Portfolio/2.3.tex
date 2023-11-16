@@ -35,7 +35,7 @@
         \item Let $L:\P_4\rightarrow\P_4$ such that $L$ satisfies (a); $L(p_3), L(p_4)\in\P_4$ such that $L(p_3)(x)=b_0+b_1x+b_2x^2+b_3x^3+b_4x^4$, $L(p_4)(x)=c_0+c_1x+c_2x^2+c_3x^3+c_4x^4$ and
         \begin{enumerate}[(1)]
             \item $b_i+c_i=0$ for all $i=0,...,4$
-            \item $b_0,b_2$ are not all zero
+            \item $b_0,b_2$ are not all or not both zero
         \end{enumerate}
         \item Let $L:P_4\rightarrow\P_4$ such that $L$ satisfies the conditions stated in (i). Then, $L$ satisfies (a).
         We have 
@@ -49,7 +49,7 @@
         \]
         Thus, $L(p_3+p_4)=$ zero polynomial, or $L$ satisfies (b).
         
-        To show that $\dim(\nullla(L))=1$, we will show that $B=p_3+p_4$ is a basis for $L$.
+        To show that $\dim(\nullla(L))=1$, we will show that $B=\{p_3+p_4\}$ is a basis for $\nullla(L)$.
         Let $p\in\nullla(L)$ such that for all $x\in\R$, $p(x)=a_0+a_1x+a_2x^2+a_3x^3+a_4x^4$ for some $a_0,a_1,a_2,a_3,a_4\in\R$.
         Then, $p=a_0p_0+a_1p_1+a_2p_2+a_3p_3+a_4p_4$. 
         We have 
@@ -117,7 +117,7 @@
 
         Therefore, given $L:\P_4\rightarrow\P_4$ satisfying (a), (b) and (c), $L$ satisfies the conditions given in (i).
         It follows that the characterization of $L$ given above is correct.\qed
-        \item The bases for $\nullla(L)$ and $\range(L)$ are $B_1=p_3+p_4$ and $B_2=p_0,p_1,p_2,p_3$, respectively.
+        \item The bases for $\nullla(L)$ and $\range(L)$ are $B_1=\{p_3+p_4\}$ and $B_2=\{L(p_0),L(p_1),L(p_2),L(p_3)\}$, respectively.
     \end{enumerate}
     \renewcommand{\qedsymbol}{}
 \end{proof}
