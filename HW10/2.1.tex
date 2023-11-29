@@ -1,44 +1,132 @@
 \begin{question}
-\normalfont
-Find the characteristic polynomials, eigenvalues, and eigenvectors of each of the following matrices. For each eigenvalue, find its algebraic multiplicity and geometric multiplicity.
-\begin{enumerate}[(i)]
-\item
-\[
-A= \begin{pmatrix}
-            4 & -5\\
-            2 & -3\\
-        \end{pmatrix}
-\]
+    \normalfont
+    Find the characteristic polynomials, eigenvalues, and eigenvectors of each of the following matrices. For each eigenvalue, find its algebraic multiplicity and geometric multiplicity.
+    \begin{enumerate}[(i)]
+        \item
+              \[
+                  A= \begin{pmatrix}
+                      4 & -5 \\
+                      2 & -3 \\
+                  \end{pmatrix}
+              \]
 
-\item
-\[
-B= \begin{pmatrix}
-            2 & -1 & 0\\
-            0 & 2 & 1\\
-            0 & 0 & 1
-        \end{pmatrix}
-\]
-\item
-\[
-C= \begin{pmatrix}
-            1 & 3 & 3\\
-            -3 & -5 & -3\\
-            3 & 3 & 1 \\
-        \end{pmatrix}
-\]
-\end{enumerate}
+        \item
+              \[
+                  B= \begin{pmatrix}
+                      2 & -1 & 0 \\
+                      0 & 2  & 1 \\
+                      0 & 0  & 1
+                  \end{pmatrix}
+              \]
+        \item
+              \[
+                  C= \begin{pmatrix}
+                      1  & 3  & 3  \\
+                      -3 & -5 & -3 \\
+                      3  & 3  & 1  \\
+                  \end{pmatrix}
+              \]
+    \end{enumerate}
 
 \end{question}
 
 \begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
     \begin{enumerate}[(i)]
         \item Let $\lambda$ and $v$ be an eigenvalue and eigenvector for $A$.
-        Solving for $Av=\lambda v$, 
-        \[
-            \begin{aligned}
-                (A-\lambda I)v=
-            \end{aligned}
-        \]
+              Solving for $Av=\lambda v$,
+              \[
+                  \begin{aligned}
+                       & (A-\lambda I)v=0             \\
+                      \iff
+                       & \det(A-\lambda I)=0          \\
+                      \iff
+                       & \begin{vmatrix}
+                             4-\lambda & -5         \\
+                             2         & -3-\lambda
+                         \end{vmatrix}=0       \\
+                      \iff
+                       & (4-\lambda)(-3-\lambda)+10=0 \\
+                      \iff
+                       & \lambda^2-\lambda-2=0        \\
+                      \iff
+                       & (\lambda+1)(\lambda-2)=0
+                  \end{aligned}
+              \]
+              The characteristic polynomial for $A$ is $f(\lambda)=\lambda^2-\lambda-2$.
+              Solving for $f(\lambda)=0$, we obtain $\lambda\in\{-1,2\}$, which are the eigenvalues for $A$.
+              It follows that the algebraic multiplicity for both eigenvalues are 1.
+              Moreover, since the geometric multiplicity cannot exceed the algebraic multiplicity but must also be nonzero, the geometric multiplicity for both eigenvalues is 1.
+
+              When $\lambda=-1$, solving for $Av=\lambda v$,
+              \[
+                  \begin{aligned}
+                       & (A+I)v=0                    \\
+                      \iff
+                       & \MatTwoTwo{5}{-5}{2}{-2}v=0
+                  \end{aligned}
+              \]
+              Letting $v=\ColVecTwo{1}{1}$, we obtain $(A-\lambda I)v=0$, or $v=\ColVecTwo{1}{1}$ is an eigenvector corresponding to $\lambda=-1$.
+              But since the geometric multiplicity is 1, it follows that the set of eigenvectors corresponding to $\lambda=-1$ is $\SpanLA(\ColVecTwo{1}{1}) -\{0\}$.
+
+              When $\lambda=2$, solving for $Av=\lambda v$,
+              \[
+                  \begin{aligned}
+                       & (A-2I)v=0                   \\
+                      \iff
+                       & \MatTwoTwo{2}{-5}{2}{-5}v=0
+                  \end{aligned}
+              \]
+              Letting $v=\ColVecTwo{1}{-1}$, we obtain $(A-\lambda I)v=0$, or $v=\ColVecTwo{1}{-1}$ is an eigenvector corresponding to $\lambda=2$.
+              But since the geometric multiplicity is 1, it follows that the set of eigenvectors corresponding to $\lambda=2$ is $\SpanLA(\ColVecTwo{1}{-1})-\{0\}$.
+        \item Let $\lambda$ and $v$ be an eigenvalue and eigenvector for $A$.
+              Solving for $Av=\lambda v$,
+              \[
+                  \begin{aligned}
+                       & (A-\lambda I)v=0                    \\
+                      \iff
+                       & \det(A-\lambda I)=0                 \\
+                      \iff
+                       & \begin{vmatrix}
+                             2-\lambda & -1        & 0         \\
+                             0         & 2-\lambda & 1         \\
+                             0         & 0         & 1-\lambda
+                         \end{vmatrix}=0   \\
+                      \iff
+                       & (2-\lambda)(2-\lambda)(1-\lambda)=0 \\
+                  \end{aligned}
+              \]
+              The characteristic polynomial for $A$ is $f(\lambda)=(2-\lambda)(2-\lambda)(1-\lambda)$.
+              It follows that the algebraic multiplicity for $\lambda=2$ is 2 and for $\lambda=1$ is 1.
+
+              When $\lambda=2$, solving for $Av=\lambda v$,
+              \[
+                  \begin{aligned}
+                       & (A-2I)v=0                    \\
+                      \iff
+                       & \begin{pmatrix}
+                            0 & -1 & 0\\
+                            0 & 0 & 1\\
+                            0 & 0 & -1
+                       \end{pmatrix}v=0
+                  \end{aligned}
+              \]
+                
+
+              When $\lambda=1$, solving for $Av=\lambda v$,
+              \[
+                  \begin{aligned}
+                       & (A-I)v=0                   \\
+                      \iff
+                       & \begin{pmatrix}
+                            1 & -1 & 0\\
+                            0 & 1 & 1\\
+                            0 & 0 & 0
+                       \end{pmatrix}v=0
+                  \end{aligned}
+              \]
+              Letting $v=\ColVecTwo{1}{-1}$, we obtain $(A-\lambda I)v=0$, or $v=\ColVecTwo{1}{-1}$ is an eigenvector corresponding to $\lambda=2$.
+
     \end{enumerate}
-    
+
 \end{proof}
