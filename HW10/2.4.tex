@@ -18,3 +18,28 @@
 \end{enumerate}	
 	
 	\end{question}
+
+\begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
+    \begin{enumerate}[(i)]
+        \item The eigenvalues for $B$ are: $\lambda\in\{1, 2, -2, 3\}$.\qed
+        \item Let $\lambda$ be an eigenvalue for $A$.
+        For $\lambda$ to be an eigenvalue for $A$, $\lambda$ must be a root of the characteristic polynomial for $A$.
+        However, since $A$ is triangular, the characteristic polynomial for $A$ given $\lambda$ is 
+        \[
+            \begin{aligned}
+                \det\begin{pmatrix}
+                    a_{1,1}-\lambda & a_{1,2} & \dots & a_{1,n}\\
+                    0 & a_{2,2}\lambda & \dots & a_{2,n}\\
+                    \vdots & \vdots & \ddots & \vdots\\
+                    0 & 0 & \dots & a_{n,n}-\lambda
+                \end{pmatrix}=0
+            \end{aligned}
+            \iff
+            \prod_{i=1}^{n}(a_{i,i}-\lambda)=0
+        \]   
+        since the determinant of a triangular matrix is the product of its diagonal entries.
+        Solving for the above equation, it must be the case that the solution for the characteristic polynomial is $\lambda\in\{a_{i,i}|i=1,...,n\}$, or the eigenvalues of $A$ (repeated with multiplicity) are the diagonal entries of $A$: $a_{1,1},a_{2,2},...,a_{n,n}$.\qed
+    \end{enumerate}
+    \renewcommand{\qedsymbol}{}
+\end{proof}

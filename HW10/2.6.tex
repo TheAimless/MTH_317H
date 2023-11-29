@@ -10,7 +10,25 @@ where $\lambda_1, \lambda_2,...\lambda_n$ are the eigenvalues of $A$ (repeated w
 
 \item Then, plug $\lambda=0$ into your formula from part (i) to conclude that the determinant of $A$ is the product of the eigenvalues. 
 \end{enumerate}
-
-
-
 \end{question}
+
+\begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
+    \begin{enumerate}[(i)]
+        \item Consider the characteristic polynomial of $A$, $f(\lambda)=\det(A-\lambda I)$.
+        From Problem 2.5, the polynomial $f(\lambda)$ is polynomial of degree $n$.
+        Moreover, since the eigenvalues are the roots of $f(\lambda)$, $f(\lambda)$ can be written as $k(\lambda-\lambda_1)(\lambda-\lambda_2)\dots(\lambda-\lambda_n)$ for some $k\in\R$.
+        Finally, since the coefficient of $\lambda^n$ in $f(\lambda)$ is $(-1)^n$, $k=(-1)^n$.
+        Hence, 
+        \[
+            \begin{aligned}
+                \det(A-\lambda I)=(-1)^n\prod_{i=1}^{n}(\lambda-\lambda_i)
+                =\prod_{i=1}^{n}(-1)(\lambda-\lambda_i)
+                =(\lambda_1-\lambda)(\lambda_2-\lambda)\dots(\lambda_n-\lambda)
+            \end{aligned}
+        \]\qed
+        \item When $\lambda=0$, $\det(A)=\det(A-\lambda I)=(\lambda_1-\lambda)(\lambda_2-\lambda)\dots(\lambda_n-\lambda)=\lambda_1\lambda_2\dots\lambda_n$.
+        Therefore, the determinant of $A$ is the product of its eigenvalues.\qed
+    \end{enumerate}
+    \renewcommand{\qedsymbol}{}
+\end{proof}

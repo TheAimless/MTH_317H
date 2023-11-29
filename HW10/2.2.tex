@@ -14,3 +14,43 @@ Determine whether each of the following statements is True or False. If it is tr
 \end{enumerate}
 
 \end{question}
+\begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
+    \begin{enumerate}[(i)]
+        \item Since the zero vector is not considered to be an eigenvector of any matrix, if the matrix has one eigenvector the vector must be nonzero.
+        Let the matrix be $A$ and the eigenvector be $v$.
+        Then, there exists $\lambda\in\R$ such that $Av=\lambda v$.
+        Let $v'=tv$ for some $t\not=0$.
+        We have 
+        \[
+            \begin{aligned}
+                Av'=A(tv)=t(Av)=t(\lambda v)=\lambda (tv)=\lambda v'
+            \end{aligned}
+        \]
+        or $v'$ must be an eigenvector for $A$.
+        Since the choice of $v'$ is arbitrary, it follows that the matrix $A$ has infinitely many eigenvectors.\qed
+        \item Let $A=\MatTwoTwo{1}{0}{0}{2},P=\MatTwoTwo{2}{-1}{1}{1}$ and $B=\MatTwoTwo{0}{1}{2}{3}$.
+        Then, $P^{-1}=\dfrac{1}{2-1}\MatTwoTwo{1}{1}{1}{2}=\MatTwoTwo{1}{1}{1}{2}$ and $A=PBP^{-1}$.
+        Thus, $A$ is similar to $B$.
+        
+        We have: $A \ColVecTwo{1}{0}=\ColVecTwo{1}{0}$, or $\ColVecTwo{1}{0}$ is an eigenvector for $A$.
+        However, $B \ColVecTwo{1}{0}=\ColVecTwo{0}{2}$, which is not a scalar multiple of $\ColVecTwo{1}{0}$.
+        Therefore, there exists an eigenvector of $A$ that is not an eigenvector of $B$, or similar matrices need not to always have the same eigenvectors.\qed
+        
+        \item Let $A=\MatTwoTwo{1}{0}{0}{2}$. Then, the eigenvalues of $A$ are $1$ and $2$ since $A$ is triangular.
+        Moreover, for $v_1=\ColVecTwo{1}{0}$ and $v_2=\ColVecTwo{0}{1}$, $Av_1=v_1$ and $Av_2=2v_2$.
+        Thus, $v_1$ and $v_2$ are two eigenvectors of $A$ and $v_1+v_2=\ColVecTwo{1}{1}\not=0$.
+        However, $A(v_1+v_2)=\ColVecTwo{1}{2}$, which is not a scalar multiple of $v_1+v_2$.
+        Hence, a nonzero sum of two eigenvectors of a matrix $A$ need not to be an eigenvector.\qed
+        \item Let $A$ be a matrix with $\lambda$ as an eigenvalue for $A$ and $v_1,v_2$ corresponding to the same eigenvalue $\lambda$ such that $v_1+v_2\not=0$.
+        Then, $Av_1=\lambda v_1$ and $Av_2=\lambda v_2$.
+        It follows that 
+        \[
+            \begin{aligned}
+                A(v_1+v_2)=Av_1+Av_2=\lambda v_1+\lambda v_2=\lambda(v_1+v_2)
+            \end{aligned}
+        \]
+        or $v_1+v_2$ is an eigenvector for $A$.\qed
+    \end{enumerate}
+    \renewcommand{\qedsymbol}{}
+\end{proof}

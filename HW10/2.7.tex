@@ -1,12 +1,30 @@
 \begin{question}	
 	\normalfont
 Let $R$ be any polygon in the plane. Prove that it is possible to divide $R$ into triangles, all of whose vertices are vertices of $R$.
-Your inductive proof must include the following steps:
-	\begin{enumerate}[(i)]
-		\item identify and state what is the conditional statement, $P(n)$, for $n\in \Natural, n \geq 3$.
-		\item state which natural number you will use as the base case, and prove that the conditional statement is true for the base case.
-		\item for a fixed $k\in\Natural$, state the inductive assumption.
-		\item prove the inductive step.  That is to say, prove that $P(k+1)$ is also true.
-		\item conclude.
-	\end{enumerate}
 \end{question}
+
+\begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
+    Suppose $R$ is convex.
+    For $n\in\N$, $n\geq 3$ let 
+    \[
+        \begin{aligned}
+            P(n)\iff \text{R can be divided into triangles whose vertices are vertices of R}
+        \end{aligned}
+    \]
+    Base case: When $n=3$, the vertices of $R$ form a triangle itself, $R$.
+    Hence, the base case holds.
+
+    Induction step: Suppose $P(n)$ holds for some $n=k\in\N$.
+    To show that $P(k+1)$ holds, let $R=A_1A_2...A_{k+1}$, where $A_1,...,A_{k+1}$ are vertices of $R$.
+    By connecting the vertices $A_k$ and $A_1$ with a line segment, we obtain a new polygon $R'=A_1A_2...A_k$ that has $k$ vertices.
+    Since $R$ is convex, the line segment $A_kA_1$ is fully contained inside $R$.
+    Hence, the new polygon must also be convex.
+
+    From the induction hypothesis, since $P(k)$ holds, $R'$ can be divided into triangles.
+    However, since the points $A_k,A_{k+1},A_1$ are pairwise distinct, $A_kA_{k+1}A_1$ must be a triangle in the plane.
+    Thus, the partition of $R'$ into triangles plus the triangle $A_kA_{k+1}A_1$ must be a partition of $R$ into triangles, all of whose vertices are vertices of $R$.
+    It follows that $P(k+1)$ holds.
+
+    From the principle of mathematical induction, it must be the case that $P(n)$ holds for all $n\in\N$, $n\geq 3$.
+\end{proof}

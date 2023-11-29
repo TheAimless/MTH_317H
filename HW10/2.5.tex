@@ -2,3 +2,52 @@
 Let $A$ be an $n\times n$ matrix, and let $f(\lambda) = \textup{det}(A - \lambda I)$ be its characteristic polynomial. Prove that $f(\lambda)$ is a polynomial of degree $n$, and the coefficient of $\lambda^n$ in $f(\lambda)$ is $(-1)^n$. \\
 \emph{Hint: Use cofactor expansion and induction.}	
 \end{question}
+
+\begin{proof}
+    \renewcommand{\qedsymbol}{$\blacksquare$}
+    For all $n\in\N$, let $A$ be an $n\times n$ matrix and let $f(\lambda)=\det(A-\lambda I)$ be its characteristic polynomial.
+    Define
+    \[
+        \begin{aligned}
+            P(n)\iff \text{deg}(f(\lambda))=n\land\text{the coefficient of }\lambda^n\text{ in }f(\lambda)\text{ is } (-1)^n
+        \end{aligned}
+    \]   
+    We will show that $P(n)$ holds for all $n\in\N$.
+
+    Base case: When $n=1$, let $A=(a)$.
+    Then, the characteristic polynomial $\det(A-\lambda I)$ is $a-\lambda=\lambda-a=0$, which has a degree of 1 and the coefficient of $\lambda^1$ in $f(\lambda)$ is $(-1)^1$.
+    Thus, $P(1)$ holds.
+
+    Induction step: Suppose $P(n)$ holds for some $n=k$.
+    Let $A$ be a $(k+1)\times(k+1)$ matrix represented as 
+    \[
+        \begin{aligned}
+            A=\begin{pmatrix}
+                a_{1,1} & a_{1,2} & \dots & a_{1,k+1}\\
+                a_{2,1} & a_{2,2} & \dots & a_{2,k+1}\\
+                \vdots & \vdots & \ddots & \vdots\\
+                a_{k+1,1} & a_{k+1,2} & \dots & a_{k+1,k+1}
+            \end{pmatrix}
+        \end{aligned}
+    \]
+    Denote $A_{i,j}$ as the submatrix of $A$ after deleting the $i^{th}$ row and $j^{th}$ column.
+    Then, the characteristic polynomial $f(\lambda)=\det(A-\lambda I)$ is given by 
+    \[
+        \begin{aligned}
+            \det(A-\lambda I)&=\begin{vmatrix}
+                a_{1,1}-\lambda & a_{1,2} & \dots & a_{1,k+1}\\
+                a_{2,1} & a_{2,2}-\lambda & \dots & a_{2,k+1}\\
+                \vdots & \vdots & \ddots & \vdots\\
+                a_{k+1,1} & a_{k+1,2} & \dots & a_{k+1,k+1}-\lambda
+            \end{vmatrix}\\
+            &=\sum_{i=1}^{k}(-1)^{k+1+i}a_{k+1,i}A_{k+1,i}+(a_{k+1,k+1}-\lambda)A_{k+1,k+1}\\
+            &=\sum_{i=1}^{k+1}(-1)^{k+1+i}a_{k+1,i}A_{k+1,i}-\lambda A_{k+1,k+1}
+        \end{aligned}
+    \]
+    However, from the induction hypothesis, since $P(k)$ holds and $A_{k+1,i}$ are $k\times k$ submatrices of $A$ for every $i=1,..,k+1$,
+    if $f_i(\lambda)$ is the $i^{th}$ characteristic polynomial of $A_{k+1,i}$, it must be the case that $\deg(f_i(\lambda))=k$ and the coefficient of $\lambda^{k}$ in $f_{k+1}(\lambda)$ is $(-1)^{k}$.
+    From the above expression, we conclude that $\deg(\sum_{i=1}^{k+1}(-1)^{k+1+i}a_{k+1,i}A_{k+1,i})=k$, yet $\deg(-\lambda A_{k+1,k+1})=k+1$ with the coefficient of $\lambda^{k+1}$ being $(-1)^k\times -1=(-1)^{k+1}$.
+    Therefore, $\deg(\det(A-\lambda I))=k+1$ and the coefficient of $\lambda^{k+1}$ being $(-1)^{k+1}$, whence $P(k+1)$ holds.
+
+    From the principle of mathematical induction, it follows that $P(n)$ holds for all $n\in\N$, or $f(\lambda)$ is a polynomial of degree $n$ and the coefficient of $\lambda^n$ in $f(\lambda)$ is $(-1)^n$.
+\end{proof}
