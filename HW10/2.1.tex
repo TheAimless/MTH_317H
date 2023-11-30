@@ -77,8 +77,8 @@
                        & \MatTwoTwo{2}{-5}{2}{-5}v=0
                   \end{aligned}
               \]
-              Letting $v=\ColVecTwo{1}{-1}$, we obtain $(A-\lambda I)v=0$, or $v=\ColVecTwo{1}{-1}$ is an eigenvector corresponding to $\lambda=2$.
-              But since the geometric multiplicity is 1, it follows that the set of eigenvectors corresponding to $\lambda=2$ is $\SpanLA(\ColVecTwo{1}{-1})-\{0\}$.
+              Letting $v=\ColVecTwo{5}{2}$, we obtain $(A-\lambda I)v=0$, or $v=\ColVecTwo{5}{2}$ is an eigenvector corresponding to $\lambda=2$.
+              But since the geometric multiplicity is 1, it follows that the set of eigenvectors corresponding to $\lambda=2$ is $\SpanLA(\ColVecTwo{5}{2})-\{0\}$.
         \item Let $\lambda$ and $v$ be an eigenvalue and eigenvector for $A$.
               Solving for $Av=\lambda v$,
               \[
@@ -99,6 +99,7 @@
               The characteristic polynomial for $A$ is $f(\lambda)=(2-\lambda)(2-\lambda)(1-\lambda)$.
               It follows that the algebraic multiplicity for $\lambda=2$ is 2 and for $\lambda=1$ is 1.
 
+              Let $v=\ColVecThree{v_1}{v_2}{v_3}$.
               When $\lambda=2$, solving for $Av=\lambda v$,
               \[
                   \begin{aligned}
@@ -108,10 +109,15 @@
                             0 & -1 & 0\\
                             0 & 0 & 1\\
                             0 & 0 & -1
-                       \end{pmatrix}v=0
+                       \end{pmatrix}\ColVecThree{v_1}{v_2}{v_3}=0\\
+                       \iff 
+                       &\ColVecThree{-v_2}{v_3}{-v_3}=0\\
+                       \iff
+                       &v_2=v_3=0
                   \end{aligned}
               \]
-                
+              It follows that the eigenvectors corresponding to $\lambda=2$ must have the form $v=\ColVecThree{k}{0}{0}$, where $k$ is a nonzero real number.
+              Thus, the geometric multiplicity for $\lambda=2$ is 1 and the set of eigenvectors corresponding to that eigenvalue is $\SpanLA(\ColVecThree{1}{0}{0})-\{0\}$.
 
               When $\lambda=1$, solving for $Av=\lambda v$,
               \[
@@ -122,11 +128,18 @@
                             1 & -1 & 0\\
                             0 & 1 & 1\\
                             0 & 0 & 0
-                       \end{pmatrix}v=0
-                  \end{aligned}
+                       \end{pmatrix}\ColVecThree{v_1}{v_2}{v_3}=0\\
+                        \iff
+                        &\ColVecThree{v_1-v_2}{v_2+v_3}{0}=0\\
+                        \iff
+                        &v_1=v_2=-v_3
+                  \end{aligned}\\
               \]
-              Letting $v=\ColVecTwo{1}{-1}$, we obtain $(A-\lambda I)v=0$, or $v=\ColVecTwo{1}{-1}$ is an eigenvector corresponding to $\lambda=2$.
-
+                It follows the eigenvectors corresponding to $\lambda=1$ must have the form $v=\ColVecThree{k}{k}{-k}$, where $k$ is a nonzero real number.
+                Thus, the geometric multiplicity for $\lambda=1$ is 1 and the set of eigenvectors corresponding to that eigenvalue is $\SpanLA(\ColVecThree{1}{1}{-1})-\{0\}$.
+        \item The characteristic polynomial for $C$ is $f(\lambda)=-\lambda^3-3\lambda^2+4$ and the eigenvalues are $\lambda\in\{1,-2\}$.
+        When $\lambda=1$, the set of eigenvectors is $\SpanLA(\ColVecThree{1}{-1}{1})-\{0\}$ and both its algebraic and geometric multiplicity is 1.
+        When $\lambda=-2$, the set of eigenvectors is $\SpanLA(\ColVecThree{-1}{0}{1},\ColVecThree{-1}{1}{0})-\{0\}$ and both its algebraic and geometric multiplicity is 2.
     \end{enumerate}
-
+    \renewcommand{\qedsymbol}{}
 \end{proof}
